@@ -1,0 +1,467 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-02 04:15+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\construction\management\commands\test_translations.py:18
+#: .\construction\management\commands\test_translations.py:26
+#: .\templates\construction\about.html:4
+msgid "About Us - Dorsamehr Construction"
+msgstr ""
+
+#: .\construction\management\commands\test_translations.py:19
+#: .\construction\management\commands\test_translations.py:27
+#: .\templates\construction\about.html:29
+msgid "Our Story"
+msgstr ""
+
+#: .\construction\management\commands\test_translations.py:20
+#: .\construction\management\commands\test_translations.py:28
+#: .\templates\construction\about.html:96
+msgid "Quality Excellence"
+msgstr ""
+
+#: .\construction\management\commands\test_translations.py:21
+#: .\construction\management\commands\test_translations.py:29
+#: .\templates\construction\about.html:248
+msgid "Get In Touch"
+msgstr ""
+
+#: .\templates\base.html:8
+msgid "Dorsamehr Construction"
+msgstr ""
+
+#: .\templates\base.html:31 .\templates\base.html:81 .\templates\base.html:142
+#: .\test_language_switching.py:63 .\test_language_switching.py:69
+msgid "Home"
+msgstr ""
+
+#: .\templates\base.html:32 .\templates\base.html:82
+#: .\test_language_switching.py:64 .\test_language_switching.py:70
+msgid "About"
+msgstr ""
+
+#: .\templates\base.html:33 .\templates\base.html:83 .\templates\base.html:144
+msgid "Projects"
+msgstr ""
+
+#: .\templates\base.html:34 .\templates\base.html:84 .\templates\base.html:145
+msgid "Team"
+msgstr ""
+
+#: .\templates\base.html:35 .\templates\base.html:85 .\templates\base.html:146
+msgid "Blog"
+msgstr ""
+
+#: .\templates\base.html:36 .\templates\base.html:86
+#: .\test_language_switching.py:65 .\test_language_switching.py:71
+msgid "Contact"
+msgstr ""
+
+#: .\templates\base.html:57 .\templates\base.html:104
+msgid "English"
+msgstr ""
+
+#: .\templates\base.html:61 .\templates\base.html:108
+msgid "Persian"
+msgstr ""
+
+#: .\templates\base.html:91
+msgid "Current Language"
+msgstr ""
+
+#: .\templates\base.html:100
+msgid "Language"
+msgstr ""
+
+#: .\templates\base.html:129
+msgid ""
+"Building excellence, creating value, and delivering quality construction "
+"solutions for over 15 years."
+msgstr ""
+
+#: .\templates\base.html:140
+msgid "Quick Links"
+msgstr ""
+
+#: .\templates\base.html:143
+msgid "About Us"
+msgstr ""
+
+#: .\templates\base.html:152
+msgid "Contact Info"
+msgstr ""
+
+#: .\templates\base.html:162
+msgid "All rights reserved."
+msgstr ""
+
+#: .\templates\construction\about.html:17
+msgid "About Dorsamehr Construction"
+msgstr ""
+
+#: .\templates\construction\about.html:19
+msgid ""
+"Building excellence and creating value through innovative construction "
+"solutions for over 15 years."
+msgstr ""
+
+#: .\templates\construction\about.html:31
+msgid ""
+"Founded in 2009, Dorsamehr Construction has grown from a small local "
+"contractor to one of the most trusted names in the construction industry. "
+"Our journey began with a simple mission: to deliver exceptional quality and "
+"value to our clients."
+msgstr ""
+
+#: .\templates\construction\about.html:34
+msgid ""
+"Over the years, we have successfully completed hundreds of projects across "
+"residential, commercial, and industrial sectors. Our commitment to quality, "
+"safety, and customer satisfaction has remained unwavering throughout our "
+"growth."
+msgstr ""
+
+#: .\templates\construction\about.html:37
+msgid ""
+"Today, we continue to push the boundaries of construction excellence, "
+"embracing new technologies and sustainable practices while maintaining the "
+"personal touch that our clients have come to expect."
+msgstr ""
+
+#: .\templates\construction\about.html:53
+msgid "Our Achievements"
+msgstr ""
+
+#: .\templates\construction\about.html:55
+msgid "Numbers that speak for our commitment to excellence"
+msgstr ""
+
+#: .\templates\construction\about.html:62
+msgid "Years of Experience"
+msgstr ""
+
+#: .\templates\construction\about.html:66 .\templates\construction\home.html:43
+msgid "Projects Completed"
+msgstr ""
+
+#: .\templates\construction\about.html:70 .\templates\construction\home.html:47
+msgid "Team Members"
+msgstr ""
+
+#: .\templates\construction\about.html:74 .\templates\construction\home.html:51
+msgid "Client Satisfaction"
+msgstr ""
+
+#: .\templates\construction\about.html:84
+msgid "Our Core Values"
+msgstr ""
+
+#: .\templates\construction\about.html:86
+msgid "The principles that guide everything we do"
+msgstr ""
+
+#: .\templates\construction\about.html:98
+msgid ""
+"We never compromise on quality. Every project is built to the highest "
+"standards using premium materials and expert craftsmanship."
+msgstr ""
+
+#: .\templates\construction\about.html:107
+#: .\templates\construction\home.html:211
+msgid "Safety First"
+msgstr ""
+
+#: .\templates\construction\about.html:109
+msgid ""
+"Safety is our top priority. We maintain strict safety protocols and ensure "
+"all team members are properly trained and equipped."
+msgstr ""
+
+#: .\templates\construction\about.html:118
+msgid "Integrity & Trust"
+msgstr ""
+
+#: .\templates\construction\about.html:120
+msgid ""
+"We build lasting relationships based on honesty, transparency, and mutual "
+"trust with our clients and partners."
+msgstr ""
+
+#: .\templates\construction\about.html:129
+msgid "Innovation"
+msgstr ""
+
+#: .\templates\construction\about.html:131
+msgid ""
+"We embrace new technologies and innovative solutions to deliver better, more "
+"efficient construction projects."
+msgstr ""
+
+#: .\templates\construction\about.html:140
+msgid "Sustainability"
+msgstr ""
+
+#: .\templates\construction\about.html:142
+msgid ""
+"We are committed to environmentally responsible construction practices and "
+"sustainable building solutions."
+msgstr ""
+
+#: .\templates\construction\about.html:151
+msgid "Customer Focus"
+msgstr ""
+
+#: .\templates\construction\about.html:153
+msgid ""
+"Our clients are at the heart of everything we do. We listen, understand, and "
+"exceed their expectations."
+msgstr ""
+
+#: .\templates\construction\about.html:164
+msgid "Meet Our Leadership Team"
+msgstr ""
+
+#: .\templates\construction\about.html:166
+msgid "Experienced professionals dedicated to delivering exceptional results"
+msgstr ""
+
+#: .\templates\construction\about.html:185
+msgid "years experience"
+msgstr ""
+
+#: .\templates\construction\about.html:197
+msgid "Team information will be available soon."
+msgstr ""
+
+#: .\templates\construction\about.html:204
+msgid "View Full Team"
+msgstr ""
+
+#: .\templates\construction\about.html:219
+msgid "Our Mission"
+msgstr ""
+
+#: .\templates\construction\about.html:221
+msgid ""
+"To deliver exceptional construction services that exceed client expectations "
+"while maintaining the highest standards of quality, safety, and "
+"sustainability. We strive to build lasting relationships and create value "
+"for our clients, employees, and communities."
+msgstr ""
+
+#: .\templates\construction\about.html:230
+msgid "Our Vision"
+msgstr ""
+
+#: .\templates\construction\about.html:232
+msgid ""
+"To be the leading construction company known for innovation, quality, and "
+"customer satisfaction. We envision a future where our projects not only meet "
+"today's needs but also contribute to a sustainable and prosperous tomorrow."
+msgstr ""
+
+#: .\templates\construction\about.html:242
+msgid "Ready to Work With Us?"
+msgstr ""
+
+#: .\templates\construction\about.html:244
+msgid ""
+"Let's discuss your project and see how we can help bring your vision to "
+"life. Contact us today for a free consultation."
+msgstr ""
+
+#: .\templates\construction\about.html:251
+msgid "View Our Work"
+msgstr ""
+
+#: .\templates\construction\home.html:4
+msgid "Dorsamehr Construction - Building Excellence"
+msgstr ""
+
+#: .\templates\construction\home.html:20
+msgid "Building Your"
+msgstr ""
+
+#: .\templates\construction\home.html:20
+msgid "Dreams"
+msgstr ""
+
+#: .\templates\construction\home.html:20
+msgid "Into Reality"
+msgstr ""
+
+#: .\templates\construction\home.html:23
+msgid ""
+"Dorsamehr Construction delivers exceptional quality and innovative solutions "
+"for residential, commercial, and industrial projects."
+msgstr ""
+
+#: .\templates\construction\home.html:27
+msgid "View Our Projects"
+msgstr ""
+
+#: .\templates\construction\home.html:30
+msgid "Get Quote"
+msgstr ""
+
+#: .\templates\construction\home.html:39
+msgid "Years Experience"
+msgstr ""
+
+#: .\templates\construction\home.html:64
+msgid "Our Services"
+msgstr ""
+
+#: .\templates\construction\home.html:66
+msgid ""
+"We offer comprehensive construction services tailored to meet your specific "
+"needs and exceed your expectations."
+msgstr ""
+
+#: .\templates\construction\home.html:76
+msgid "Residential Construction"
+msgstr ""
+
+#: .\templates\construction\home.html:78
+msgid ""
+"Custom homes, renovations, and residential developments built with quality "
+"materials and expert craftsmanship."
+msgstr ""
+
+#: .\templates\construction\home.html:81 .\templates\construction\home.html:95
+#: .\templates\construction\home.html:109
+msgid "Learn More"
+msgstr ""
+
+#: .\templates\construction\home.html:90
+msgid "Commercial Construction"
+msgstr ""
+
+#: .\templates\construction\home.html:92
+msgid ""
+"Office buildings, retail spaces, and commercial facilities designed for "
+"functionality and aesthetic appeal."
+msgstr ""
+
+#: .\templates\construction\home.html:104
+msgid "Industrial Construction"
+msgstr ""
+
+#: .\templates\construction\home.html:106
+msgid ""
+"Manufacturing facilities, warehouses, and industrial complexes built for "
+"efficiency and durability."
+msgstr ""
+
+#: .\templates\construction\home.html:120
+msgid "Featured Projects"
+msgstr ""
+
+#: .\templates\construction\home.html:122
+msgid ""
+"Explore our portfolio of successful projects that showcase our expertise and "
+"commitment to quality."
+msgstr ""
+
+#: .\templates\construction\home.html:148
+msgid "View Details"
+msgstr ""
+
+#: .\templates\construction\home.html:156
+msgid "No featured projects available yet."
+msgstr ""
+
+#: .\templates\construction\home.html:163
+msgid "View All Projects"
+msgstr ""
+
+#: .\templates\construction\home.html:174
+msgid "Why Choose Dorsamehr Construction?"
+msgstr ""
+
+#: .\templates\construction\home.html:181
+msgid "Quality Assurance"
+msgstr ""
+
+#: .\templates\construction\home.html:182
+msgid ""
+"We maintain the highest standards of quality throughout every project phase."
+msgstr ""
+
+#: .\templates\construction\home.html:191
+msgid "Timely Delivery"
+msgstr ""
+
+#: .\templates\construction\home.html:192
+msgid ""
+"We complete projects on schedule while maintaining quality and safety "
+"standards."
+msgstr ""
+
+#: .\templates\construction\home.html:201
+msgid "Expert Team"
+msgstr ""
+
+#: .\templates\construction\home.html:202
+msgid ""
+"Our experienced professionals bring expertise and innovation to every "
+"project."
+msgstr ""
+
+#: .\templates\construction\home.html:212
+msgid ""
+"We prioritize safety in all our operations and maintain strict safety "
+"protocols."
+msgstr ""
+
+#: .\templates\construction\home.html:232
+msgid "Latest News & Insights"
+msgstr ""
+
+#: .\templates\construction\home.html:234
+msgid ""
+"Stay updated with the latest trends, tips, and insights from the "
+"construction industry."
+msgstr ""
+
+#: .\templates\construction\home.html:257
+msgid "Read More"
+msgstr ""
+
+#: .\templates\construction\home.html:266
+msgid "View All Posts"
+msgstr ""
+
+#: .\templates\construction\home.html:276
+msgid "Ready to Start Your Project?"
+msgstr ""
+
+#: .\templates\construction\home.html:278
+msgid ""
+"Let's discuss your construction needs and create something amazing together. "
+"Contact us today for a free consultation."
+msgstr ""
+
+#: .\templates\construction\home.html:282
+msgid "Get Free Quote"
+msgstr ""
+
+#: .\templates\construction\home.html:285
+msgid "Call Now"
+msgstr ""

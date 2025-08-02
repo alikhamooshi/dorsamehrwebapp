@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ project.title }} - Dorsamehr Construction{% endblock %}
+
+{% block content %}
+<!-- Theme Toggle -->
+<div class="fixed top-20 right-4 z-40">
+    <button id="theme-toggle" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg p-2 shadow-lg transition-all duration-300">
+        <i id="theme-icon" class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+    </button>
+</div>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">{{ project.title }}</h1>
+            <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+                {{ project.description|truncatewords:30 }}
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Project Details Section -->
+<section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Project Image -->
+            <div>
+                {% if project.image %}
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="w-full rounded-2xl shadow-lg">
+                {% else %}
+                <div class="w-full h-96 bg-gray-300 dark:bg-gray-600 rounded-2xl flex items-center justify-center">
+                    <i class="fas fa-building text-8xl text-gray-500 dark:text-gray-400"></i>
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- Project Information -->
+            <div>
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Project Overview</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{ project.description }}</p>
+                </div>
+                
+                <!-- Project Details -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-tag text-[#feb906] dark:text-[#95a236] mr-3"></i>
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Project Type</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">{{ project.get_project_type_display }}</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-map-marker-alt text-[#feb906] dark:text-[#95a236] mr-3"></i>
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Location</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">{{ project.location }}</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-ruler-combined text-[#feb906] dark:text-[#95a236] mr-3"></i>
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Area</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">{{ project.area }}</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-calendar-check text-[#feb906] dark:text-[#95a236] mr-3"></i>
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Completion Date</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">{{ project.completion_date|date:"F Y" }}</p>
+                    </div>
+                </div>
+                
+                <!-- Project Features -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Key Features</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Quality construction with premium materials
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Expert craftsmanship and attention to detail
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Timely completion within budget
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-300">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Safety compliance throughout the project
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="{% url 'construction:contact' %}" class="bg-[#feb906] dark:bg-[#95a236] text-white dark:text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] dark:hover:bg-[#7a8a2b] transition duration-300 text-center">
+                Get Similar Quote
+            </a>
+            <a href="{% url 'construction:projects' %}" class="border-2 border-[#feb906] dark:border-[#95a236] text-[#feb906] dark:text-[#95a236] px-8 py-3 rounded-lg font-semibold hover:bg-[#feb906] hover:text-white dark:hover:bg-[#95a236] dark:hover:text-gray-900 transition duration-300 text-center">
+                View All Projects
+            </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Process Section -->
+<section class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Construction Process</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                We follow a systematic approach to ensure quality and timely delivery of every project.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-[#feb906] dark:bg-[#95a236] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white dark:text-gray-900 font-bold text-xl">1</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Planning & Design</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Detailed planning and design phase to ensure all requirements are met and the project is feasible.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-[#feb906] dark:bg-[#95a236] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white dark:text-gray-900 font-bold text-xl">2</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Site Preparation</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Site preparation including clearing, excavation, and foundation work to prepare for construction.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-[#feb906] dark:bg-[#95a236] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white dark:text-gray-900 font-bold text-xl">3</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Construction</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Expert construction phase with quality materials and skilled labor to build your project.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-[#feb906] dark:bg-[#95a236] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-white dark:text-gray-900 font-bold text-xl">4</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Completion</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Final inspection, quality checks, and handover of the completed project to the client.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Projects Section -->
+{% if related_projects %}
+<section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Related Projects</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300">
+                Explore more projects similar to this one
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for related_project in related_projects %}
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700">
+                {% if related_project.image %}
+                <img src="{{ related_project.image.url }}" alt="{{ related_project.title }}" class="w-full h-48 object-cover">
+                {% else %}
+                <div class="w-full h-48 bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                    <i class="fas fa-building text-4xl text-gray-500 dark:text-gray-400"></i>
+                </div>
+                {% endif %}
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-[#feb906]/10 dark:bg-[#95a236]/10 text-[#feb906] dark:text-[#95a236] text-xs font-semibold px-3 py-1 rounded-full">
+                            {{ related_project.get_project_type_display }}
+                        </span>
+                        <span class="text-gray-500 dark:text-gray-400 text-sm">{{ related_project.completion_date|date:"M Y" }}</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ related_project.title }}</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">{{ related_project.description|truncatewords:15 }}</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 dark:text-gray-400 text-sm"><i class="fas fa-map-marker-alt mr-1"></i>{{ related_project.location }}</span>
+                        <a href="{% url 'construction:project_detail' related_project.id %}" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="{% url 'construction:projects' %}" class="bg-[#feb906] dark:bg-[#95a236] text-white dark:text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] dark:hover:bg-[#7a8a2b] transition duration-300">
+                View All Projects
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
+        <p class="text-xl mb-8 text-gray-100 max-w-3xl mx-auto">
+            Inspired by this project? Let's discuss how we can help bring your construction vision to life.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'construction:contact' %}" class="bg-[#feb906] text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] transition duration-300">
+                Get Free Quote
+            </a>
+            <a href="tel:+982112345678" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#95a236] transition duration-300">
+                <i class="fas fa-phone mr-2"></i>Call Now
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Theme Toggle JavaScript -->
+<script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+    
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+    
+    function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+            themeIcon.className = 'fas fa-sun text-yellow-400';
+        } else {
+            themeIcon.className = 'fas fa-moon text-gray-700';
+        }
+    }
+</script>
+{% endblock %} 

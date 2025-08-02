@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Projects - Dorsamehr Construction{% endblock %}
+
+{% block content %}
+<!-- Theme Toggle -->
+<div class="fixed top-20 right-4 z-40">
+    <button id="theme-toggle" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg p-2 shadow-lg transition-all duration-300">
+        <i id="theme-icon" class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+    </button>
+</div>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Our Projects</h1>
+        <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+            Explore our portfolio of successful construction projects that showcase our expertise and commitment to quality.
+        </p>
+    </div>
+</section>
+
+<!-- Filter and Search Section -->
+<section class="py-12 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row gap-6 items-center justify-between">
+            <!-- Search -->
+            <div class="flex-1 max-w-md">
+                <form method="get" class="relative">
+                    <input type="text" name="search" value="{{ search_query|default:'' }}" 
+                           placeholder="Search projects..." 
+                           class="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#95a236] dark:focus:ring-[#feb906] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500"></i>
+                </form>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-2">
+                <a href="{% url 'construction:projects' %}" 
+                   class="px-4 py-2 rounded-lg font-medium {% if not current_type %}bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900{% else %}bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600{% endif %} transition duration-300">
+                    All Projects
+                </a>
+                {% for type_code, type_name in project_types %}
+                <a href="{% url 'construction:projects' %}?type={{ type_code }}" 
+                   class="px-4 py-2 rounded-lg font-medium {% if current_type == type_code %}bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900{% else %}bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600{% endif %} transition duration-300">
+                    {{ type_name }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid Section -->
+<section class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {% if page_obj %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for project in page_obj %}
+            <div class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700">
+                {% if project.image %}
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="w-full h-48 object-cover">
+                {% else %}
+                <div class="w-full h-48 bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                    <i class="fas fa-building text-4xl text-gray-500 dark:text-gray-400"></i>
+                </div>
+                {% endif %}
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-[#95a236]/10 dark:bg-[#feb906]/10 text-[#95a236] dark:text-[#feb906] text-xs font-semibold px-3 py-1 rounded-full">
+                            {{ project.get_project_type_display }}
+                        </span>
+                        <span class="text-gray-500 dark:text-gray-400 text-sm">{{ project.completion_date|date:"M Y" }}</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ project.title }}</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">{{ project.description|truncatewords:20 }}</p>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>{{ project.location }}</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-ruler-combined mr-2"></i>
+                            <span>{{ project.area }}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        {% if project.featured %}
+                        <span class="bg-[#feb906]/10 dark:bg-[#95a236]/10 text-[#feb906] dark:text-[#95a236] text-xs font-semibold px-2 py-1 rounded">
+                            Featured
+                        </span>
+                        {% else %}
+                        <span></span>
+                        {% endif %}
+                        <a href="{% url 'construction:project_detail' project.id %}" class="text-[#95a236] dark:text-[#feb906] font-semibold hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition">
+                            View Details <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Pagination -->
+        {% if page_obj.has_other_pages %}
+        <div class="mt-12 flex justify-center">
+            <nav class="flex items-center space-x-2">
+                {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}{% if current_type %}&type={{ current_type }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}" 
+                   class="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                {% endif %}
+                
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <span class="px-3 py-2 bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 rounded-lg">{{ num }}</span>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a href="?page={{ num }}{% if current_type %}&type={{ current_type }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}" 
+                       class="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                        {{ num }}
+                    </a>
+                    {% endif %}
+                {% endfor %}
+                
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}{% if current_type %}&type={{ current_type }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}" 
+                   class="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                {% endif %}
+            </nav>
+        </div>
+        {% endif %}
+        
+        {% else %}
+        <!-- No Projects Found -->
+        <div class="text-center py-12">
+            <i class="fas fa-search text-6xl text-gray-300 dark:text-gray-600 mb-4"></i>
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2">No Projects Found</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+                {% if search_query %}
+                    No projects match your search for "{{ search_query }}".
+                {% elif current_type %}
+                    No {{ current_type|title }} projects available at the moment.
+                {% else %}
+                    No projects are available at the moment.
+                {% endif %}
+            </p>
+            <a href="{% url 'construction:projects' %}" class="bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-[#7a8a2b] dark:hover:bg-[#e6a800] transition duration-300">
+                View All Projects
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Project Types Overview -->
+<section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Project Types</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                We specialize in various types of construction projects, each requiring unique expertise and approach.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-[#95a236] dark:bg-[#feb906] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-home text-3xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Residential</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Custom homes, renovations, and residential developments built with quality materials and expert craftsmanship.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-[#95a236] dark:bg-[#feb906] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-building text-3xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Commercial</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Office buildings, retail spaces, and commercial facilities designed for functionality and aesthetic appeal.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-[#95a236] dark:bg-[#feb906] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-industry text-3xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Industrial</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Manufacturing facilities, warehouses, and industrial complexes built for efficiency and durability.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-[#95a236] dark:bg-[#feb906] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-road text-3xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Infrastructure</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Roads, bridges, utilities, and other infrastructure projects that support community development.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
+        <p class="text-xl mb-8 text-gray-100 max-w-3xl mx-auto">
+            Inspired by our work? Let's discuss your project and see how we can help bring your vision to life.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'construction:contact' %}" class="bg-[#feb906] text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] transition duration-300">
+                Get Free Quote
+            </a>
+            <a href="{% url 'construction:about' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#95a236] transition duration-300">
+                Learn About Us
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Theme Toggle JavaScript -->
+<script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+    
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+    
+    function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+            themeIcon.className = 'fas fa-sun text-yellow-400';
+        } else {
+            themeIcon.className = 'fas fa-moon text-gray-700';
+        }
+    }
+</script>
+{% endblock %} 

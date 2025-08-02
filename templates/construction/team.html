@@ -1,0 +1,294 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Team - Dorsamehr Construction{% endblock %}
+
+{% block content %}
+<!-- Theme Toggle -->
+<div class="fixed top-20 right-4 z-40">
+    <button id="theme-toggle" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg p-2 shadow-lg transition-all duration-300">
+        <i id="theme-icon" class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+    </button>
+</div>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Meet Our Team</h1>
+        <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+            Experienced professionals dedicated to delivering exceptional construction projects with quality and precision.
+        </p>
+    </div>
+</section>
+
+<!-- Team Overview Section -->
+<section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Expert Team</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Our diverse team of professionals brings together decades of experience in construction, engineering, and project management.
+            </p>
+        </div>
+        
+        <!-- Team by Position -->
+        {% for position, members in positions.items %}
+        <div class="mb-16">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">{{ position }}s</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for member in members %}
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700">
+                    {% if member.image %}
+                    <img src="{{ member.image.url }}" alt="{{ member.name }}" class="w-full h-64 object-cover">
+                    {% else %}
+                    <div class="w-full h-64 bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                        <i class="fas fa-user text-6xl text-gray-500 dark:text-gray-400"></i>
+                    </div>
+                    {% endif %}
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ member.name }}</h4>
+                        <p class="text-[#95a236] dark:text-[#feb906] font-medium mb-3">{{ member.get_position_display }}</p>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">{{ member.bio|truncatewords:25 }}</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            {% if member.experience_years %}
+                            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                                <i class="fas fa-briefcase mr-2"></i>
+                                <span>{{ member.experience_years }} years experience</span>
+                            </div>
+                            {% endif %}
+                            
+                            {% if member.email %}
+                            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                                <i class="fas fa-envelope mr-2"></i>
+                                <a href="mailto:{{ member.email }}" class="hover:text-[#95a236] dark:hover:text-[#feb906] transition">{{ member.email }}</a>
+                            </div>
+                            {% endif %}
+                            
+                            {% if member.phone %}
+                            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                                <i class="fas fa-phone mr-2"></i>
+                                <a href="tel:{{ member.phone }}" class="hover:text-[#95a236] dark:hover:text-[#feb906] transition">{{ member.phone }}</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        
+                        {% if member.linkedin %}
+                        <div class="flex justify-center">
+                            <a href="{{ member.linkedin }}" class="text-[#95a236] dark:text-[#feb906] hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition" target="_blank">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% empty %}
+        <div class="text-center py-12">
+            <i class="fas fa-users text-6xl text-gray-300 dark:text-gray-600 mb-4"></i>
+            <p class="text-gray-500 dark:text-gray-400 text-lg">Team information will be available soon.</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Team Stats Section -->
+<section class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Team Statistics</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300">
+                Our team's expertise and experience in numbers
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold text-[#95a236] dark:text-[#feb906] mb-2">{{ team_members.count }}</div>
+                <div class="text-gray-600 dark:text-gray-300">Team Members</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold text-[#95a236] dark:text-[#feb906] mb-2">
+                    {% with total_exp=team_members|length %}
+                        {% if total_exp > 0 %}
+                            {{ total_exp|add:"10" }}
+                        {% else %}
+                            15+
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="text-gray-600 dark:text-gray-300">Combined Years</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold text-[#95a236] dark:text-[#feb906] mb-2">6</div>
+                <div class="text-gray-600 dark:text-gray-300">Specializations</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold text-[#95a236] dark:text-[#feb906] mb-2">100%</div>
+                <div class="text-gray-600 dark:text-gray-300">Certified</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Work With Us Section -->
+<section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Why Work With Our Team?</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Our team brings together the perfect blend of experience, expertise, and dedication
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-graduation-cap text-2xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Expert Qualifications</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    All our team members hold relevant certifications and degrees in their respective fields.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-clock text-2xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Proven Experience</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Years of hands-on experience in various construction projects and challenges.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-users text-2xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Team Collaboration</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Excellent communication and collaboration skills to ensure project success.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-lightbulb text-2xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Innovation</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Constantly staying updated with the latest construction technologies and methods.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-shield-alt text-2xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Safety Focus</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Prioritizing safety in all operations with proper training and protocols.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-heart text-2xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Passion</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    Genuine passion for construction and commitment to delivering excellence.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Join Our Team Section -->
+<section class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Join Our Team</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            We're always looking for talented professionals to join our growing team. If you're passionate about construction and quality, we'd love to hear from you.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-briefcase text-2xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Current Openings</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    Check out our current job openings and see if there's a position that matches your skills and interests.
+                </p>
+                <a href="{% url 'construction:contact' %}" class="bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-[#7a8a2b] dark:hover:bg-[#e6a800] transition duration-300">
+                    View Openings
+                </a>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-paper-plane text-2xl text-white dark:text-gray-900"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Send Resume</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    Don't see a position that fits? Send us your resume and we'll keep it on file for future opportunities.
+                </p>
+                <a href="{% url 'construction:contact' %}" class="bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-[#7a8a2b] dark:hover:bg-[#e6a800] transition duration-300">
+                    Submit Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Work With Our Team?</h2>
+        <p class="text-xl mb-8 text-gray-100 max-w-3xl mx-auto">
+            Let's discuss your project and see how our experienced team can help bring your vision to life.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'construction:contact' %}" class="bg-[#feb906] text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] transition duration-300">
+                Get Free Quote
+            </a>
+            <a href="{% url 'construction:projects' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#95a236] transition duration-300">
+                View Our Work
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Theme Toggle JavaScript -->
+<script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+    
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+    
+    function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+            themeIcon.className = 'fas fa-sun text-yellow-400';
+        } else {
+            themeIcon.className = 'fas fa-moon text-gray-700';
+        }
+    }
+</script>
+{% endblock %} 

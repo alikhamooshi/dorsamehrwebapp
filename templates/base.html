@@ -1,0 +1,194 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:'en' }}" dir="{% if LANGUAGE_CODE == 'fa' %}rtl{% else %}ltr{% endif %}" class="{% if LANGUAGE_CODE == 'fa' %}rtl{% else %}ltr{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% trans "Dorsamehr Construction" %}{% endblock %}</title>
+    
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="{% url 'construction:home' %}" class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-[#95a236] dark:text-[#feb906]">Dorsamehr</h1>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="{% url 'construction:home' %}" class="text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] px-3 py-2 text-sm font-medium transition">{% trans "Home" %}</a>
+                    <a href="{% url 'construction:about' %}" class="text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] px-3 py-2 text-sm font-medium transition">{% trans "About" %}</a>
+                    <a href="{% url 'construction:projects' %}" class="text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] px-3 py-2 text-sm font-medium transition">{% trans "Projects" %}</a>
+                    <a href="{% url 'construction:team' %}" class="text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] px-3 py-2 text-sm font-medium transition">{% trans "Team" %}</a>
+                    <a href="{% url 'construction:blog' %}" class="text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] px-3 py-2 text-sm font-medium transition">{% trans "Blog" %}</a>
+                    <a href="{% url 'construction:contact' %}" class="bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 px-6 py-2 rounded-lg hover:bg-[#7a8a2b] dark:hover:bg-[#e6a800] transition duration-300 text-sm font-medium">{% trans "Contact" %}</a>
+                    
+                    <!-- Language Indicator -->
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs text-gray-500 dark:text-gray-400">|</span>
+                        <span class="text-xs font-medium {% if LANGUAGE_CODE == 'en' %}text-blue-600 dark:text-blue-400{% else %}text-green-600 dark:text-green-400{% endif %}">
+                            {% if LANGUAGE_CODE == 'en' %}EN{% else %}FA{% endif %}
+                        </span>
+                    </div>
+                    
+                    <!-- Language Switcher -->
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] px-3 py-2 text-sm font-medium transition">
+                            <i class="fas fa-globe mr-1"></i>
+                            {% if LANGUAGE_CODE == 'en' %}English{% else %}فارسی{% endif %}
+                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <form method="post" action="/i18n/setlang/" class="p-2">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ request.path }}">
+                                <button type="submit" name="language" value="en" class="w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors duration-200 {% if LANGUAGE_CODE == 'en' %}bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 font-medium{% endif %}">
+                                    <i class="fas fa-flag mr-2"></i>{% trans "English" %}
+                                    {% if LANGUAGE_CODE == 'en' %}<i class="fas fa-check ml-auto"></i>{% endif %}
+                                </button>
+                                <button type="submit" name="language" value="fa" class="w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors duration-200 {% if LANGUAGE_CODE == 'fa' %}bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 font-medium{% endif %}">
+                                    <i class="fas fa-flag mr-2"></i>{% trans "Persian" %}
+                                    {% if LANGUAGE_CODE == 'fa' %}<i class="fas fa-check ml-auto"></i>{% endif %}
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="{% url 'construction:home' %}" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] transition">{% trans "Home" %}</a>
+                <a href="{% url 'construction:about' %}" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] transition">{% trans "About" %}</a>
+                <a href="{% url 'construction:projects' %}" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] transition">{% trans "Projects" %}</a>
+                <a href="{% url 'construction:team' %}" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] transition">{% trans "Team" %}</a>
+                <a href="{% url 'construction:blog' %}" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] transition">{% trans "Blog" %}</a>
+                <a href="{% url 'construction:contact' %}" class="block px-3 py-2 text-[#95a236] dark:text-[#feb906] font-medium">{% trans "Contact" %}</a>
+                
+                <!-- Mobile Language Indicator -->
+                <div class="px-3 py-2 border-t border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">{% trans "Current Language" %}:</span>
+                        <span class="text-sm font-medium {% if LANGUAGE_CODE == 'en' %}text-blue-600 dark:text-blue-400{% else %}text-green-600 dark:text-green-400{% endif %}">
+                            {% if LANGUAGE_CODE == 'en' %}English{% else %}فارسی{% endif %}
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Mobile Language Switcher -->
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
+                    <p class="px-3 py-1 text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">{% trans "Language" %} ({{ LANGUAGE_CODE|upper }})</p>
+                    <form method="post" action="/i18n/setlang/" class="space-y-1">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.path }}">
+                        <button type="submit" name="language" value="en" class="w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors duration-200 {% if LANGUAGE_CODE == 'en' %}bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 font-medium{% endif %}">
+                            <i class="fas fa-flag mr-2"></i>{% trans "English" %}
+                            {% if LANGUAGE_CODE == 'en' %}<i class="fas fa-check ml-auto"></i>{% endif %}
+                        </button>
+                        <button type="submit" name="language" value="fa" class="w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors duration-200 {% if LANGUAGE_CODE == 'fa' %}bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 font-medium{% endif %}">
+                            <i class="fas fa-flag mr-2"></i>{% trans "Persian" %}
+                            {% if LANGUAGE_CODE == 'fa' %}<i class="fas fa-check ml-auto"></i>{% endif %}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-[#95a236] dark:text-[#feb906] mb-4">Dorsamehr Construction</h3>
+                    <p class="text-gray-300 mb-4">{% trans "Building excellence, creating value, and delivering quality construction solutions for over 15 years." %}</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-[#95a236] dark:hover:text-[#feb906] transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-[#95a236] dark:hover:text-[#feb906] transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-[#95a236] dark:hover:text-[#feb906] transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-[#95a236] dark:hover:text-[#feb906] transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">{% trans "Quick Links" %}</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'construction:home' %}" class="text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] transition">{% trans "Home" %}</a></li>
+                        <li><a href="{% url 'construction:about' %}" class="text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] transition">{% trans "About Us" %}</a></li>
+                        <li><a href="{% url 'construction:projects' %}" class="text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] transition">{% trans "Projects" %}</a></li>
+                        <li><a href="{% url 'construction:team' %}" class="text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] transition">{% trans "Team" %}</a></li>
+                        <li><a href="{% url 'construction:blog' %}" class="text-gray-300 hover:text-[#95a236] dark:hover:text-[#feb906] transition">{% trans "Blog" %}</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">{% trans "Contact Info" %}</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Tehran, Iran</p>
+                        <p><i class="fas fa-phone mr-2"></i> +98 21 1234 5678</p>
+                        <p><i class="fas fa-envelope mr-2"></i> info@dorsamehr.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Dorsamehr Construction. {% trans "All rights reserved." %}</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html> 

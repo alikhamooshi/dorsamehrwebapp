@@ -1,0 +1,320 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Dorsamehr Construction - Building Excellence" %}{% endblock %}
+
+{% block content %}
+<!-- Theme Toggle -->
+<div class="fixed top-20 {% if LANGUAGE_CODE == 'fa' %}left-4{% else %}right-4{% endif %} z-40">
+    <button id="theme-toggle" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg p-2 shadow-lg transition-all duration-300">
+        <i id="theme-icon" class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+    </button>
+</div>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="{% if LANGUAGE_CODE == 'fa' %}text-right{% endif %}">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    {% trans "Building Your" %} <span class="text-[#feb906]">{% trans "Dreams" %}</span> {% trans "Into Reality" %}
+                </h1>
+                <p class="text-xl mb-8 text-gray-100">
+                    {% trans "Dorsamehr Construction delivers exceptional quality and innovative solutions for residential, commercial, and industrial projects." %}
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 {% if LANGUAGE_CODE == 'fa' %}justify-end{% endif %}">
+                    <a href="{% url 'construction:projects' %}" class="bg-[#feb906] text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] transition duration-300 text-center">
+                        {% trans "View Our Projects" %}
+                    </a>
+                    <a href="{% url 'construction:contact' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#95a236] transition duration-300 text-center">
+                        {% trans "Get Quote" %}
+                    </a>
+                </div>
+            </div>
+            <div class="hidden lg:block">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#feb906]">15+</div>
+                            <div class="text-sm">{% trans "Years Experience" %}</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#feb906]">200+</div>
+                            <div class="text-sm">{% trans "Projects Completed" %}</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#feb906]">50+</div>
+                            <div class="text-sm">{% trans "Team Members" %}</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#feb906]">100%</div>
+                            <div class="text-sm">{% trans "Client Satisfaction" %}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{% trans "Our Services" %}</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                {% trans "We offer comprehensive construction services tailored to meet your specific needs and exceed your expectations." %}
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Residential Construction -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-lg transition duration-300 border border-gray-200 dark:border-gray-700">
+                <div class="w-16 h-16 bg-[#95a236] rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-home text-2xl text-white"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">{% trans "Residential Construction" %}</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    {% trans "Custom homes, renovations, and residential developments built with quality materials and expert craftsmanship." %}
+                </p>
+                <a href="{% url 'construction:projects' %}?type=residential" class="text-[#95a236] dark:text-[#feb906] font-semibold hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition">
+                    {% trans "Learn More" %} <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Commercial Construction -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-lg transition duration-300 border border-gray-200 dark:border-gray-700">
+                <div class="w-16 h-16 bg-[#95a236] rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-building text-2xl text-white"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">{% trans "Commercial Construction" %}</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    {% trans "Office buildings, retail spaces, and commercial facilities designed for functionality and aesthetic appeal." %}
+                </p>
+                <a href="{% url 'construction:projects' %}?type=commercial" class="text-[#95a236] dark:text-[#feb906] font-semibold hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition">
+                    {% trans "Learn More" %} <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Industrial Construction -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-lg transition duration-300 border border-gray-200 dark:border-gray-700">
+                <div class="w-16 h-16 bg-[#95a236] rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-industry text-2xl text-white"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">{% trans "Industrial Construction" %}</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    {% trans "Manufacturing facilities, warehouses, and industrial complexes built for efficiency and durability." %}
+                </p>
+                <a href="{% url 'construction:projects' %}?type=industrial" class="text-[#95a236] dark:text-[#feb906] font-semibold hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition">
+                    {% trans "Learn More" %} <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{% trans "Featured Projects" %}</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                {% trans "Explore our portfolio of successful projects that showcase our expertise and commitment to quality." %}
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for project in featured_projects %}
+            <div class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700">
+                {% if project.image %}
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="w-full h-48 object-cover">
+                {% else %}
+                <div class="w-full h-48 bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                    <i class="fas fa-building text-4xl text-gray-500 dark:text-gray-400"></i>
+                </div>
+                {% endif %}
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-[#95a236]/10 dark:bg-[#feb906]/10 text-[#95a236] dark:text-[#feb906] text-xs font-semibold px-3 py-1 rounded-full">
+                            {{ project.get_project_type_display }}
+                        </span>
+                        <span class="text-gray-500 dark:text-gray-400 text-sm">{{ project.completion_date|date:"M Y" }}</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ project.title }}</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">{{ project.description|truncatewords:20 }}</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500 dark:text-gray-400 text-sm"><i class="fas fa-map-marker-alt mr-1"></i>{{ project.location }}</span>
+                        <a href="{% url 'construction:project_detail' project.id %}" class="text-[#95a236] dark:text-[#feb906] font-semibold hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition">
+                            {% trans "View Details" %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-span-full text-center py-12">
+                <i class="fas fa-building text-6xl text-gray-300 dark:text-gray-600 mb-4"></i>
+                <p class="text-gray-500 dark:text-gray-400 text-lg">{% trans "No featured projects available yet." %}</p>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="{% url 'construction:projects' %}" class="bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#7a8a2b] dark:hover:bg-[#e6a800] transition duration-300">
+                {% trans "View All Projects" %}
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="{% if LANGUAGE_CODE == 'fa' %}order-2{% endif %}">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">{% trans "Why Choose Dorsamehr Construction?" %}</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                            <i class="fas fa-medal text-white dark:text-gray-900"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{% trans "Quality Assurance" %}</h3>
+                            <p class="text-gray-600 dark:text-gray-300">{% trans "We maintain the highest standards of quality throughout every project phase." %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                            <i class="fas fa-clock text-white dark:text-gray-900"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{% trans "Timely Delivery" %}</h3>
+                            <p class="text-gray-600 dark:text-gray-300">{% trans "We complete projects on schedule while maintaining quality and safety standards." %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                            <i class="fas fa-users text-white dark:text-gray-900"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{% trans "Expert Team" %}</h3>
+                            <p class="text-gray-600 dark:text-gray-300">{% trans "Our experienced professionals bring expertise and innovation to every project." %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                            <i class="fas fa-shield-alt text-white dark:text-gray-900"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{% trans "Safety First" %}</h3>
+                            <p class="text-gray-600 dark:text-gray-300">{% trans "We prioritize safety in all our operations and maintain strict safety protocols." %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative {% if LANGUAGE_CODE == 'fa' %}order-1{% endif %}">
+                <div class="bg-gray-300 dark:bg-gray-600 h-96 rounded-2xl flex items-center justify-center">
+                    <i class="fas fa-hard-hat text-8xl text-gray-500 dark:text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Blog Posts -->
+{% if recent_blogs %}
+<section class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{% trans "Latest News & Insights" %}</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                {% trans "Stay updated with the latest trends, tips, and insights from the construction industry." %}
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for blog in recent_blogs %}
+            <div class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700">
+                {% if blog.image %}
+                <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="w-full h-48 object-cover">
+                {% else %}
+                <div class="w-full h-48 bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+                    <i class="fas fa-newspaper text-4xl text-gray-500 dark:text-gray-400"></i>
+                </div>
+                {% endif %}
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                        <span><i class="fas fa-user mr-1"></i>{{ blog.author }}</span>
+                        <span class="mx-2">•</span>
+                        <span><i class="fas fa-calendar mr-1"></i>{{ blog.published_date|date:"M d, Y" }}</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">{{ blog.title }}</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">{{ blog.excerpt|default:blog.content|truncatewords:20 }}</p>
+                    <a href="{% url 'construction:blog_detail' blog.slug %}" class="text-[#95a236] dark:text-[#feb906] font-semibold hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition">
+                        {% trans "Read More" %} <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="{% url 'construction:blog' %}" class="bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#7a8a2b] dark:hover:bg-[#e6a800] transition duration-300">
+                {% trans "View All Posts" %}
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">{% trans "Ready to Start Your Project?" %}</h2>
+        <p class="text-xl mb-8 text-gray-100 max-w-3xl mx-auto">
+            {% trans "Let's discuss your construction needs and create something amazing together. Contact us today for a free consultation." %}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'construction:contact' %}" class="bg-[#feb906] text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] transition duration-300">
+                {% trans "Get Free Quote" %}
+            </a>
+            <a href="tel:+982112345678" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#95a236] transition duration-300">
+                <i class="fas fa-phone mr-2"></i>{% trans "Call Now" %}
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Theme Toggle JavaScript -->
+<script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+    
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+    
+    function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+            themeIcon.className = 'fas fa-sun text-yellow-400';
+        } else {
+            themeIcon.className = 'fas fa-moon text-gray-700';
+        }
+    }
+</script>
+{% endblock %} 
