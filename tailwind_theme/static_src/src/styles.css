@@ -70,3 +70,180 @@
 .rtl .left-4 { left: auto; right: 1rem; }
 .rtl .right-4 { right: auto; left: 1rem; }
 .rtl .right-0 { right: auto; left: 0; }
+
+/* Custom Dark Mode Styles - Professional Color Scheme */
+.dark-mode-active .text-white {
+  color: #ffffff !important;
+}
+
+.dark-mode-active .bg-white {
+  background-color: #121212 !important;
+}
+
+.dark-mode-active .text-gray-300 {
+  color: #b0b0b0 !important;
+}
+
+.dark-mode-active .text-gray-400 {
+  color: #b0b0b0 !important;
+}
+
+.dark-mode-active .text-gray-500 {
+  color: #b0b0b0 !important;
+}
+
+.dark-mode-active .text-gray-600 {
+  color: #ffffff !important;
+}
+
+.dark-mode-active .text-gray-700 {
+  color: #ffffff !important;
+}
+
+.dark-mode-active .text-gray-800 {
+  color: #ffffff !important;
+}
+
+.dark-mode-active .text-gray-900 {
+  color: #ffffff !important;
+}
+
+/* Additional styles for better dark mode visibility */
+.dark-mode-active .text-gray-100 {
+  color: #ffffff !important;
+}
+
+.dark-mode-active .text-gray-200 {
+  color: #ffffff !important;
+}
+
+/* Keep accent colors unchanged */
+.dark-mode-active .text-\[#feb906\],
+.dark-mode-active .text-\[#95a236\] {
+  color: inherit !important;
+}
+
+/* Professional Dark Mode Background Colors */
+.dark-mode-active .bg-gray-50 {
+  background-color: #181818 !important;
+}
+
+.dark-mode-active .bg-gray-100 {
+  background-color: #181818 !important;
+}
+
+.dark-mode-active .bg-gray-200 {
+  background-color: #181818 !important;
+}
+
+.dark-mode-active .bg-gray-800 {
+  background-color: #121212 !important;
+}
+
+.dark-mode-active .bg-gray-900 {
+  background-color: #121212 !important;
+}
+
+/* Dark mode borders and separators */
+.dark-mode-active .border-gray-200 {
+  border-color: #333333 !important;
+}
+
+.dark-mode-active .border-gray-300 {
+  border-color: #333333 !important;
+}
+
+.dark-mode-active .border-gray-400 {
+  border-color: #444444 !important;
+}
+
+.dark-mode-active .border-gray-500 {
+  border-color: #444444 !important;
+}
+
+.dark-mode-active .border-gray-600 {
+  border-color: #444444 !important;
+}
+
+.dark-mode-active .border-gray-700 {
+  border-color: #444444 !important;
+}
+
+/* Specific element background in dark mode */
+.dark-mode-active .bg-white\/95 {
+  background-color: #feb906 !important;
+}
+
+/* Navigation menu text in dark mode */
+.dark-mode-active nav .text-gray-700 {
+  color: #ffffff !important;
+}
+
+.dark-mode-active nav .text-gray-300 {
+  color: #ffffff !important;
+}
+
+.dark-mode-active nav .text-gray-400 {
+  color: #ffffff !important;
+}
+
+.dark-mode-active nav .text-gray-500 {
+  color: #ffffff !important;
+}
+
+.dark-mode-active nav .text-gray-600 {
+  color: #ffffff !important;
+}
+
+.dark-mode-active nav .text-gray-800 {
+  color: #ffffff !important;
+}
+
+.dark-mode-active nav .text-gray-900 {
+  color: #ffffff !important;
+}
+
+/* Navigation background in dark mode */
+.dark-mode-active nav {
+  background-color: #121212 !important;
+}
+
+.dark-mode-active nav.bg-white {
+  background-color: #121212 !important;
+}
+
+.dark-mode-active nav.bg-gray-800 {
+  background-color: #121212 !important;
+}
+
+/* Navigation text item backgrounds in dark mode */
+.dark-mode-active nav .hover\:bg-gray-100:hover {
+  background-color: #95a236 !important;
+}
+
+.dark-mode-active nav .hover\:bg-gray-700\/50:hover {
+  background-color: #95a236 !important;
+}
+
+.dark-mode-active nav .bg-gray-100 {
+  background-color: #95a236 !important;
+}
+
+.dark-mode-active nav .bg-gray-700 {
+  background-color: #95a236 !important;
+}
+
+.dark-mode-active nav .bg-gray-200 {
+  background-color: #95a236 !important;
+}
+
+.dark-mode-active nav .bg-gray-600 {
+  background-color: #95a236 !important;
+}
+
+.dark-mode-active .text-blue-600,
+.dark-mode-active .text-blue-400,
+.dark-mode-active .text-green-600,
+.dark-mode-active .text-green-400 {
+  color: inherit !important;
+}

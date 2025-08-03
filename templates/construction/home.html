@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 {% load i18n %}
-
+{% load static %}
 {% block title %}{% trans "Dorsamehr Construction - Building Excellence" %}{% endblock %}
 
 {% block content %}
 <!-- Theme Toggle -->
-<div class="fixed top-20 {% if LANGUAGE_CODE == 'fa' %}left-4{% else %}right-4{% endif %} z-40">
-    <button id="theme-toggle" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg p-2 shadow-lg transition-all duration-300">
-        <i id="theme-icon" class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
-    </button>
-</div>
+
 
 <!-- Hero Section -->
 <section class="bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white py-20">
@@ -23,32 +19,39 @@
                     {% trans "Dorsamehr Construction delivers exceptional quality and innovative solutions for residential, commercial, and industrial projects." %}
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 {% if LANGUAGE_CODE == 'fa' %}justify-end{% endif %}">
-                    <a href="{% url 'construction:projects' %}" class="bg-[#feb906] text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] transition duration-300 text-center">
+                    <a href="{% url 'construction:projects' %}" class="bg-[#95a236] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#7a8a2b] transition duration-300 text-center">
                         {% trans "View Our Projects" %}
                     </a>
-                    <a href="{% url 'construction:contact' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#95a236] transition duration-300 text-center">
+                    <a href="{% url 'construction:contact' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#feb906] transition duration-300 text-center">
                         {% trans "Get Quote" %}
                     </a>
                 </div>
             </div>
             <div class="hidden lg:block">
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-[#feb906]">15+</div>
-                            <div class="text-sm">{% trans "Years Experience" %}</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-[#feb906]">200+</div>
-                            <div class="text-sm">{% trans "Projects Completed" %}</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-[#feb906]">50+</div>
-                            <div class="text-sm">{% trans "Team Members" %}</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-[#feb906]">100%</div>
-                            <div class="text-sm">{% trans "Client Satisfaction" %}</div>
+                <div class="relative">
+                    <!-- Main Building Image -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 overflow-hidden">
+                        <img src="{% static 'images/download.png' %}" alt="Dorsamehr Construction Building Complex" class="w-full h-auto rounded-xl shadow-2xl">
+                    </div>
+                    <!-- Statistics Overlay -->
+                    <div class="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-xl">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-[#95a236]">15+</div>
+                                <div class="text-xs text-gray-600">{% trans "Years Experience" %}</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-[#95a236]">200+</div>
+                                <div class="text-xs text-gray-600">{% trans "Projects Completed" %}</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-[#95a236]">50+</div>
+                                <div class="text-xs text-gray-600">{% trans "Team Members" %}</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-[#95a236]">100%</div>
+                                <div class="text-xs text-gray-600">{% trans "Client Satisfaction" %}</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,7 +80,7 @@
                 <p class="text-gray-600 dark:text-gray-300 mb-6">
                     {% trans "Custom homes, renovations, and residential developments built with quality materials and expert craftsmanship." %}
                 </p>
-                <a href="{% url 'construction:projects' %}?type=residential" class="text-[#95a236] dark:text-[#feb906] font-semibold hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition">
+                <a href="{% url 'construction:projects' %}?type=residential" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
                     {% trans "Learn More" %} <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -91,7 +94,7 @@
                 <p class="text-gray-600 dark:text-gray-300 mb-6">
                     {% trans "Office buildings, retail spaces, and commercial facilities designed for functionality and aesthetic appeal." %}
                 </p>
-                <a href="{% url 'construction:projects' %}?type=commercial" class="text-[#95a236] dark:text-[#feb906] font-semibold hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition">
+                <a href="{% url 'construction:projects' %}?type=commercial" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
                     {% trans "Learn More" %} <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -105,7 +108,7 @@
                 <p class="text-gray-600 dark:text-gray-300 mb-6">
                     {% trans "Manufacturing facilities, warehouses, and industrial complexes built for efficiency and durability." %}
                 </p>
-                <a href="{% url 'construction:projects' %}?type=industrial" class="text-[#95a236] dark:text-[#feb906] font-semibold hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition">
+                <a href="{% url 'construction:projects' %}?type=industrial" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
                     {% trans "Learn More" %} <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -135,7 +138,7 @@
                 {% endif %}
                 <div class="p-6">
                     <div class="flex items-center justify-between mb-3">
-                        <span class="bg-[#95a236]/10 dark:bg-[#feb906]/10 text-[#95a236] dark:text-[#feb906] text-xs font-semibold px-3 py-1 rounded-full">
+                        <span class="bg-[#feb906]/10 dark:bg-[#95a236]/10 text-[#feb906] dark:text-[#95a236] text-xs font-semibold px-3 py-1 rounded-full">
                             {{ project.get_project_type_display }}
                         </span>
                         <span class="text-gray-500 dark:text-gray-400 text-sm">{{ project.completion_date|date:"M Y" }}</span>
@@ -144,7 +147,7 @@
                     <p class="text-gray-600 dark:text-gray-300 mb-4">{{ project.description|truncatewords:20 }}</p>
                     <div class="flex items-center justify-between">
                         <span class="text-gray-500 dark:text-gray-400 text-sm"><i class="fas fa-map-marker-alt mr-1"></i>{{ project.location }}</span>
-                        <a href="{% url 'construction:project_detail' project.id %}" class="text-[#95a236] dark:text-[#feb906] font-semibold hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition">
+                        <a href="{% url 'construction:project_detail' project.id %}" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
                             {% trans "View Details" %}
                         </a>
                     </div>
@@ -159,7 +162,7 @@
         </div>
         
         <div class="text-center mt-12">
-            <a href="{% url 'construction:projects' %}" class="bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#7a8a2b] dark:hover:bg-[#e6a800] transition duration-300">
+            <a href="{% url 'construction:projects' %}" class="bg-[#feb906] dark:bg-[#95a236] text-white dark:text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] dark:hover:bg-[#7a8a2b] transition duration-300">
                 {% trans "View All Projects" %}
             </a>
         </div>
@@ -174,7 +177,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">{% trans "Why Choose Dorsamehr Construction?" %}</h2>
                 <div class="space-y-6">
                     <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#95a236] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
                             <i class="fas fa-medal text-white dark:text-gray-900"></i>
                         </div>
                         <div>
@@ -184,7 +187,7 @@
                     </div>
                     
                     <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#95a236] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
                             <i class="fas fa-clock text-white dark:text-gray-900"></i>
                         </div>
                         <div>
@@ -194,7 +197,7 @@
                     </div>
                     
                     <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#95a236] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
                             <i class="fas fa-users text-white dark:text-gray-900"></i>
                         </div>
                         <div>
@@ -204,7 +207,7 @@
                     </div>
                     
                     <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#95a236] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
                             <i class="fas fa-shield-alt text-white dark:text-gray-900"></i>
                         </div>
                         <div>
@@ -253,7 +256,7 @@
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">{{ blog.title }}</h3>
                     <p class="text-gray-600 dark:text-gray-300 mb-4">{{ blog.excerpt|default:blog.content|truncatewords:20 }}</p>
-                    <a href="{% url 'construction:blog_detail' blog.slug %}" class="text-[#95a236] dark:text-[#feb906] font-semibold hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition">
+                    <a href="{% url 'construction:blog_detail' blog.slug %}" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
                         {% trans "Read More" %} <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -262,7 +265,7 @@
         </div>
         
         <div class="text-center mt-12">
-            <a href="{% url 'construction:blog' %}" class="bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#7a8a2b] dark:hover:bg-[#e6a800] transition duration-300">
+            <a href="{% url 'construction:blog' %}" class="bg-[#feb906] dark:bg-[#95a236] text-white dark:text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] dark:hover:bg-[#7a8a2b] transition duration-300">
                 {% trans "View All Posts" %}
             </a>
         </div>
@@ -278,10 +281,10 @@
             {% trans "Let's discuss your construction needs and create something amazing together. Contact us today for a free consultation." %}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{% url 'construction:contact' %}" class="bg-[#feb906] text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] transition duration-300">
+            <a href="{% url 'construction:contact' %}" class="bg-[#95a236] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#7a8a2b] transition duration-300">
                 {% trans "Get Free Quote" %}
             </a>
-            <a href="tel:+982112345678" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#95a236] transition duration-300">
+            <a href="tel:+982112345678" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#feb906] transition duration-300">
                 <i class="fas fa-phone mr-2"></i>{% trans "Call Now" %}
             </a>
         </div>
@@ -290,31 +293,48 @@
 
 <!-- Theme Toggle JavaScript -->
 <script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const html = document.documentElement;
-    
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', currentTheme);
-    updateThemeIcon(currentTheme);
-    
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    // Dark mode toggle functionality for home page
+    function toggleDarkMode() {
+        const html = document.documentElement;
+        const isDark = html.classList.contains('dark');
         
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-    
-    function updateThemeIcon(theme) {
-        if (theme === 'dark') {
-            themeIcon.className = 'fas fa-sun text-yellow-400';
+        if (isDark) {
+            html.classList.remove('dark');
+            localStorage.setItem('darkMode', 'false');
+            // Reset text colors to original
+            document.body.classList.remove('dark-mode-active');
         } else {
-            themeIcon.className = 'fas fa-moon text-gray-700';
+            html.classList.add('dark');
+            localStorage.setItem('darkMode', 'true');
+            // Add custom dark mode class
+            document.body.classList.add('dark-mode-active');
         }
     }
+
+    // Initialize dark mode from localStorage
+    function initializeDarkMode() {
+        const savedMode = localStorage.getItem('darkMode');
+        const html = document.documentElement;
+        
+        if (savedMode === 'true' || (!savedMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            document.body.classList.add('dark-mode-active');
+        } else {
+            html.classList.remove('dark');
+            document.body.classList.remove('dark-mode-active');
+        }
+    }
+
+    // Add event listeners for dark mode toggles
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeDarkMode();
+        
+        // Home page toggle
+        const homeDarkModeToggle = document.getElementById('home-dark-mode-toggle');
+        if (homeDarkModeToggle) {
+            homeDarkModeToggle.addEventListener('click', toggleDarkMode);
+        }
+    });
 </script>
+
 {% endblock %} 

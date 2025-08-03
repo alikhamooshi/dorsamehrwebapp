@@ -3,12 +3,8 @@
 {% block title %}{{ project.title }} - Dorsamehr Construction{% endblock %}
 
 {% block content %}
-<!-- Theme Toggle -->
-<div class="fixed top-20 right-4 z-40">
-    <button id="theme-toggle" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg p-2 shadow-lg transition-all duration-300">
-        <i id="theme-icon" class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
-    </button>
-</div>
+
+
 
 <!-- Hero Section -->
 <section class="bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white py-20">
@@ -239,32 +235,5 @@
 </section>
 
 <!-- Theme Toggle JavaScript -->
-<script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const html = document.documentElement;
-    
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', currentTheme);
-    updateThemeIcon(currentTheme);
-    
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-    
-    function updateThemeIcon(theme) {
-        if (theme === 'dark') {
-            themeIcon.className = 'fas fa-sun text-yellow-400';
-        } else {
-            themeIcon.className = 'fas fa-moon text-gray-700';
-        }
-    }
-</script>
+
 {% endblock %} 
