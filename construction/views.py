@@ -163,6 +163,10 @@ def blog_detail(request, slug):
     }
     return render(request, 'construction/blog_detail.html', context)
 
+def gallery(request):
+    """Project gallery page"""
+    return render(request, 'construction/gallery.html')
+
 def debug_language(request):
     """Debug view for language switching"""
     return render(request, 'debug_language.html')

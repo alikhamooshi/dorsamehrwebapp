@@ -69,8 +69,20 @@ msgid "Blog"
 msgstr ""
 
 #: .\templates\base.html:36 .\templates\base.html:86
+msgid "Gallery"
+msgstr ""
+
+#: .\templates\base.html:37 .\templates\base.html:87
 #: .\test_language_switching.py:65 .\test_language_switching.py:71
 msgid "Contact"
+msgstr ""
+
+#: .\templates\construction\gallery.html:6
+msgid "Project Gallery"
+msgstr ""
+
+#: .\templates\construction\gallery.html:10
+msgid "Explore our diverse portfolio of construction projects through our comprehensive gallery."
 msgstr ""
 
 #: .\templates\base.html:57 .\templates\base.html:104

@@ -10,6 +10,7 @@ urlpatterns = [
     path('team/', views.team, name='team'),
     path('projects/', views.projects, name='projects'),
     path('projects/<int:project_id>/', views.project_detail, name='project_detail'),
+    path('gallery/', views.gallery, name='gallery'),
     path('blog/', views.blog, name='blog'),
     path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
     path('debug-language/', views.debug_language, name='debug_language'),

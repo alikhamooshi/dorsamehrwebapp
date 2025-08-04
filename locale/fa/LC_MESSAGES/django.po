@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-02 04:15+0330\n"
+"POT-Creation-Date: 2025-08-04 03:15+0330\n"
 "PO-Revision-Date: 2024-01-01 12:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
@@ -23,19 +23,19 @@ msgstr "درباره ما - ساختمان سازی درسمهر"
 
 #: .\construction\management\commands\test_translations.py:19
 #: .\construction\management\commands\test_translations.py:27
-#: .\templates\construction\about.html:29
+#: .\templates\construction\about.html:25
 msgid "Our Story"
 msgstr "داستان ما"
 
 #: .\construction\management\commands\test_translations.py:20
 #: .\construction\management\commands\test_translations.py:28
-#: .\templates\construction\about.html:96
+#: .\templates\construction\about.html:92
 msgid "Quality Excellence"
 msgstr "برتری کیفیت"
 
 #: .\construction\management\commands\test_translations.py:21
 #: .\construction\management\commands\test_translations.py:29
-#: .\templates\construction\about.html:248
+#: .\templates\construction\about.html:244
 msgid "Get In Touch"
 msgstr "تماس با ما"
 
@@ -45,52 +45,58 @@ msgstr "تماس با ما"
 msgid "Dorsamehr Construction"
 msgstr "درباره ساختمان سازی درسمهر"
 
-#: .\templates\base.html:31 .\templates\base.html:81 .\templates\base.html:142
-#: .\test_language_switching.py:63 .\test_language_switching.py:69
+#: .\templates\base.html:34
+#, fuzzy
+#| msgid "About Dorsamehr Construction"
+msgid "Construction"
+msgstr "درباره ساختمان سازی درسمهر"
+
+#: .\templates\base.html:43 .\templates\base.html:151 .\templates\base.html:246
+#: .\test_language_switching.py:69 .\test_language_switching.py:75
 msgid "Home"
 msgstr "خانه"
 
-#: .\templates\base.html:32 .\templates\base.html:82
-#: .\test_language_switching.py:64 .\test_language_switching.py:70
+#: .\templates\base.html:47 .\templates\base.html:154
+#: .\test_language_switching.py:70 .\test_language_switching.py:76
 msgid "About"
 msgstr "درباره"
 
-#: .\templates\base.html:33 .\templates\base.html:83 .\templates\base.html:144
+#: .\templates\base.html:51 .\templates\base.html:157 .\templates\base.html:248
 msgid "Projects"
 msgstr "پروژه‌ها"
 
-#: .\templates\base.html:34 .\templates\base.html:84 .\templates\base.html:145
+#: .\templates\base.html:55 .\templates\base.html:160
+msgid "Gallery"
+msgstr "گالری"
+
+#: .\templates\base.html:59 .\templates\base.html:163 .\templates\base.html:249
 msgid "Team"
 msgstr "تیم"
 
-#: .\templates\base.html:35 .\templates\base.html:85 .\templates\base.html:146
+#: .\templates\base.html:63 .\templates\base.html:166 .\templates\base.html:250
 msgid "Blog"
 msgstr "وبلاگ"
 
-#: .\templates\base.html:36 .\templates\base.html:86
-#: .\test_language_switching.py:65 .\test_language_switching.py:71
+#: .\templates\base.html:69 .\templates\base.html:169
+#: .\test_language_switching.py:71 .\test_language_switching.py:77
 msgid "Contact"
 msgstr "تماس"
 
-#: .\templates\base.html:57 .\templates\base.html:104
+#: .\templates\base.html:97
+#, fuzzy
+#| msgid "Switch Language"
+msgid "Select Language"
+msgstr "تغییر زبان"
+
+#: .\templates\base.html:110 .\templates\base.html:200
 msgid "English"
 msgstr "انگلیسی"
 
-#: .\templates\base.html:61 .\templates\base.html:108
+#: .\templates\base.html:130 .\templates\base.html:207
 msgid "Persian"
 msgstr "فارسی"
 
-#: .\templates\base.html:91
-#, fuzzy
-#| msgid "Language"
-msgid "Current Language"
-msgstr "زبان"
-
-#: .\templates\base.html:100
-msgid "Language"
-msgstr "زبان"
-
-#: .\templates\base.html:129
+#: .\templates\base.html:233
 #, fuzzy
 #| msgid ""
 #| "Building excellence and creating value through innovative construction "
@@ -102,31 +108,31 @@ msgstr ""
 "ساخت برتری و ایجاد ارزش از طریق راه‌حل‌های نوآورانه ساختمانی برای بیش از ۱۵ "
 "سال."
 
-#: .\templates\base.html:140
+#: .\templates\base.html:244
 msgid "Quick Links"
 msgstr "لینک‌های سریع"
 
-#: .\templates\base.html:143
+#: .\templates\base.html:247
 #, fuzzy
 #| msgid "About"
 msgid "About Us"
 msgstr "درباره"
 
-#: .\templates\base.html:152
+#: .\templates\base.html:256
 #, fuzzy
 #| msgid "Contact Information"
 msgid "Contact Info"
 msgstr "اطلاعات تماس"
 
-#: .\templates\base.html:162
+#: .\templates\base.html:266
 msgid "All rights reserved."
 msgstr "تمام حقوق محفوظ است."
 
-#: .\templates\construction\about.html:17
+#: .\templates\construction\about.html:13
 msgid "About Dorsamehr Construction"
 msgstr "درباره ساختمان سازی درسمهر"
 
-#: .\templates\construction\about.html:19
+#: .\templates\construction\about.html:15
 msgid ""
 "Building excellence and creating value through innovative construction "
 "solutions for over 15 years."
@@ -134,7 +140,7 @@ msgstr ""
 "ساخت برتری و ایجاد ارزش از طریق راه‌حل‌های نوآورانه ساختمانی برای بیش از ۱۵ "
 "سال."
 
-#: .\templates\construction\about.html:31
+#: .\templates\construction\about.html:27
 msgid ""
 "Founded in 2009, Dorsamehr Construction has grown from a small local "
 "contractor to one of the most trusted names in the construction industry. "
@@ -145,7 +151,7 @@ msgstr ""
 "از معتبرترین نام‌ها در صنعت ساختمان تبدیل شده است. سفر ما با یک مأموریت ساده "
 "آغاز شد: ارائه کیفیت و ارزش استثنایی به مشتریانمان."
 
-#: .\templates\construction\about.html:34
+#: .\templates\construction\about.html:30
 msgid ""
 "Over the years, we have successfully completed hundreds of projects across "
 "residential, commercial, and industrial sectors. Our commitment to quality, "
@@ -156,7 +162,7 @@ msgstr ""
 "تکمیل کرده‌ایم. تعهد ما به کیفیت، ایمنی و رضایت مشتری در طول رشدمان ثابت "
 "مانده است."
 
-#: .\templates\construction\about.html:37
+#: .\templates\construction\about.html:33
 msgid ""
 "Today, we continue to push the boundaries of construction excellence, "
 "embracing new technologies and sustainable practices while maintaining the "
@@ -166,39 +172,39 @@ msgstr ""
 "شیوه‌های پایدار را پذیرفته و در عین حال تماس شخصی‌ای که مشتریانمان انتظار "
 "دارند را حفظ می‌کنیم."
 
-#: .\templates\construction\about.html:53
+#: .\templates\construction\about.html:49
 msgid "Our Achievements"
 msgstr "دستاوردهای ما"
 
-#: .\templates\construction\about.html:55
+#: .\templates\construction\about.html:51
 msgid "Numbers that speak for our commitment to excellence"
 msgstr "اعدادی که از تعهد ما به برتری سخن می‌گویند"
 
-#: .\templates\construction\about.html:62
+#: .\templates\construction\about.html:58
 msgid "Years of Experience"
 msgstr "سال تجربه"
 
-#: .\templates\construction\about.html:66 .\templates\construction\home.html:43
+#: .\templates\construction\about.html:62 .\templates\construction\home.html:45
 msgid "Projects Completed"
 msgstr "پروژه تکمیل شده"
 
-#: .\templates\construction\about.html:70 .\templates\construction\home.html:47
+#: .\templates\construction\about.html:66 .\templates\construction\home.html:49
 msgid "Team Members"
 msgstr "اعضای تیم"
 
-#: .\templates\construction\about.html:74 .\templates\construction\home.html:51
+#: .\templates\construction\about.html:70 .\templates\construction\home.html:53
 msgid "Client Satisfaction"
 msgstr "رضایت مشتری"
 
-#: .\templates\construction\about.html:84
+#: .\templates\construction\about.html:80
 msgid "Our Core Values"
 msgstr "ارزش‌های اصلی ما"
 
-#: .\templates\construction\about.html:86
+#: .\templates\construction\about.html:82
 msgid "The principles that guide everything we do"
 msgstr "اصولی که تمام کارهای ما را هدایت می‌کنند"
 
-#: .\templates\construction\about.html:98
+#: .\templates\construction\about.html:94
 msgid ""
 "We never compromise on quality. Every project is built to the highest "
 "standards using premium materials and expert craftsmanship."
@@ -206,12 +212,12 @@ msgstr ""
 "ما هرگز در کیفیت مصالحه نمی‌کنیم. هر پروژه با بالاترین استانداردها و استفاده "
 "از مواد اولیه برتر و مهارت متخصص ساخته می‌شود."
 
-#: .\templates\construction\about.html:107
-#: .\templates\construction\home.html:211
+#: .\templates\construction\about.html:103
+#: .\templates\construction\home.html:214
 msgid "Safety First"
 msgstr "ایمنی اول"
 
-#: .\templates\construction\about.html:109
+#: .\templates\construction\about.html:105
 msgid ""
 "Safety is our top priority. We maintain strict safety protocols and ensure "
 "all team members are properly trained and equipped."
@@ -219,11 +225,11 @@ msgstr ""
 "ایمنی اولویت اصلی ماست. ما پروتکل‌های ایمنی سختگیرانه‌ای را حفظ کرده و اطمینان "
 "حاصل می‌کنیم که تمام اعضای تیم به درستی آموزش دیده و مجهز هستند."
 
-#: .\templates\construction\about.html:118
+#: .\templates\construction\about.html:114
 msgid "Integrity & Trust"
 msgstr "صداقت و اعتماد"
 
-#: .\templates\construction\about.html:120
+#: .\templates\construction\about.html:116
 msgid ""
 "We build lasting relationships based on honesty, transparency, and mutual "
 "trust with our clients and partners."
@@ -231,11 +237,11 @@ msgstr ""
 "ما روابط پایدار بر اساس صداقت، شفافیت و اعتماد متقابل با مشتریان و شرکایمان "
 "می‌سازیم."
 
-#: .\templates\construction\about.html:129
+#: .\templates\construction\about.html:125
 msgid "Innovation"
 msgstr "نوآوری"
 
-#: .\templates\construction\about.html:131
+#: .\templates\construction\about.html:127
 msgid ""
 "We embrace new technologies and innovative solutions to deliver better, more "
 "efficient construction projects."
@@ -243,11 +249,11 @@ msgstr ""
 "ما فناوری‌های جدید و راه‌حل‌های نوآورانه را پذیرفته تا پروژه‌های ساختمانی بهتر و "
 "کارآمدتری ارائه دهیم."
 
-#: .\templates\construction\about.html:140
+#: .\templates\construction\about.html:136
 msgid "Sustainability"
 msgstr "پایداری"
 
-#: .\templates\construction\about.html:142
+#: .\templates\construction\about.html:138
 msgid ""
 "We are committed to environmentally responsible construction practices and "
 "sustainable building solutions."
@@ -255,11 +261,11 @@ msgstr ""
 "ما متعهد به شیوه‌های ساختمانی مسئولانه محیط زیستی و راه‌حل‌های ساختمانی پایدار "
 "هستیم."
 
-#: .\templates\construction\about.html:151
+#: .\templates\construction\about.html:147
 msgid "Customer Focus"
 msgstr "تمرکز بر مشتری"
 
-#: .\templates\construction\about.html:153
+#: .\templates\construction\about.html:149
 msgid ""
 "Our clients are at the heart of everything we do. We listen, understand, and "
 "exceed their expectations."
@@ -267,31 +273,31 @@ msgstr ""
 "مشتریان ما در قلب تمام کارهای ما هستند. ما گوش می‌دهیم، درک می‌کنیم و فراتر از "
 "انتظاراتشان عمل می‌کنیم."
 
-#: .\templates\construction\about.html:164
+#: .\templates\construction\about.html:160
 msgid "Meet Our Leadership Team"
 msgstr "با تیم رهبری ما آشنا شوید"
 
-#: .\templates\construction\about.html:166
+#: .\templates\construction\about.html:162
 msgid "Experienced professionals dedicated to delivering exceptional results"
 msgstr "متخصصان با تجربه‌ای که متعهد به ارائه نتایج استثنایی هستند"
 
-#: .\templates\construction\about.html:185
+#: .\templates\construction\about.html:181
 msgid "years experience"
 msgstr "سال تجربه"
 
-#: .\templates\construction\about.html:197
+#: .\templates\construction\about.html:193
 msgid "Team information will be available soon."
 msgstr "اطلاعات تیم به زودی در دسترس خواهد بود."
 
-#: .\templates\construction\about.html:204
+#: .\templates\construction\about.html:200
 msgid "View Full Team"
 msgstr "مشاهده کامل تیم"
 
-#: .\templates\construction\about.html:219
+#: .\templates\construction\about.html:215
 msgid "Our Mission"
 msgstr "ماموریت ما"
 
-#: .\templates\construction\about.html:221
+#: .\templates\construction\about.html:217
 msgid ""
 "To deliver exceptional construction services that exceed client expectations "
 "while maintaining the highest standards of quality, safety, and "
@@ -302,11 +308,11 @@ msgstr ""
 "بالاترین استانداردهای کیفیت، ایمنی و پایداری را حفظ می‌کنیم. ما تلاش می‌کنیم "
 "روابط پایدار بسازیم و برای مشتریان، کارمندان و جوامعمان ارزش ایجاد کنیم."
 
-#: .\templates\construction\about.html:230
+#: .\templates\construction\about.html:226
 msgid "Our Vision"
 msgstr "چشم‌انداز ما"
 
-#: .\templates\construction\about.html:232
+#: .\templates\construction\about.html:228
 msgid ""
 "To be the leading construction company known for innovation, quality, and "
 "customer satisfaction. We envision a future where our projects not only meet "
@@ -316,11 +322,11 @@ msgstr ""
 "شناخته شده است. ما آینده‌ای را تصور می‌کنیم که پروژه‌هایمان نه تنها نیازهای "
 "امروز را برآورده می‌کنند بلکه به فردایی پایدار و مرفه کمک می‌کنند."
 
-#: .\templates\construction\about.html:242
+#: .\templates\construction\about.html:238
 msgid "Ready to Work With Us?"
 msgstr "آماده کار با ما هستید؟"
 
-#: .\templates\construction\about.html:244
+#: .\templates\construction\about.html:240
 msgid ""
 "Let's discuss your project and see how we can help bring your vision to "
 "life. Contact us today for a free consultation."
@@ -328,27 +334,38 @@ msgstr ""
 "بیایید پروژه شما را بررسی کنیم و ببینیم چگونه می‌توانیم به تحقق چشم‌اندازتان "
 "کمک کنیم. امروز برای مشاوره رایگان با ما تماس بگیرید."
 
-#: .\templates\construction\about.html:251
+#: .\templates\construction\about.html:247
 msgid "View Our Work"
 msgstr "مشاهده کارهای ما"
+
+#: .\templates\construction\gallery.html:5
+#: .\templates\construction\gallery.html:12
+msgid "Project Gallery"
+msgstr "گالری پروژه‌ها"
+
+#: .\templates\construction\gallery.html:14
+msgid ""
+"Explore our diverse portfolio of construction projects through our "
+"comprehensive gallery."
+msgstr "مجموعه متنوع پروژه‌های ساختمانی ما را از طریق گالری جامع ما کاوش کنید."
 
 #: .\templates\construction\home.html:4
 msgid "Dorsamehr Construction - Building Excellence"
 msgstr "ساختمان سازی درسمهر - ساخت برتری"
 
-#: .\templates\construction\home.html:20
+#: .\templates\construction\home.html:16
 msgid "Building Your"
 msgstr "ساخت"
 
-#: .\templates\construction\home.html:20
+#: .\templates\construction\home.html:16
 msgid "Dreams"
 msgstr "رویاهای"
 
-#: .\templates\construction\home.html:20
+#: .\templates\construction\home.html:16
 msgid "Into Reality"
 msgstr "به واقعیت"
 
-#: .\templates\construction\home.html:23
+#: .\templates\construction\home.html:19
 msgid ""
 "Dorsamehr Construction delivers exceptional quality and innovative solutions "
 "for residential, commercial, and industrial projects."
@@ -356,23 +373,23 @@ msgstr ""
 "ساختمان سازی درسمهر کیفیت استثنایی و راه‌حل‌های نوآورانه برای پروژه‌های مسکونی، "
 "تجاری و صنعتی ارائه می‌دهد."
 
-#: .\templates\construction\home.html:27
+#: .\templates\construction\home.html:23
 msgid "View Our Projects"
 msgstr "مشاهده پروژه‌های ما"
 
-#: .\templates\construction\home.html:30
+#: .\templates\construction\home.html:26
 msgid "Get Quote"
 msgstr "دریافت قیمت"
 
-#: .\templates\construction\home.html:39
+#: .\templates\construction\home.html:41
 msgid "Years Experience"
 msgstr "سال تجربه"
 
-#: .\templates\construction\home.html:64
+#: .\templates\construction\home.html:67
 msgid "Our Services"
 msgstr "خدمات ما"
 
-#: .\templates\construction\home.html:66
+#: .\templates\construction\home.html:69
 msgid ""
 "We offer comprehensive construction services tailored to meet your specific "
 "needs and exceed your expectations."
@@ -380,11 +397,11 @@ msgstr ""
 "ما خدمات ساختمانی جامعی ارائه می‌دهیم که متناسب با نیازهای خاص شما طراحی شده "
 "و فراتر از انتظاراتتان عمل می‌کند."
 
-#: .\templates\construction\home.html:76
+#: .\templates\construction\home.html:79
 msgid "Residential Construction"
 msgstr "ساخت مسکونی"
 
-#: .\templates\construction\home.html:78
+#: .\templates\construction\home.html:81
 msgid ""
 "Custom homes, renovations, and residential developments built with quality "
 "materials and expert craftsmanship."
@@ -392,16 +409,16 @@ msgstr ""
 "خانه‌های سفارشی، بازسازی و توسعه‌های مسکونی ساخته شده با مواد اولیه با کیفیت و "
 "مهارت متخصص."
 
-#: .\templates\construction\home.html:81 .\templates\construction\home.html:95
-#: .\templates\construction\home.html:109
+#: .\templates\construction\home.html:84 .\templates\construction\home.html:98
+#: .\templates\construction\home.html:112
 msgid "Learn More"
 msgstr "بیشتر بدانید"
 
-#: .\templates\construction\home.html:90
+#: .\templates\construction\home.html:93
 msgid "Commercial Construction"
 msgstr "ساخت تجاری"
 
-#: .\templates\construction\home.html:92
+#: .\templates\construction\home.html:95
 msgid ""
 "Office buildings, retail spaces, and commercial facilities designed for "
 "functionality and aesthetic appeal."
@@ -409,11 +426,11 @@ msgstr ""
 "ساختمان‌های اداری، فضاهای خرده‌فروشی و تأسیسات تجاری طراحی شده برای کارایی و "
 "جذابیت زیبایی‌شناختی."
 
-#: .\templates\construction\home.html:104
+#: .\templates\construction\home.html:107
 msgid "Industrial Construction"
 msgstr "ساخت صنعتی"
 
-#: .\templates\construction\home.html:106
+#: .\templates\construction\home.html:109
 #, fuzzy
 #| msgid ""
 #| "Factories, warehouses, and industrial facilities built to meet the "
@@ -425,11 +442,11 @@ msgstr ""
 "کارخانه‌ها، انبارها و تأسیسات صنعتی ساخته شده برای برآورده کردن بالاترین "
 "استانداردهای کارایی و ایمنی."
 
-#: .\templates\construction\home.html:120
+#: .\templates\construction\home.html:123
 msgid "Featured Projects"
 msgstr "پروژه‌های ویژه"
 
-#: .\templates\construction\home.html:122
+#: .\templates\construction\home.html:125
 #, fuzzy
 #| msgid ""
 #| "Explore our portfolio of successful construction projects that showcase "
@@ -441,50 +458,52 @@ msgstr ""
 "نمونه کار موفقیت‌آمیز پروژه‌های ساختمانی ما را که تخصص و تعهد ما به کیفیت را "
 "نشان می‌دهد کاوش کنید."
 
-#: .\templates\construction\home.html:148
+#: .\templates\construction\home.html:151
 msgid "View Details"
 msgstr "مشاهده جزئیات"
 
-#: .\templates\construction\home.html:156
+#: .\templates\construction\home.html:159
 msgid "No featured projects available yet."
 msgstr "هنوز هیچ پروژه ویژه‌ای در دسترس نیست."
 
-#: .\templates\construction\home.html:163
+#: .\templates\construction\home.html:166
 msgid "View All Projects"
 msgstr "مشاهده تمام پروژه‌ها"
 
-#: .\templates\construction\home.html:174
+#: .\templates\construction\home.html:177
 #, fuzzy
 #| msgid "About Dorsamehr Construction"
 msgid "Why Choose Dorsamehr Construction?"
 msgstr "چرا ساختمان سازی درسمهر را انتخاب کنید؟"
 
-#: .\templates\construction\home.html:181
+#: .\templates\construction\home.html:184
 #, fuzzy
 #| msgid "Quality Excellence"
 msgid "Quality Assurance"
 msgstr "تضمین کیفیت"
 
-#: .\templates\construction\home.html:182
+#: .\templates\construction\home.html:185
 msgid ""
 "We maintain the highest standards of quality throughout every project phase."
 msgstr "ما بالاترین استانداردهای کیفیت را در تمام مراحل پروژه حفظ می‌کنیم."
 
-#: .\templates\construction\home.html:191
+#: .\templates\construction\home.html:194
 msgid "Timely Delivery"
 msgstr "تحویل به موقع"
 
-#: .\templates\construction\home.html:192
+#: .\templates\construction\home.html:195
 msgid ""
 "We complete projects on schedule while maintaining quality and safety "
 "standards."
-msgstr "ما پروژه‌ها را طبق برنامه تکمیل می‌کنیم در حالی که استانداردهای کیفیت و ایمنی را حفظ می‌کنیم."
+msgstr ""
+"ما پروژه‌ها را طبق برنامه تکمیل می‌کنیم در حالی که استانداردهای کیفیت و ایمنی "
+"را حفظ می‌کنیم."
 
-#: .\templates\construction\home.html:201
+#: .\templates\construction\home.html:204
 msgid "Expert Team"
 msgstr "تیم متخصص"
 
-#: .\templates\construction\home.html:202
+#: .\templates\construction\home.html:205
 #, fuzzy
 #| msgid ""
 #| "Our team of experienced professionals brings years of expertise to every "
@@ -494,19 +513,21 @@ msgid ""
 "project."
 msgstr "تیم ما از متخصصان با تجربه سال‌ها تخصص را به هر پروژه می‌آورد."
 
-#: .\templates\construction\home.html:212
+#: .\templates\construction\home.html:215
 msgid ""
 "We prioritize safety in all our operations and maintain strict safety "
 "protocols."
-msgstr "ما ایمنی را در تمام عملیات‌مان اولویت قرار داده و پروتکل‌های ایمنی سختگیرانه‌ای را حفظ می‌کنیم."
+msgstr ""
+"ما ایمنی را در تمام عملیات‌مان اولویت قرار داده و پروتکل‌های ایمنی سختگیرانه‌ای "
+"را حفظ می‌کنیم."
 
-#: .\templates\construction\home.html:232
+#: .\templates\construction\home.html:235
 #, fuzzy
 #| msgid "Latest News"
 msgid "Latest News & Insights"
 msgstr "آخرین اخبار"
 
-#: .\templates\construction\home.html:234
+#: .\templates\construction\home.html:237
 #, fuzzy
 #| msgid ""
 #| "Stay updated with the latest construction trends, tips, and insights from "
@@ -517,21 +538,21 @@ msgid ""
 msgstr ""
 "با آخرین روندها، نکات و بینش‌های ساختمانی از متخصصان صنعتی ما به‌روز بمانید."
 
-#: .\templates\construction\home.html:257
+#: .\templates\construction\home.html:260
 msgid "Read More"
 msgstr "بیشتر بخوانید"
 
-#: .\templates\construction\home.html:266
+#: .\templates\construction\home.html:269
 #, fuzzy
 #| msgid "View All Projects"
 msgid "View All Posts"
 msgstr "مشاهده تمام پروژه‌ها"
 
-#: .\templates\construction\home.html:276
+#: .\templates\construction\home.html:279
 msgid "Ready to Start Your Project?"
 msgstr "آماده شروع پروژه خود هستید؟"
 
-#: .\templates\construction\home.html:278
+#: .\templates\construction\home.html:281
 #, fuzzy
 #| msgid ""
 #| "Let's discuss your project and see how we can help bring your vision to "
@@ -543,18 +564,23 @@ msgstr ""
 "بیایید پروژه شما را بررسی کنیم و ببینیم چگونه می‌توانیم به تحقق چشم‌اندازتان "
 "کمک کنیم. امروز برای مشاوره رایگان با ما تماس بگیرید."
 
-#: .\templates\construction\home.html:282
+#: .\templates\construction\home.html:285
 #, fuzzy
 #| msgid "Get Quote"
 msgid "Get Free Quote"
 msgstr "دریافت قیمت"
 
-#: .\templates\construction\home.html:285
+#: .\templates\construction\home.html:288
 msgid "Call Now"
 msgstr "همین حالا تماس بگیرید"
 
-#~ msgid "Switch Language"
-#~ msgstr "تغییر زبان"
+#, fuzzy
+#~| msgid "Language"
+#~ msgid "Current Language"
+#~ msgstr "زبان"
+
+#~ msgid "Language"
+#~ msgstr "زبان"
 
 #~ msgid "Privacy Policy"
 #~ msgstr "سیاست حفظ حریم خصوصی"

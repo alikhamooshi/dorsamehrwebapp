@@ -51,6 +51,10 @@
                         <i class="fas fa-project-diagram mr-2"></i>{% trans "Projects" %}
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#feb906] to-[#e6a800] dark:from-[#95a236] dark:to-[#7a8a2b] transition-all duration-300 group-hover:w-full"></span>
                     </a>
+                    <a href="{% url 'construction:gallery' %}" class="relative text-gray-700 dark:text-gray-300 hover:text-[#feb906] dark:hover:text-[#95a236] px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 group">
+                        <i class="fas fa-images mr-2"></i>{% trans "Gallery" %}
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#feb906] to-[#e6a800] dark:from-[#95a236] dark:to-[#7a8a2b] transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                     <a href="{% url 'construction:team' %}" class="relative text-gray-700 dark:text-gray-300 hover:text-[#feb906] dark:hover:text-[#95a236] px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 group">
                         <i class="fas fa-users mr-2"></i>{% trans "Team" %}
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#feb906] to-[#e6a800] dark:from-[#95a236] dark:to-[#7a8a2b] transition-all duration-300 group-hover:w-full"></span>
@@ -151,6 +155,9 @@
                     </a>
                     <a href="{% url 'construction:projects' %}" class="text-gray-700 dark:text-gray-300 hover:text-[#feb906] dark:hover:text-[#95a236] px-2 py-2 text-xs font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50">
                         {% trans "Projects" %}
+                    </a>
+                    <a href="{% url 'construction:gallery' %}" class="text-gray-700 dark:text-gray-300 hover:text-[#feb906] dark:hover:text-[#95a236] px-2 py-2 text-xs font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50">
+                        {% trans "Gallery" %}
                     </a>
                     <a href="{% url 'construction:team' %}" class="text-gray-700 dark:text-gray-300 hover:text-[#feb906] dark:hover:text-[#95a236] px-2 py-2 text-xs font-medium transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50">
                         {% trans "Team" %}
