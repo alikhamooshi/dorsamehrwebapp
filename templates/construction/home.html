@@ -1,114 +1,254 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load static %}
-{% block title %}{% trans "Dorsamehr Construction - Building Excellence" %}{% endblock %}
+{% block title %}{% trans "Dorsamehr Kish - Building Excellence" %}{% endblock %}
+
+{% block extra_css %}
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+    /* Custom animations for project details */
+    .project-detail-item {
+        opacity: 0;
+        transition: all 0.6s ease;
+    }
+    
+    .project-detail-item.animate {
+        opacity: 1;
+        animation: animate-pulse 2s infinite;
+    }
+    
+    .project-badge {
+        animation: fadeInScale 0.8s ease-out forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    
+    @keyframes fadeInScale {
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .project-title {
+        animation: slideInFromLeft 1s ease-out forwards;
+        animation-delay: 0.5s;
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    
+    @keyframes slideInFromLeft {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .project-description {
+        animation: fadeInUp 1s ease-out forwards;
+        animation-delay: 0.7s;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Define animate-pulse keyframes */
+    @keyframes animate-pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+    
+    .project-image {
+        position: relative;
+        height: 100%;
+        min-height: 500px;
+    }
+    
+    .project-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .project-image:hover {
+        transform: scale(1.05) rotate(1deg);
+    }
+    
+    .project-summary:hover .project-badge {
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(65, 90, 119, 0.3);
+    }
+    
+    /* Ensure equal height for grid items */
+    .project-row {
+        align-items: stretch;
+    }
+    
+    .project-row > div {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+{% endblock %}
 
 {% block content %}
-<!-- Theme Toggle -->
-
-
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="{% if LANGUAGE_CODE == 'fa' %}text-right{% endif %}">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    {% trans "Building Your" %} <span class="text-[#feb906]">{% trans "Dreams" %}</span> {% trans "Into Reality" %}
-                </h1>
-                <p class="text-xl mb-8 text-gray-100">
-                    {% trans "Dorsamehr Construction delivers exceptional quality and innovative solutions for residential, commercial, and industrial projects." %}
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 {% if LANGUAGE_CODE == 'fa' %}justify-end{% endif %}">
-                    <a href="{% url 'construction:projects' %}" class="bg-[#95a236] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#7a8a2b] transition duration-300 text-center">
-                        {% trans "View Our Projects" %}
-                    </a>
-                    <a href="{% url 'construction:contact' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#feb906] transition duration-300 text-center">
-                        {% trans "Get Quote" %}
-                    </a>
+                    <section class="relative bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] text-white h-[calc(100vh-5rem)] overflow-hidden">
+            <!-- Background Photo Carousel -->
+            <div id="gallery-carousel" class="absolute inset-0 w-full h-full">
+                <div class="relative w-full h-full overflow-hidden">
+                    <!-- Photo 1 -->
+                    <img src="{% static 'images/Offy/dorsamehrkish/0O7A1259.jpg' %}" alt="Dorsamehr Construction Project 1" class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-100" data-index="0" data-title="{% trans 'Every detail tells a story' %}" data-description="{% trans 'Beacuse you deserve nothing but the best' %}">
+                    <!-- Photo 2 -->
+                    <img src="{% static 'images/Offy/dorsamehrkish/49ce9796-cc0b-45d2-8efe-74e2ab688b48.jpg' %}" alt="Dorsamehr Construction Project 2" class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0" data-index="1" data-title="{% trans 'Every detail tells a story' %}" data-description="{% trans 'Beacuse you deserve nothing but the best' %}">
+                    <!-- Photo 3 -->
+                    <img src="{% static 'images/Offy/dorsamehrkish/IMG_20250506_133558_810.jpg' %}" alt="Dorsamehr Construction Project 3" class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0" data-index="2" data-title="{% trans 'Every detail tells a story' %}" data-description="{% trans 'Beacuse you deserve nothing but the best' %}">
+
                 </div>
+                
+                <!-- Static Text Overlay - Top Left -->
+                <div class="absolute top-8 left-8 z-10 max-w-2xl">
+                    <div class="bg-black/60 backdrop-blur-sm rounded-xl px-8 py-4 border border-white/20">
+                        <!-- Decorative accent -->
+                        <div class="w-16 h-1 bg-gradient-to-r from-[#415a77] to-[#778da9] mb-3 rounded-full"></div>
+                        
+                        <!-- Main Title -->
+                        <h3 class="text-2xl md:text-3xl font-light mb-2 text-white leading-tight">
+                            <span class="font-thin">Every</span> 
+                            <span class="font-bold text-[#e0e1dd]">detail</span>
+                            <span class="font-thin">tells a</span>
+                            <span class="font-bold text-[#e0e1dd]">story</span>
+                        </h3>
+                        
+                        <!-- Subtitle -->
+                        <p class="text-sm md:text-base font-light text-white/90 leading-relaxed tracking-wide mb-2">
+                            Because you deserve nothing but the best
+                        </p>
+                        
+                        <!-- Bottom accent line -->
+                        <div class="w-12 h-px bg-white/40"></div>
             </div>
-            <div class="hidden lg:block">
-                <div class="relative">
-                    <!-- Main Building Image -->
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 overflow-hidden">
-                        <img src="{% static 'images/download.png' %}" alt="Dorsamehr Construction Building Complex" class="w-full h-auto rounded-xl shadow-2xl">
-                    </div>
-                    <!-- Statistics Overlay -->
-                    <div class="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-xl">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-[#95a236]">15+</div>
-                                <div class="text-xs text-gray-600">{% trans "Years Experience" %}</div>
                             </div>
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-[#95a236]">200+</div>
-                                <div class="text-xs text-gray-600">{% trans "Projects Completed" %}</div>
+                            
+                            <!-- Navigation Dots -->
+                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                    <button class="w-4 h-4 bg-white/30 rounded-full transition-all duration-300 hover:bg-white/50 active-dot" data-index="0"></button>
+                    <button class="w-4 h-4 bg-white/30 rounded-full transition-all duration-300 hover:bg-white/50" data-index="1"></button>
+                    <button class="w-4 h-4 bg-white/30 rounded-full transition-all duration-300 hover:bg-white/50" data-index="2"></button>
+
                             </div>
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-[#95a236]">50+</div>
-                                <div class="text-xs text-gray-600">{% trans "Team Members" %}</div>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-[#95a236]">100%</div>
-                                <div class="text-xs text-gray-600">{% trans "Client Satisfaction" %}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            
+                            <!-- Navigation Arrows -->
+                <button id="prev-btn" class="absolute left-8 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                            </button>
+                <button id="next-btn" class="absolute right-8 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                            </button>
             </div>
-        </div>
-    </div>
+            
+            
+            
+
 </section>
 
 <!-- Services Section -->
-<section class="py-20 bg-white dark:bg-gray-900">
+<section class="py-20 bg-[#0d1b2a]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{% trans "Our Services" %}</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#e0e1dd] mb-4">{% trans "Our Services" %}</h2>
+            <p class="text-xl text-[#415a77] max-w-3xl mx-auto">
                 {% trans "We offer comprehensive construction services tailored to meet your specific needs and exceed your expectations." %}
             </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Residential Construction -->
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-lg transition duration-300 border border-gray-200 dark:border-gray-700">
-                <div class="w-16 h-16 bg-[#95a236] rounded-lg flex items-center justify-center mb-6">
-                    <i class="fas fa-home text-2xl text-white"></i>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            <!-- Project Definition -->
+            <div class="bg-[#e0e1dd] rounded-xl p-6 hover:shadow-lg transition duration-300 border border-[#778da9]">
+                <div class="w-16 h-16 bg-[#415a77] rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-clipboard-list text-2xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">{% trans "Residential Construction" %}</h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-6">
-                    {% trans "Custom homes, renovations, and residential developments built with quality materials and expert craftsmanship." %}
+                <h3 class="text-lg font-semibold text-[#0d1b2a] mb-4">{% trans "Project Definition" %}</h3>
+                <p class="text-[#415a77] mb-6 text-sm">
+                    {% trans "Comprehensive project planning, analysis, and strategic definition to ensure successful execution from concept to completion." %}
                 </p>
-                <a href="{% url 'construction:projects' %}?type=residential" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
+                <a href="{% url 'construction:projects' %}?type=definition" class="text-[#415a77] font-semibold hover:text-[#1b263b] transition text-sm">
                     {% trans "Learn More" %} <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
             
-            <!-- Commercial Construction -->
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-lg transition duration-300 border border-gray-200 dark:border-gray-700">
-                <div class="w-16 h-16 bg-[#95a236] rounded-lg flex items-center justify-center mb-6">
-                    <i class="fas fa-building text-2xl text-white"></i>
+            <!-- Project Implementation -->
+            <div class="bg-[#e0e1dd] rounded-xl p-6 hover:shadow-lg transition duration-300 border border-[#778da9]">
+                <div class="w-16 h-16 bg-[#415a77] rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-tools text-2xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">{% trans "Commercial Construction" %}</h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-6">
-                    {% trans "Office buildings, retail spaces, and commercial facilities designed for functionality and aesthetic appeal." %}
+                <h3 class="text-lg font-semibold text-[#0d1b2a] mb-4">{% trans "Project Implementation" %}</h3>
+                <p class="text-[#415a77] mb-6 text-sm">
+                    {% trans "Expert execution of construction projects with skilled teams, quality materials, and advanced methodologies." %}
                 </p>
-                <a href="{% url 'construction:projects' %}?type=commercial" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
+                <a href="{% url 'construction:projects' %}?type=implementation" class="text-[#415a77] font-semibold hover:text-[#1b263b] transition text-sm">
                     {% trans "Learn More" %} <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
             
-            <!-- Industrial Construction -->
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-lg transition duration-300 border border-gray-200 dark:border-gray-700">
-                <div class="w-16 h-16 bg-[#95a236] rounded-lg flex items-center justify-center mb-6">
-                    <i class="fas fa-industry text-2xl text-white"></i>
+            <!-- Operation -->
+            <div class="bg-[#e0e1dd] rounded-xl p-6 hover:shadow-lg transition duration-300 border border-[#778da9]">
+                <div class="w-16 h-16 bg-[#415a77] rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-cogs text-2xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">{% trans "Industrial Construction" %}</h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-6">
-                    {% trans "Manufacturing facilities, warehouses, and industrial complexes built for efficiency and durability." %}
+                <h3 class="text-lg font-semibold text-[#0d1b2a] mb-4">{% trans "Operation" %}</h3>
+                <p class="text-[#415a77] mb-6 text-sm">
+                    {% trans "Ongoing operational management, maintenance services, and facility optimization for long-term performance." %}
                 </p>
-                <a href="{% url 'construction:projects' %}?type=industrial" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
+                <a href="{% url 'construction:projects' %}?type=operation" class="text-[#415a77] font-semibold hover:text-[#1b263b] transition text-sm">
+                    {% trans "Learn More" %} <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Barter -->
+            <div class="bg-[#e0e1dd] rounded-xl p-6 hover:shadow-lg transition duration-300 border border-[#778da9]">
+                <div class="w-16 h-16 bg-[#415a77] rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-exchange-alt text-2xl text-white"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-[#0d1b2a] mb-4">{% trans "Barter" %}</h3>
+                <p class="text-[#415a77] mb-6 text-sm">
+                    {% trans "Flexible exchange services and trade agreements that create mutual value for construction and development projects." %}
+                </p>
+                <a href="{% url 'construction:team_barter' %}" class="text-[#415a77] font-semibold hover:text-[#1b263b] transition text-sm">
+                    {% trans "Learn More" %} <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Co-ownership -->
+            <div class="bg-[#e0e1dd] rounded-xl p-6 hover:shadow-lg transition duration-300 border border-[#778da9]">
+                <div class="w-16 h-16 bg-[#415a77] rounded-lg flex items-center justify-center mb-6">
+                    <i class="fas fa-handshake text-2xl text-white"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-[#0d1b2a] mb-4">{% trans "Co-ownership" %}</h3>
+                <p class="text-[#415a77] mb-6 text-sm">
+                    {% trans "Strategic partnership opportunities in real estate development with shared ownership and collaborative investment models." %}
+                </p>
+                <a href="{% url 'construction:team_partnership' %}" class="text-[#415a77] font-semibold hover:text-[#1b263b] transition text-sm">
                     {% trans "Learn More" %} <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -117,52 +257,173 @@
 </section>
 
 <!-- Featured Projects Section -->
-<section class="py-20 bg-gray-50 dark:bg-gray-800">
+<section class="py-20 bg-[#1b263b]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{% trans "Featured Projects" %}</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#e0e1dd] mb-4">{% trans "Featured Projects" %}</h2>
+            <p class="text-xl text-[#415a77] max-w-3xl mx-auto">
                 {% trans "Explore our portfolio of successful projects that showcase our expertise and commitment to quality." %}
             </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% for project in featured_projects %}
-            <div class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700">
-                {% if project.image %}
-                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="w-full h-48 object-cover">
-                {% else %}
-                <div class="w-full h-48 bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
-                    <i class="fas fa-building text-4xl text-gray-500 dark:text-gray-400"></i>
+        <!-- Project 1 - Summary Left, Image Right -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 project-row" data-aos="fade-up" data-aos-duration="1000">
+            <!-- Project 1 Summary -->
+            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-[#778da9] flex flex-col justify-center transform hover:scale-105 project-summary" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
+                <div class="mb-4">
+                    <span class="bg-[#415a77]/10 text-[#415a77] text-sm font-semibold px-4 py-2 rounded-full project-badge">
+                        {% trans "Commercial Development" %}
+                    </span>
                 </div>
-                {% endif %}
-                <div class="p-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="bg-[#feb906]/10 dark:bg-[#95a236]/10 text-[#feb906] dark:text-[#95a236] text-xs font-semibold px-3 py-1 rounded-full">
-                            {{ project.get_project_type_display }}
-                        </span>
-                        <span class="text-gray-500 dark:text-gray-400 text-sm">{{ project.completion_date|date:"M Y" }}</span>
+                <h3 class="text-2xl md:text-3xl font-bold text-[#0d1b2a] mb-4 project-title">{% trans "Dorsamehr Kish Complex" %}</h3>
+                <p class="text-[#415a77] mb-6 leading-relaxed project-description">
+                    {% trans "A premium commercial development featuring modern architecture, sustainable design principles, and state-of-the-art facilities. This project showcases our commitment to excellence and innovation in construction." %}
+                </p>
+                
+                <!-- Project Details Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="space-y-3">
+                        <div class="flex items-center text-[#0d1b2a] project-detail-item">
+                            <i class="fas fa-building w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Project Type" %}</span>
+                                <p class="font-semibold">{% trans "Commercial Complex" %}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-[#0d1b2a] project-detail-item">
+                            <i class="fas fa-map-marker-alt w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Location" %}</span>
+                                <p class="font-semibold">{% trans "Kish Island" %}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-[#0d1b2a]">
+                            <i class="fas fa-expand-arrows-alt w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Area" %}</span>
+                                <p class="font-semibold">15,000 m²</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-[#0d1b2a]">
+                            <i class="fas fa-calendar w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Completion Date" %}</span>
+                                <p class="font-semibold">{% trans "December 2024" %}</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ project.title }}</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">{{ project.description|truncatewords:20 }}</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-gray-500 dark:text-gray-400 text-sm"><i class="fas fa-map-marker-alt mr-1"></i>{{ project.location }}</span>
-                        <a href="{% url 'construction:project_detail' project.id %}" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
-                            {% trans "View Details" %}
-                        </a>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-[#0d1b2a]">
+                            <i class="fas fa-layer-group w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Number of Floors" %}</span>
+                                <p class="font-semibold">12 {% trans "Floors" %}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-[#0d1b2a]">
+                            <i class="fas fa-drafting-compass w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Architectural Design" %}</span>
+                                <p class="font-semibold">{% trans "Modern Minimalist" %}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-[#0d1b2a]">
+                            <i class="fas fa-store w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Venue" %}</span>
+                                <p class="font-semibold">{% trans "Mixed-Use Complex" %}</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                
+                <div class="mt-6">
+                    <a href="{% url 'construction:gallery' %}" class="bg-[#415a77] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1b263b] transition duration-300 inline-flex items-center">
+                        {% trans "View Gallery" %}
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </div>
-            {% empty %}
-            <div class="col-span-full text-center py-12">
-                <i class="fas fa-building text-6xl text-gray-300 dark:text-gray-600 mb-4"></i>
-                <p class="text-gray-500 dark:text-gray-400 text-lg">{% trans "No featured projects available yet." %}</p>
+            
+            <!-- Project 1 Image -->
+            <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 project-image h-full min-h-[500px]" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
+                <img src="{% static 'images/Offy/dorsamehrkish/0O7A1259.jpg' %}" alt="Dorsamehr Kish Project" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-110">
             </div>
-            {% endfor %}
+        </div>
+        
+        <!-- Project 2 - Image Left, Summary Right -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 project-row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+            <!-- Project 2 Image -->
+            <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 project-image h-full min-h-[500px]" data-aos="fade-right" data-aos-delay="800" data-aos-duration="800">
+                <img src="{% static 'images/Offy/emaratfarokh/ED12.jpg' %}" alt="Emarat Farokh Project" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-110">
+            </div>
+            
+            <!-- Project 2 Summary -->
+            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-[#778da9] flex flex-col justify-center transform hover:scale-105 project-summary" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="800">
+                <div class="mb-4">
+                    <span class="bg-[#415a77]/10 text-[#415a77] text-sm font-semibold px-4 py-2 rounded-full">
+                        {% trans "Luxury Construction" %}
+                    </span>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-[#0d1b2a] mb-4">{% trans "Emarat Farokh" %}</h3>
+                <p class="text-[#415a77] mb-6 leading-relaxed">
+                    {% trans "An exceptional luxury construction project that combines premium materials with innovative design. This development represents the pinnacle of modern construction excellence and attention to detail." %}
+                </p>
+                
+                <!-- Project Details Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="space-y-3">
+                        <div class="flex items-center text-[#0d1b2a]">
+                            <i class="fas fa-expand-arrows-alt w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Area" %}</span>
+                                <p class="font-semibold">8,500 m²</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-[#0d1b2a]">
+                            <i class="fas fa-building w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Venue" %}</span>
+                                <p class="font-semibold">{% trans "Residential Complex" %}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-[#0d1b2a]">
+                            <i class="fas fa-home w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Number of Units" %}</span>
+                                <p class="font-semibold">36 {% trans "Units" %}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-[#0d1b2a]">
+                            <i class="fas fa-user-tie w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Employer" %}</span>
+                                <p class="font-semibold">{% trans "Farokh Development" %}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-[#0d1b2a]">
+                            <i class="fas fa-layer-group w-5 text-[#415a77] mr-3"></i>
+                            <div>
+                                <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Number of Floors" %}</span>
+                                <p class="font-semibold">8 {% trans "Floors" %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <a href="{% url 'construction:gallery' %}" class="bg-[#415a77] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1b263b] transition duration-300 inline-flex items-center">
+                        {% trans "View Gallery" %}
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
         </div>
         
         <div class="text-center mt-12">
-            <a href="{% url 'construction:projects' %}" class="bg-[#feb906] dark:bg-[#95a236] text-white dark:text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] dark:hover:bg-[#7a8a2b] transition duration-300">
+            <a href="{% url 'construction:projects' %}" class="bg-[#415a77] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1b263b] transition duration-300">
                 {% trans "View All Projects" %}
             </a>
         </div>
@@ -170,171 +431,462 @@
 </section>
 
 <!-- Why Choose Us Section -->
-<section class="py-20 bg-white dark:bg-gray-900">
+<section class="py-20 bg-[#415a77]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="{% if LANGUAGE_CODE == 'fa' %}order-2{% endif %}">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">{% trans "Why Choose Dorsamehr Construction?" %}</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#e0e1dd] mb-6">{% trans "Why Choose Dorsamehr Construction?" %}</h2>
                 <div class="space-y-6">
                     <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#95a236] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
-                            <i class="fas fa-medal text-white dark:text-gray-900"></i>
+                        <div class="w-12 h-12 bg-[#415a77] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                            <i class="fas fa-medal text-white"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{% trans "Quality Assurance" %}</h3>
-                            <p class="text-gray-600 dark:text-gray-300">{% trans "We maintain the highest standards of quality throughout every project phase." %}</p>
+                            <h3 class="text-xl font-semibold text-[#e0e1dd] mb-2">{% trans "Quality Assurance" %}</h3>
+                            <p class="text-[#e0e1dd]">{% trans "We maintain the highest standards of quality throughout every project phase." %}</p>
                         </div>
                     </div>
                     
                     <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#95a236] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
-                            <i class="fas fa-clock text-white dark:text-gray-900"></i>
+                        <div class="w-12 h-12 bg-[#415a77] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                            <i class="fas fa-clock text-white"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{% trans "Timely Delivery" %}</h3>
-                            <p class="text-gray-600 dark:text-gray-300">{% trans "We complete projects on schedule while maintaining quality and safety standards." %}</p>
+                            <h3 class="text-xl font-semibold text-[#e0e1dd] mb-2">{% trans "Timely Delivery" %}</h3>
+                            <p class="text-[#e0e1dd]">{% trans "We complete projects on schedule while maintaining quality and safety standards." %}</p>
                         </div>
                     </div>
                     
                     <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#95a236] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
-                            <i class="fas fa-users text-white dark:text-gray-900"></i>
+                        <div class="w-12 h-12 bg-[#415a77] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                            <i class="fas fa-users text-white"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{% trans "Expert Team" %}</h3>
-                            <p class="text-gray-600 dark:text-gray-300">{% trans "Our experienced professionals bring expertise and innovation to every project." %}</p>
+                            <h3 class="text-xl font-semibold text-[#e0e1dd] mb-2">{% trans "Expert Team" %}</h3>
+                            <p class="text-[#e0e1dd]">{% trans "Our experienced professionals bring expertise and innovation to every project." %}</p>
                         </div>
                     </div>
                     
                     <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#95a236] dark:bg-[#95a236] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
-                            <i class="fas fa-shield-alt text-white dark:text-gray-900"></i>
+                        <div class="w-12 h-12 bg-[#415a77] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
+                            <i class="fas fa-shield-alt text-white"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{% trans "Safety First" %}</h3>
-                            <p class="text-gray-600 dark:text-gray-300">{% trans "We prioritize safety in all our operations and maintain strict safety protocols." %}</p>
+                            <h3 class="text-xl font-semibold text-[#e0e1dd] mb-2">{% trans "Safety First" %}</h3>
+                            <p class="text-[#e0e1dd]">{% trans "We prioritize safety in all our operations and maintain strict safety protocols." %}</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="relative {% if LANGUAGE_CODE == 'fa' %}order-1{% endif %}">
-                <div class="bg-gray-300 dark:bg-gray-600 h-96 rounded-2xl flex items-center justify-center">
-                    <i class="fas fa-hard-hat text-8xl text-gray-500 dark:text-gray-400"></i>
+                <div class="bg-[#778da9] h-96 rounded-2xl flex items-center justify-center">
+                    <img src="{% static 'images/Offy/emaratfarokh/ED63.jpg' %}" alt="Why Choose Us">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Latest Blog Posts -->
-{% if recent_blogs %}
-<section class="py-20 bg-gray-50 dark:bg-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{% trans "Latest News & Insights" %}</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                {% trans "Stay updated with the latest trends, tips, and insights from the construction industry." %}
+<!-- Statistics Section -->
+<section class="py-20 bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] text-white relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-10 left-10 w-32 h-32 border border-white/20 rounded-full"></div>
+        <div class="absolute top-20 right-20 w-24 h-24 border border-white/20 rounded-full"></div>
+        <div class="absolute bottom-20 left-1/4 w-16 h-16 border border-white/20 rounded-full"></div>
+        <div class="absolute bottom-10 right-1/3 w-20 h-20 border border-white/20 rounded-full"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{% trans "Our Achievements" %}</h2>
+            <p class="text-xl text-[#e0e1dd] max-w-3xl mx-auto">
+                {% trans "Discover the numbers that showcase our dedication to excellence and years of expertise in construction." %}
             </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% for blog in recent_blogs %}
-            <div class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700">
-                {% if blog.image %}
-                <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="w-full h-48 object-cover">
-                {% else %}
-                <div class="w-full h-48 bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
-                    <i class="fas fa-newspaper text-4xl text-gray-500 dark:text-gray-400"></i>
-                </div>
-                {% endif %}
-                <div class="p-6">
-                    <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
-                        <span><i class="fas fa-user mr-1"></i>{{ blog.author }}</span>
-                        <span class="mx-2">•</span>
-                        <span><i class="fas fa-calendar mr-1"></i>{{ blog.published_date|date:"M d, Y" }}</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Total Units Built -->
+            <div class="text-center stats-card" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
+                <div class="flex justify-center mb-4">
+                    <div class="w-40 h-40 rounded-full bg-gradient-to-br from-[#415a77] to-[#778da9] flex items-center justify-center shadow-2xl transform hover:scale-110 transition-all duration-500 hover:rotate-6">
+                        <div class="text-center">
+                            <i class="fas fa-building text-4xl text-white mb-3"></i>
+                            <div class="counter text-3xl font-bold text-white" data-target="850">0</div>
+                            <div class="text-xs text-white/80 uppercase tracking-wider">{% trans "Units" %}</div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">{{ blog.title }}</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">{{ blog.excerpt|default:blog.content|truncatewords:20 }}</p>
-                    <a href="{% url 'construction:blog_detail' blog.slug %}" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
-                        {% trans "Read More" %} <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
                 </div>
+                <h3 class="text-lg font-semibold text-white mb-2">{% trans "Total Units Built" %}</h3>
+                <p class="text-[#e0e1dd] text-sm">{% trans "Residential and commercial units completed successfully" %}</p>
             </div>
-            {% endfor %}
-        </div>
-        
-        <div class="text-center mt-12">
-            <a href="{% url 'construction:blog' %}" class="bg-[#feb906] dark:bg-[#95a236] text-white dark:text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] dark:hover:bg-[#7a8a2b] transition duration-300">
-                {% trans "View All Posts" %}
-            </a>
+            
+            <!-- Infrastructure Built -->
+            <div class="text-center stats-card" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="800">
+                <div class="flex justify-center mb-4">
+                    <div class="w-40 h-40 rounded-full bg-gradient-to-br from-[#778da9] to-[#415a77] flex items-center justify-center shadow-2xl transform hover:scale-110 transition-all duration-500 hover:rotate-6">
+                        <div class="text-center">
+                            <i class="fas fa-road text-4xl text-white mb-3"></i>
+                            <div class="counter text-3xl font-bold text-white" data-target="125">0</div>
+                            <div class="text-xs text-white/80 uppercase tracking-wider">{% trans "Projects" %}</div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">{% trans "Infrastructure Built" %}</h3>
+                <p class="text-[#e0e1dd] text-sm">{% trans "Roads, utilities, and essential infrastructure projects" %}</p>
+            </div>
+            
+            <!-- Infrastructure Under Construction -->
+            <div class="text-center stats-card" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="800">
+                <div class="flex justify-center mb-4">
+                    <div class="w-40 h-40 rounded-full bg-gradient-to-br from-[#e0e1dd] to-[#778da9] flex items-center justify-center shadow-2xl transform hover:scale-110 transition-all duration-500 hover:rotate-6">
+                        <div class="text-center">
+                            <i class="fas fa-hammer text-4xl text-[#0d1b2a] mb-3"></i>
+                            <div class="counter text-3xl font-bold text-[#0d1b2a]" data-target="42">0</div>
+                            <div class="text-xs text-[#0d1b2a]/80 uppercase tracking-wider">{% trans "Active" %}</div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">{% trans "Under Construction" %}</h3>
+                <p class="text-[#e0e1dd] text-sm">{% trans "Currently active infrastructure development projects" %}</p>
+            </div>
+            
+            <!-- Years of Activity -->
+            <div class="text-center stats-card" data-aos="zoom-in" data-aos-delay="800" data-aos-duration="800">
+                <div class="flex justify-center mb-4">
+                    <div class="w-40 h-40 rounded-full bg-gradient-to-br from-[#1b263b] to-[#415a77] flex items-center justify-center shadow-2xl transform hover:scale-110 transition-all duration-500 hover:rotate-6">
+                        <div class="text-center">
+                            <i class="fas fa-calendar-alt text-4xl text-white mb-3"></i>
+                            <div class="counter text-3xl font-bold text-white" data-target="25">0</div>
+                            <div class="text-xs text-white/80 uppercase tracking-wider">{% trans "Years" %}</div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">{% trans "History of Activity" %}</h3>
+                <p class="text-[#e0e1dd] text-sm">{% trans "Years of dedicated service and construction excellence" %}</p>
+            </div>
         </div>
     </div>
 </section>
-{% endif %}
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white">
+<section class="py-20 bg-gradient-to-br from-[#415a77] to-[#1b263b] text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">{% trans "Ready to Start Your Project?" %}</h2>
-        <p class="text-xl mb-8 text-gray-100 max-w-3xl mx-auto">
+        <p class="text-xl mb-8 text-[#e0e1dd] max-w-3xl mx-auto">
             {% trans "Let's discuss your construction needs and create something amazing together. Contact us today for a free consultation." %}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{% url 'construction:contact' %}" class="bg-[#95a236] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#7a8a2b] transition duration-300">
+            <a href="{% url 'construction:contact' %}" class="bg-[#415a77] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1b263b] transition duration-300">
                 {% trans "Get Free Quote" %}
             </a>
-            <a href="tel:+982112345678" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#feb906] transition duration-300">
+            <a href="tel:+982112345678" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#0d1b2a] transition duration-300">
                 <i class="fas fa-phone mr-2"></i>{% trans "Call Now" %}
             </a>
         </div>
     </div>
 </section>
 
-<!-- Theme Toggle JavaScript -->
+<!-- Gallery Carousel JavaScript -->
 <script>
-    // Dark mode toggle functionality for home page
-    function toggleDarkMode() {
-        const html = document.documentElement;
-        const isDark = html.classList.contains('dark');
-        
-        if (isDark) {
-            html.classList.remove('dark');
-            localStorage.setItem('darkMode', 'false');
-            // Reset text colors to original
-            document.body.classList.remove('dark-mode-active');
-        } else {
-            html.classList.add('dark');
-            localStorage.setItem('darkMode', 'true');
-            // Add custom dark mode class
-            document.body.classList.add('dark-mode-active');
-        }
-    }
-
-    // Initialize dark mode from localStorage
-    function initializeDarkMode() {
-        const savedMode = localStorage.getItem('darkMode');
-        const html = document.documentElement;
-        
-        if (savedMode === 'true' || (!savedMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-            document.body.classList.add('dark-mode-active');
-        } else {
-            html.classList.remove('dark');
-            document.body.classList.remove('dark-mode-active');
-        }
-    }
-
-    // Add event listeners for dark mode toggles
+    // Gallery Carousel Functionality
     document.addEventListener('DOMContentLoaded', function() {
-        initializeDarkMode();
+                 const carousel = document.getElementById('gallery-carousel');
+         const images = carousel.querySelectorAll('img');
+         const dots = carousel.querySelectorAll('[data-index]');
+         const prevBtn = document.getElementById('prev-btn');
+         const nextBtn = document.getElementById('next-btn');
         
-        // Home page toggle
-        const homeDarkModeToggle = document.getElementById('home-dark-mode-toggle');
-        if (homeDarkModeToggle) {
-            homeDarkModeToggle.addEventListener('click', toggleDarkMode);
+        console.log('DOM elements found:', {
+            carousel: carousel,
+            images: images.length,
+            dots: dots.length,
+            prevBtn: prevBtn,
+            nextBtn: nextBtn
+        });
+        
+
+        
+        let currentIndex = 0;
+        let imageTimer = null;
+        
+        // Initialize first image
+        console.log('Initializing first image');
+        showImage(0);
+        
+        // Navigation dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showImage(index);
+            });
+        });
+        
+        // Navigation arrows
+        prevBtn.addEventListener('click', () => {
+            const newIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+            showImage(newIndex);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            const newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+            showImage(newIndex);
+        });
+        
+                 // Show image function
+        function showImage(index) {
+             console.log('showImage called with index:', index);
+             
+             // Clear any existing timers first
+             if (imageTimer) {
+                 clearTimeout(imageTimer);
+             }
+             
+            // Hide all images
+            images.forEach(img => {
+                img.style.opacity = '0';
+            });
+            
+             // Show selected image
+            images[index].style.opacity = '1';
+            
+             // Update current index
+             currentIndex = index;
+             
+             // Update active dot
+             dots.forEach((dot, i) => {
+                 if (i === index) {
+                     dot.classList.add('active-dot');
+                     dot.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                 } else {
+                     dot.classList.remove('active-dot');
+                     dot.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                 }
+             });
+             
+             // Start timer for next image (5 seconds)
+             imageTimer = setTimeout(() => {
+            const nextIndex = (currentIndex + 1) % images.length;
+            showImage(nextIndex);
+             }, 5000);
         }
+        
+
+        
+        // Auto-play functionality
+        function startAutoPlay() {
+            console.log('startAutoPlay called');
+            // Auto-play is now managed by showImage function
+        }
+        
+        function stopAutoPlay() {
+            if (imageTimer) {
+                clearTimeout(imageTimer);
+            }
+        }
+        
+        // Pause on hover
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', () => {
+            // Restart the timer for current image
+            imageTimer = setTimeout(() => {
+                const nextIndex = (currentIndex + 1) % images.length;
+                showImage(nextIndex);
+            }, 5000);
+        });
+        
+        // Start auto-play
+        console.log('Starting auto-play');
+                startAutoPlay();
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                const newIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+                showImage(newIndex);
+            } else if (e.key === 'ArrowRight') {
+                const newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+                showImage(newIndex);
+            }
+        });
     });
+</script>
+
+<!-- AOS Animation Library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initialize AOS and Custom Animations -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+        // Animate project details on scroll with pulse effect (only detail items)
+        const animateProjectDetails = () => {
+            const projectRows = document.querySelectorAll('.project-row');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Only animate detail items with pulse effect
+                        const detailItems = entry.target.querySelectorAll('.project-detail-item');
+                        detailItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.classList.add('animate');
+                            }, index * 100);
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+            
+            projectRows.forEach(row => {
+                observer.observe(row);
+            });
+        };
+        
+        // Initialize project details animation
+        animateProjectDetails();
+        
+        // Add stagger animation to project details
+        const addStaggerAnimation = () => {
+            const projectSummaries = document.querySelectorAll('.project-summary');
+            
+            projectSummaries.forEach(summary => {
+                summary.addEventListener('mouseenter', () => {
+                    const details = summary.querySelectorAll('.project-detail-item');
+                    details.forEach((detail, index) => {
+                        detail.style.transform = 'translateX(5px)';
+                        detail.style.transition = `transform 0.3s ease ${index * 0.05}s`;
+                    });
+                });
+                
+                summary.addEventListener('mouseleave', () => {
+                    const details = summary.querySelectorAll('.project-detail-item');
+                    details.forEach(detail => {
+                        detail.style.transform = 'translateX(0)';
+                    });
+                });
+            });
+        };
+        
+        // Initialize stagger animation
+        addStaggerAnimation();
+        
+        // Parallax effect disabled - images remain static during scroll
+        
+        // Add smooth counter animation for numbers
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.project-detail-item p');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const text = element.textContent;
+                        
+                        // Check if text contains numbers
+                        if (/\d/.test(text)) {
+                            element.style.animation = 'pulse 0.6s ease-out';
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+            
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        };
+        
+        // Initialize counter animation
+        animateCounters();
+        
+        // Animated Counter for Statistics
+        const animateStatCounters = () => {
+            const counters = document.querySelectorAll('.counter');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 2000; // 2 seconds
+                        const step = target / (duration / 16); // 60fps
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            if (current < target) {
+                                current += step;
+                                counter.textContent = Math.floor(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        // Add counting animation with delay
+                        setTimeout(() => {
+                            updateCounter();
+                        }, 500);
+                        
+                        // Remove observer after animation
+                        observer.unobserve(counter);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+            
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        };
+        
+        // Initialize stat counters
+        animateStatCounters();
+    });
+    
+    // Add CSS keyframes for pulse animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .project-image {
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            transition: transform 0.3s ease;
+        }
+        
+        /* Hover effect only - no scroll movement */
+        .project-image:hover img {
+            transform: scale(1.1) !important;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .project-detail-item,
+            .project-badge,
+            .project-title,
+            .project-description {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    `;
+    document.head.appendChild(style);
 </script>
 
 {% endblock %} 

@@ -59,7 +59,7 @@ msgstr "خانه"
 #: .\templates\base.html:47 .\templates\base.html:154
 #: .\test_language_switching.py:70 .\test_language_switching.py:76
 msgid "About"
-msgstr "درباره"
+msgstr " درباره ما"
 
 #: .\templates\base.html:51 .\templates\base.html:157 .\templates\base.html:248
 msgid "Projects"
@@ -71,7 +71,7 @@ msgstr "گالری"
 
 #: .\templates\base.html:59 .\templates\base.html:163 .\templates\base.html:249
 msgid "Team"
-msgstr "تیم"
+msgstr "همکاری با ما"
 
 #: .\templates\base.html:63 .\templates\base.html:166 .\templates\base.html:250
 msgid "Blog"
@@ -80,7 +80,7 @@ msgstr "وبلاگ"
 #: .\templates\base.html:69 .\templates\base.html:169
 #: .\test_language_switching.py:71 .\test_language_switching.py:77
 msgid "Contact"
-msgstr "تماس"
+msgstr "ارتباط با ما"
 
 #: .\templates\base.html:97
 #, fuzzy

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Employment Opportunities" %} - {% trans "Dorsamehr Kish" %}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-[#415a77] to-[#1b263b] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">{% trans "Employment Opportunities" %}</h1>
+        <p class="text-xl text-[#e0e1dd] max-w-3xl mx-auto">{% trans "Join our dynamic team and be part of building excellence in construction" %}</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Left Column -->
+            <div>
+                <h2 class="text-3xl font-bold text-[#0d1b2a] mb-6">{% trans "Why Work With Us?" %}</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#feb906] rounded-lg flex items-center justify-center">
+                            <i class="fas fa-star text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[#0d1b2a] mb-2">{% trans "Professional Growth" %}</h3>
+                            <p class="text-[#415a77]">{% trans "Continuous learning opportunities and career advancement paths" %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#feb906] rounded-lg flex items-center justify-center">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[#0d1b2a] mb-2">{% trans "Team Environment" %}</h3>
+                            <p class="text-[#415a77]">{% trans "Collaborative work culture with experienced professionals" %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#feb906] rounded-lg flex items-center justify-center">
+                            <i class="fas fa-award text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[#0d1b2a] mb-2">{% trans "Competitive Benefits" %}</h3>
+                            <p class="text-[#415a77]">{% trans "Attractive salary packages and comprehensive benefits" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="bg-[#e0e1dd] rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-[#0d1b2a] mb-6">{% trans "Current Openings" %}</h3>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-[#0d1b2a] mb-2">{% trans "Senior Project Manager" %}</h4>
+                        <p class="text-[#415a77] text-sm mb-3">{% trans "Full-time • Tehran" %}</p>
+                        <p class="text-[#415a77] mb-4">{% trans "Lead complex construction projects with a team of professionals" %}</p>
+                        <button class="bg-[#415a77] text-white px-6 py-2 rounded-lg hover:bg-[#1b263b] transition duration-300">
+                            {% trans "Apply Now" %}
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-[#0d1b2a] mb-2">{% trans "Civil Engineer" %}</h4>
+                        <p class="text-[#415a77] text-sm mb-3">{% trans "Full-time • Kish Island" %}</p>
+                        <p class="text-[#415a77] mb-4">{% trans "Design and oversee construction projects from concept to completion" %}</p>
+                        <button class="bg-[#415a77] text-white px-6 py-2 rounded-lg hover:bg-[#1b263b] transition duration-300">
+                            {% trans "Apply Now" %}
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-[#0d1b2a] mb-2">{% trans "Site Supervisor" %}</h4>
+                        <p class="text-[#415a77] text-sm mb-3">{% trans "Full-time • Multiple Locations" %}</p>
+                        <p class="text-[#415a77] mb-4">{% trans "Ensure quality and safety standards on construction sites" %}</p>
+                        <button class="bg-[#415a77] text-white px-6 py-2 rounded-lg hover:bg-[#1b263b] transition duration-300">
+                            {% trans "Apply Now" %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-16 bg-[#e0e1dd]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-[#0d1b2a] mb-6">{% trans "Interested in Joining Our Team?" %}</h2>
+        <p class="text-xl text-[#415a77] mb-8">{% trans "Send us your resume and cover letter. We're always looking for talented individuals!" %}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'construction:contact' %}" class="bg-[#415a77] text-white px-8 py-3 rounded-lg hover:bg-[#1b263b] transition duration-300 font-semibold">
+                {% trans "Contact HR" %}
+            </a>
+            <a href="#" class="border-2 border-[#415a77] text-[#415a77] px-8 py-3 rounded-lg hover:bg-[#415a77] hover:text-white transition duration-300 font-semibold">
+                {% trans "Send Resume" %}
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

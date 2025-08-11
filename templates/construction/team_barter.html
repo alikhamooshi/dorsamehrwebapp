@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Barter & Exchange Opportunities" %} - {% trans "Dorsamehr Kish" %}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-[#415a77] to-[#1b263b] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">{% trans "Barter & Exchange Opportunities" %}</h1>
+        <p class="text-xl text-[#e0e1dd] max-w-3xl mx-auto">{% trans "Exchange services, materials, and expertise for mutual benefit in construction projects" %}</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Left Column -->
+            <div>
+                <h2 class="text-3xl font-bold text-[#0d1b2a] mb-6">{% trans "How Barter Works" %}</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#feb906] rounded-lg flex items-center justify-center">
+                            <i class="fas fa-exchange-alt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[#0d1b2a] mb-2">{% trans "Service Exchange" %}</h3>
+                            <p class="text-[#415a77]">{% trans "Trade construction services for other valuable services you need" %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#feb906] rounded-lg flex items-center justify-center">
+                            <i class="fas fa-boxes text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[#0d1b2a] mb-2">{% trans "Material Trading" %}</h3>
+                            <p class="text-[#415a77]">{% trans "Exchange construction materials for other resources or services" %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#feb906] rounded-lg flex items-center justify-center">
+                            <i class="fas fa-handshake text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[#0d1b2a] mb-2">{% trans "Mutual Benefit" %}</h3>
+                            <p class="text-[#415a77]">{% trans "Both parties gain value without traditional monetary exchange" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="bg-[#e0e1dd] rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-[#0d1b2a] mb-6">{% trans "Available for Exchange" %}</h3>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-[#0d1b2a] mb-2">{% trans "Construction Services" %}</h4>
+                        <p class="text-[#415a77] text-sm mb-3">{% trans "Project management, supervision, consulting" %}</p>
+                        <p class="text-[#415a77] mb-4">{% trans "Trade our expertise for your specialized services" %}</p>
+                        <button class="bg-[#415a77] text-white px-6 py-2 rounded-lg hover:bg-[#1b263b] transition duration-300">
+                            {% trans "Offer Exchange" %}
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-[#0d1b2a] mb-2">{% trans "Equipment & Machinery" %}</h4>
+                        <p class="text-[#415a77] text-sm mb-3">{% trans "Heavy equipment, tools, vehicles" %}</p>
+                        <p class="text-[#415a77] mb-4">{% trans "Exchange for materials, services, or other equipment" %}</p>
+                        <button class="bg-[#415a77] text-white px-6 py-2 rounded-lg hover:bg-[#1b263b] transition duration-300">
+                            {% trans "Offer Exchange" %}
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-[#0d1b2a] mb-2">{% trans "Materials & Supplies" %}</h4>
+                        <p class="text-[#415a77] text-sm mb-3">{% trans "Construction materials, supplies, inventory" %}</p>
+                        <p class="text-[#415a77] mb-4">{% trans "Trade excess materials for other valuable resources" %}</p>
+                        <button class="bg-[#415a77] text-white px-6 py-2 rounded-lg hover:bg-[#1b263b] transition duration-300">
+                            {% trans "Offer Exchange" %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Exchange Process Section -->
+<section class="py-16 bg-[#e0e1dd]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-[#0d1b2a] text-center mb-12">{% trans "Exchange Process" %}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-16 h-16 bg-[#feb906] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white text-2xl font-bold">1</span>
+                </div>
+                <h3 class="text-lg font-semibold text-[#0d1b2a] mb-3">{% trans "Submit Offer" %}</h3>
+                <p class="text-[#415a77] text-sm">{% trans "Describe what you have and what you need" %}</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-16 h-16 bg-[#feb906] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white text-2xl font-bold">2</span>
+                </div>
+                <h3 class="text-lg font-semibold text-[#0d1b2a] mb-3">{% trans "Review & Match" %}</h3>
+                <p class="text-[#415a77] text-sm">{% trans "We review and find matching opportunities" %}</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-16 h-16 bg-[#feb906] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white text-2xl font-bold">3</span>
+                </div>
+                <h3 class="text-lg font-semibold text-[#0d1b2a] mb-3">{% trans "Negotiate Terms" %}</h3>
+                <p class="text-[#415a77] text-sm">{% trans "Agree on exchange terms and conditions" %}</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-16 h-16 bg-[#feb906] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white text-2xl font-bold">4</span>
+                </div>
+                <h3 class="text-lg font-semibold text-[#0d1b2a] mb-3">{% trans "Execute Exchange" %}</h3>
+                <p class="text-[#415a77] text-sm">{% trans "Complete the exchange and benefit both parties" %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Stories Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-[#0d1b2a] text-center mb-12">{% trans "Successful Exchanges" %}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-[#e0e1dd] rounded-xl p-8">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-[#feb906] rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-building text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-[#0d1b2a]">{% trans "Office Space Exchange" %}</h4>
+                        <p class="text-[#415a77] text-sm">{% trans "Tehran, 2023" %}</p>
+                    </div>
+                </div>
+                <p class="text-[#415a77]">{% trans "Exchanged office renovation services for 6 months of office space rental, saving both parties significant costs." %}</p>
+            </div>
+            
+            <div class="bg-[#e0e1dd] rounded-xl p-8">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-[#feb906] rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-truck text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-[#0d1b2a]">{% trans "Equipment Trade" %}</h4>
+                        <p class="text-[#415a77] text-sm">{% trans "Kish Island, 2023" %}</p>
+                    </div>
+                </div>
+                <p class="text-[#415a77]">{% trans "Traded excess construction materials for heavy equipment rental, completing projects on time and budget." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-16 bg-[#e0e1dd]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-[#0d1b2a] mb-6">{% trans "Ready to Exchange?" %}</h2>
+        <p class="text-xl text-[#415a77] mb-8">{% trans "Submit your exchange offer and let's create value together through barter and exchange!" %}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'construction:contact' %}" class="bg-[#415a77] text-white px-8 py-3 rounded-lg hover:bg-[#1b263b] transition duration-300 font-semibold">
+                {% trans "Contact Exchange Team" %}
+            </a>
+            <a href="#" class="border-2 border-[#415a77] text-[#415a77] px-8 py-3 rounded-lg hover:bg-[#415a77] hover:text-white transition duration-300 font-semibold">
+                {% trans "Submit Exchange Offer" %}
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

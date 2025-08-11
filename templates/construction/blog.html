@@ -1,69 +1,66 @@
 {% extends 'base.html' %}
 
-{% block title %}Blog - Dorsamehr Construction{% endblock %}
+{% block title %}Blog - Dorsamehr Kish{% endblock %}
 
 {% block content %}
-<!-- Theme Toggle -->
-
-
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white py-20">
+<section class="bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] text-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-4xl md:text-6xl font-bold mb-6">Our Blog</h1>
-        <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+        <p class="text-xl text-[#e0e1dd] max-w-3xl mx-auto">
             Stay updated with the latest trends, tips, and insights from the construction industry.
         </p>
     </div>
 </section>
 
 <!-- Search Section -->
-<section class="py-12 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+<section class="py-12 bg-white border-b border-[#778da9]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl mx-auto">
             <form method="get" class="relative">
                 <input type="text" name="search" value="{{ search_query|default:'' }}" 
                        placeholder="Search blog posts..." 
-                       class="w-full pl-12 pr-4 py-4 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#95a236] dark:focus:ring-[#feb906] focus:border-transparent text-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
-                <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 text-xl"></i>
+                       class="w-full pl-12 pr-4 py-4 border border-[#778da9] rounded-lg focus:ring-2 focus:ring-[#415a77] focus:border-transparent text-lg bg-white text-[#0d1b2a]">
+                <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-[#778da9] text-xl"></i>
             </form>
         </div>
     </div>
 </section>
 
 <!-- Blog Posts Section -->
-<section class="py-20 bg-gray-50 dark:bg-gray-800">
+<section class="py-20 bg-[#e0e1dd]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {% if page_obj %}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {% for blog in page_obj %}
-            <article class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700">
+            <article class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-[#778da9]">
                 {% if blog.image %}
                 <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="w-full h-48 object-cover">
                 {% else %}
-                <div class="w-full h-48 bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
-                    <i class="fas fa-newspaper text-4xl text-gray-500 dark:text-gray-400"></i>
+                <div class="w-full h-48 bg-[#778da9] flex items-center justify-center">
+                    <i class="fas fa-newspaper text-4xl text-[#e0e1dd]"></i>
                 </div>
                 {% endif %}
                 <div class="p-6">
-                    <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                    <div class="flex items-center text-sm text-[#778da9] mb-3">
                         <span><i class="fas fa-user mr-1"></i>{{ blog.author }}</span>
                         <span class="mx-2">•</span>
                         <span><i class="fas fa-calendar mr-1"></i>{{ blog.published_date|date:"M d, Y" }}</span>
                     </div>
-                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">{{ blog.title }}</h2>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">{{ blog.excerpt|default:blog.content|truncatewords:20 }}</p>
+                    <h2 class="text-xl font-semibold text-[#0d1b2a] mb-3">{{ blog.title }}</h2>
+                    <p class="text-[#415a77] mb-4">{{ blog.excerpt|default:blog.content|truncatewords:20 }}</p>
                     
                     {% if blog.tags %}
                     <div class="mb-4">
                         <div class="flex flex-wrap gap-2">
                             {% for tag in blog.tags.split|slice:":3" %}
-                            <span class="bg-[#feb906]/10 dark:bg-[#95a236]/10 text-[#feb906] dark:text-[#95a236] text-xs px-2 py-1 rounded">{{ tag }}</span>
+                            <span class="bg-[#415a77]/10 text-[#415a77] text-xs px-2 py-1 rounded">{{ tag }}</span>
                             {% endfor %}
                         </div>
                     </div>
                     {% endif %}
                     
-                    <a href="{% url 'construction:blog_detail' blog.slug %}" class="text-[#feb906] dark:text-[#95a236] font-semibold hover:text-[#e6a800] dark:hover:text-[#7a8a2b] transition">
+                    <a href="{% url 'construction:blog_detail' blog.slug %}" class="text-[#415a77] font-semibold hover:text-[#1b263b] transition">
                         Read More <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
@@ -77,17 +74,17 @@
             <nav class="flex items-center space-x-2">
                 {% if page_obj.has_previous %}
                 <a href="?page={{ page_obj.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" 
-                   class="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                   class="px-3 py-2 border border-[#778da9] rounded-lg text-[#415a77] hover:bg-[#e0e1dd]">
                     <i class="fas fa-chevron-left"></i>
                 </a>
                 {% endif %}
                 
                 {% for num in page_obj.paginator.page_range %}
                     {% if page_obj.number == num %}
-                    <span class="px-3 py-2 bg-[#feb906] dark:bg-[#95a236] text-white dark:text-gray-900 rounded-lg">{{ num }}</span>
+                    <span class="px-3 py-2 bg-[#415a77] text-white rounded-lg">{{ num }}</span>
                     {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
                     <a href="?page={{ num }}{% if search_query %}&search={{ search_query }}{% endif %}" 
-                       class="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                       class="px-3 py-2 border border-[#778da9] rounded-lg text-[#415a77] hover:bg-[#e0e1dd]">
                         {{ num }}
                     </a>
                     {% endif %}
@@ -95,7 +92,7 @@
                 
                 {% if page_obj.has_next %}
                 <a href="?page={{ page_obj.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" 
-                   class="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                   class="px-3 py-2 border border-[#778da9] rounded-lg text-[#415a77] hover:bg-[#e0e1dd]">
                     <i class="fas fa-chevron-right"></i>
                 </a>
                 {% endif %}
@@ -106,16 +103,16 @@
         {% else %}
         <!-- No Posts Found -->
         <div class="text-center py-12">
-            <i class="fas fa-search text-6xl text-gray-300 dark:text-gray-600 mb-4"></i>
-            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2">No Blog Posts Found</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-6">
+            <i class="fas fa-search text-6xl text-[#778da9] mb-4"></i>
+            <h3 class="text-2xl font-semibold text-[#0d1b2a] mb-2">No Blog Posts Found</h3>
+            <p class="text-[#415a77] mb-6">
                 {% if search_query %}
                     No posts match your search for "{{ search_query }}".
                 {% else %}
                     No blog posts are available at the moment.
                 {% endif %}
             </p>
-            <a href="{% url 'construction:blog' %}" class="bg-[#feb906] dark:bg-[#95a236] text-white dark:text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-[#e6a800] dark:hover:bg-[#7a8a2b] transition duration-300">
+            <a href="{% url 'construction:blog' %}" class="bg-[#415a77] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1b263b] transition duration-300">
                 View All Posts
             </a>
         </div>
@@ -124,52 +121,52 @@
 </section>
 
 <!-- Blog Categories Section -->
-<section class="py-20 bg-white dark:bg-gray-900">
+<section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Blog Categories</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-4">Blog Categories</h2>
+            <p class="text-xl text-[#415a77] max-w-3xl mx-auto">
                 Explore our blog posts by category to find the information you need.
             </p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
-                <div class="w-20 h-20 bg-[#feb906] dark:bg-[#95a236] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-tools text-3xl text-white dark:text-gray-900"></i>
+                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-tools text-3xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Construction Tips</h3>
-                <p class="text-gray-600 dark:text-gray-300">
+                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">Construction Tips</h3>
+                <p class="text-[#415a77]">
                     Practical tips and advice for construction projects and best practices.
                 </p>
             </div>
             
             <div class="text-center">
-                <div class="w-20 h-20 bg-[#feb906] dark:bg-[#95a236] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-lightbulb text-3xl text-white dark:text-gray-900"></i>
+                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-lightbulb text-3xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Industry Insights</h3>
-                <p class="text-gray-600 dark:text-gray-300">
+                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">Industry Insights</h3>
+                <p class="text-[#415a77]">
                     Latest trends and insights from the construction industry.
                 </p>
             </div>
             
             <div class="text-center">
-                <div class="w-20 h-20 bg-[#feb906] dark:bg-[#95a236] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-leaf text-3xl text-white dark:text-gray-900"></i>
+                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-leaf text-3xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Sustainability</h3>
-                <p class="text-gray-600 dark:text-gray-300">
+                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">Sustainability</h3>
+                <p class="text-[#415a77]">
                     Green building practices and sustainable construction methods.
                 </p>
             </div>
             
             <div class="text-center">
-                <div class="w-20 h-20 bg-[#feb906] dark:bg-[#95a236] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-shield-alt text-3xl text-white dark:text-gray-900"></i>
+                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-shield-alt text-3xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Safety & Compliance</h3>
-                <p class="text-gray-600 dark:text-gray-300">
+                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">Safety & Compliance</h3>
+                <p class="text-[#415a77]">
                     Safety guidelines and compliance requirements for construction projects.
                 </p>
             </div>
@@ -178,17 +175,17 @@
 </section>
 
 <!-- Newsletter Section -->
-<section class="py-20 bg-gray-50 dark:bg-gray-800">
+<section class="py-20 bg-[#e0e1dd]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Stay Updated</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-4">Stay Updated</h2>
+        <p class="text-xl text-[#415a77] mb-8">
             Subscribe to our newsletter to receive the latest construction insights and tips directly in your inbox.
         </p>
         
         <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input type="email" placeholder="Enter your email" 
-                   class="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#95a236] dark:focus:ring-[#feb906] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
-            <button type="submit" class="bg-[#feb906] dark:bg-[#95a236] text-white dark:text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-[#e6a800] dark:hover:bg-[#7a8a2b] transition duration-300">
+                   class="flex-1 px-4 py-3 border border-[#778da9] rounded-lg focus:ring-2 focus:ring-[#415a77] focus:border-transparent bg-white text-[#0d1b2a]">
+            <button type="submit" class="bg-[#415a77] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1b263b] transition duration-300">
                 Subscribe
             </button>
         </form>
@@ -196,23 +193,21 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white">
+<section class="py-20 bg-gradient-to-br from-[#415a77] to-[#1b263b] text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
-        <p class="text-xl mb-8 text-gray-100 max-w-3xl mx-auto">
+        <p class="text-xl mb-8 text-[#e0e1dd] max-w-3xl mx-auto">
             Get inspired by our blog and ready to build something amazing? Contact us today.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{% url 'construction:contact' %}" class="bg-[#95a236] text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#7a8a2b] transition duration-300">
+            <a href="{% url 'construction:contact' %}" class="bg-[#415a77] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1b263b] transition duration-300">
                 Get Free Quote
             </a>
-            <a href="{% url 'construction:projects' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#feb906] transition duration-300">
+            <a href="{% url 'construction:projects' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#0d1b2a] transition duration-300">
                 View Our Work
             </a>
         </div>
     </div>
 </section>
-
-<!-- Theme Toggle JavaScript -->
 
 {% endblock %} 

@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Partnership Opportunities" %} - {% trans "Dorsamehr Kish" %}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-[#415a77] to-[#1b263b] text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">{% trans "Partnership Opportunities" %}</h1>
+        <p class="text-xl text-[#e0e1dd] max-w-3xl mx-auto">{% trans "Collaborate with us to create innovative construction solutions and expand your business" %}</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Left Column -->
+            <div>
+                <h2 class="text-3xl font-bold text-[#0d1b2a] mb-6">{% trans "Why Partner With Us?" %}</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#feb906] rounded-lg flex items-center justify-center">
+                            <i class="fas fa-handshake text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[#0d1b2a] mb-2">{% trans "Proven Track Record" %}</h3>
+                            <p class="text-[#415a77]">{% trans "15+ years of successful project delivery and client satisfaction" %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#feb906] rounded-lg flex items-center justify-center">
+                            <i class="fas fa-globe text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[#0d1b2a] mb-2">{% trans "Market Access" %}</h3>
+                            <p class="text-[#415a77]">{% trans "Access to diverse markets and high-profile projects across Iran" %}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#feb906] rounded-lg flex items-center justify-center">
+                            <i class="fas fa-lightbulb text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-[#0d1b2a] mb-2">{% trans "Innovation Focus" %}</h3>
+                            <p class="text-[#415a77]">{% trans "Cutting-edge technology and sustainable construction practices" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="bg-[#e0e1dd] rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-[#0d1b2a] mb-6">{% trans "Partnership Types" %}</h3>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-[#0d1b2a] mb-2">{% trans "Joint Ventures" %}</h4>
+                        <p class="text-[#415a77] text-sm mb-3">{% trans "Large-scale infrastructure projects" %}</p>
+                        <p class="text-[#415a77] mb-4">{% trans "Combine resources and expertise for major developments" %}</p>
+                        <button class="bg-[#415a77] text-white px-6 py-2 rounded-lg hover:bg-[#1b263b] transition duration-300">
+                            {% trans "Learn More" %}
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-[#0d1b2a] mb-2">{% trans "Supplier Partnerships" %}</h4>
+                        <p class="text-[#415a77] text-sm mb-3">{% trans "Materials and equipment supply" %}</p>
+                        <p class="text-[#415a77] mb-4">{% trans "Long-term supply agreements with quality guarantees" %}</p>
+                        <button class="bg-[#415a77] text-white px-6 py-2 rounded-lg hover:bg-[#1b263b] transition duration-300">
+                            {% trans "Learn More" %}
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h4 class="text-lg font-semibold text-[#0d1b2a] mb-2">{% trans "Technology Partnerships" %}</h4>
+                        <p class="text-[#415a77] text-sm mb-3">{% trans "Innovation and R&D collaboration" %}</p>
+                        <p class="text-[#415a77] mb-4">{% trans "Develop next-generation construction solutions together" %}</p>
+                        <button class="bg-[#415a77] text-white px-6 py-2 rounded-lg hover:bg-[#1b263b] transition duration-300">
+                            {% trans "Learn More" %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="py-16 bg-[#e0e1dd]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-[#0d1b2a] text-center mb-12">{% trans "Partnership Benefits" %}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl p-8 text-center shadow-sm">
+                <div class="w-16 h-16 bg-[#feb906] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-chart-line text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">{% trans "Revenue Growth" %}</h3>
+                <p class="text-[#415a77]">{% trans "Expand your business reach and increase project opportunities" %}</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-8 text-center shadow-sm">
+                <div class="w-16 h-16 bg-[#feb906] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-network-wired text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">{% trans "Network Expansion" %}</h3>
+                <p class="text-[#415a77]">{% trans "Connect with industry leaders and potential clients" %}</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-8 text-center shadow-sm">
+                <div class="w-16 h-16 bg-[#feb906] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-rocket text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">{% trans "Innovation Access" %}</h3>
+                <p class="text-[#415a77]">{% trans "Access to cutting-edge technologies and methodologies" %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-[#0d1b2a] mb-6">{% trans "Ready to Partner With Us?" %}</h2>
+        <p class="text-xl text-[#415a77] mb-8">{% trans "Let's discuss how we can create value together. Contact our partnership team today!" %}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'construction:contact' %}" class="bg-[#415a77] text-white px-8 py-3 rounded-lg hover:bg-[#1b263b] transition duration-300 font-semibold">
+                {% trans "Contact Partnership Team" %}
+            </a>
+            <a href="#" class="border-2 border-[#415a77] text-[#415a77] px-8 py-3 rounded-lg hover:bg-[#415a77] hover:text-white transition duration-300 font-semibold">
+                {% trans "Partnership Proposal" %}
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Our Team - Dorsamehr Construction{% endblock %}
+{% block title %}{% trans "Our Team" %} - Dorsamehr Kish{% endblock %}
 
 {% block content %}
-<!-- Theme Toggle -->
-
-
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white py-20">
+<section class="bg-gradient-to-br from-deep-sea-600 to-deep-sea-800 text-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">Meet Our Team</h1>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">{% trans "Meet Our Team" %}</h1>
         <p class="text-xl text-gray-100 max-w-3xl mx-auto">
-            Experienced professionals dedicated to delivering exceptional construction projects with quality and precision.
+            {% trans "Experienced professionals dedicated to delivering exceptional construction projects with quality and precision." %}
         </p>
     </div>
 </section>
@@ -20,72 +18,227 @@
 <section class="py-20 bg-white dark:bg-gray-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Expert Team</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{% trans "Our Expert Team" %}</h2>
             <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Our diverse team of professionals brings together decades of experience in construction, engineering, and project management.
+                {% trans "Our diverse team of professionals brings together decades of experience in construction, engineering, and project management." %}
             </p>
         </div>
         
-        <!-- Team by Position -->
-        {% for position, members in positions.items %}
-        <div class="mb-16">
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">{{ position }}s</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Team Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button class="team-filter-btn active bg-deep-sea-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-deep-sea-700 transition duration-300 shadow-lg hover:shadow-xl" data-category="all">
+                <i class="fas fa-users mr-2"></i>{% trans "All Team" %}
+            </button>
+            <button class="team-filter-btn bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-deep-sea-600 hover:text-white dark:hover:bg-deep-sea-600 dark:hover:text-white transition duration-300 shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700" data-category="designer">
+                <i class="fas fa-palette mr-2"></i>{% trans "Designers" %}
+            </button>
+            <button class="team-filter-btn bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-deep-sea-600 hover:text-white dark:hover:bg-deep-sea-600 dark:hover:text-white transition duration-300 shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700" data-category="project_manager">
+                <i class="fas fa-tasks mr-2"></i>{% trans "Project Managers" %}
+            </button>
+            <button class="team-filter-btn bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-deep-sea-600 hover:text-white dark:hover:bg-deep-sea-600 dark:hover:text-white transition duration-300 shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700" data-category="engineer">
+                <i class="fas fa-cogs mr-2"></i>{% trans "Engineers" %}
+            </button>
+            <button class="team-filter-btn bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-deep-sea-600 hover:text-white dark:hover:bg-deep-sea-600 dark:hover:text-white transition duration-300 shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700" data-category="architect">
+                <i class="fas fa-drafting-compass mr-2"></i>{% trans "Architects" %}
+            </button>
+        </div>
+        
+        <!-- Team Members Grid -->
+        <div id="team-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {% for position, members in positions.items %}
                 {% for member in members %}
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700">
-                    {% if member.image %}
-                    <img src="{{ member.image.url }}" alt="{{ member.name }}" class="w-full h-64 object-cover">
-                    {% else %}
-                    <div class="w-full h-64 bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
-                        <i class="fas fa-user text-6xl text-gray-500 dark:text-gray-400"></i>
+                <div class="team-member bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2" data-category="{{ member.position|lower|slugify }}">
+                    <div class="relative">
+                        {% if member.image %}
+                        <img src="{{ member.image.url }}" alt="{{ member.name }}" class="w-full h-64 object-cover">
+                        {% else %}
+                        <div class="w-full h-64 bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center">
+                            <i class="fas fa-user text-6xl text-white"></i>
+                        </div>
+                        {% endif %}
+                        <div class="absolute top-4 right-4 bg-deep-sea-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            {{ member.get_position_display }}
+                        </div>
                     </div>
-                    {% endif %}
                     <div class="p-6">
                         <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ member.name }}</h4>
-                        <p class="text-[#95a236] dark:text-[#feb906] font-medium mb-3">{{ member.get_position_display }}</p>
+                        <p class="text-deep-sea-600 dark:text-deep-sea-400 font-medium mb-3">{{ member.get_position_display }}</p>
                         <p class="text-gray-600 dark:text-gray-300 mb-4">{{ member.bio|truncatewords:25 }}</p>
                         
                         <div class="space-y-2 mb-4">
                             {% if member.experience_years %}
                             <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
                                 <i class="fas fa-briefcase mr-2"></i>
-                                <span>{{ member.experience_years }} years experience</span>
+                                <span>{{ member.experience_years }} {% trans "years experience" %}</span>
                             </div>
                             {% endif %}
                             
                             {% if member.email %}
                             <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
                                 <i class="fas fa-envelope mr-2"></i>
-                                <a href="mailto:{{ member.email }}" class="hover:text-[#95a236] dark:hover:text-[#feb906] transition">{{ member.email }}</a>
+                                <a href="mailto:{{ member.email }}" class="hover:text-deep-sea-600 dark:hover:text-deep-sea-400 transition">{{ member.email }}</a>
                             </div>
                             {% endif %}
                             
                             {% if member.phone %}
                             <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
                                 <i class="fas fa-phone mr-2"></i>
-                                <a href="tel:{{ member.phone }}" class="hover:text-[#95a236] dark:hover:text-[#feb906] transition">{{ member.phone }}</a>
+                                <a href="tel:{{ member.phone }}" class="hover:text-deep-sea-600 dark:hover:text-deep-sea-400 transition">{{ member.phone }}</a>
                             </div>
                             {% endif %}
                         </div>
                         
                         {% if member.linkedin %}
-                        <div class="flex justify-center">
-                            <a href="{{ member.linkedin }}" class="text-[#95a236] dark:text-[#feb906] hover:text-[#7a8a2b] dark:hover:text-[#e6a800] transition" target="_blank">
-                                <i class="fab fa-linkedin text-2xl"></i>
+                        <div class="flex justify-center space-x-3">
+                            <a href="{{ member.linkedin }}" class="text-deep-sea-600 dark:text-deep-sea-400 hover:text-deep-sea-700 dark:hover:text-deep-sea-300 transition" target="_blank">
+                                <i class="fab fa-linkedin text-xl"></i>
                             </a>
                         </div>
                         {% endif %}
                     </div>
                 </div>
                 {% endfor %}
+            {% empty %}
+            <!-- Fallback Team Members if no Django data -->
+            <div class="team-member bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2" data-category="designer">
+                <div class="relative">
+                    <div class="w-full h-64 bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
+                        <i class="fas fa-user text-6xl text-white"></i>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-deep-sea-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        {% trans "Designer" %}
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Sarah Johnson</h4>
+                    <p class="text-deep-sea-600 dark:text-deep-sea-400 font-medium mb-3">{% trans "Senior Interior Designer" %}</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">{% trans "Creative designer with 8+ years of experience in modern interior design and space planning." %}</p>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            <span>8 {% trans "years experience" %}</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:sarah@dorsamehr.com" class="hover:text-deep-sea-600 dark:hover:text-deep-sea-400 transition">sarah@dorsamehr.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-deep-sea-600 dark:text-deep-sea-400 hover:text-deep-sea-700 dark:hover:text-deep-sea-300 transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
+            
+            <div class="team-member bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2" data-category="project_manager">
+                <div class="relative">
+                    <div class="w-full h-64 bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center">
+                        <i class="fas fa-user text-6xl text-white"></i>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-deep-sea-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        {% trans "Project Manager" %}
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Michael Chen</h4>
+                    <p class="text-deep-sea-600 dark:text-deep-sea-400 font-medium mb-3">{% trans "Senior Project Manager" %}</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">{% trans "Experienced project manager with 12+ years leading complex construction projects." %}</p>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            <span>12 {% trans "years experience" %}</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:michael@dorsamehr.com" class="hover:text-deep-sea-600 dark:hover:text-deep-sea-400 transition">michael@dorsamehr.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-deep-sea-600 dark:text-deep-sea-400 hover:text-deep-sea-700 dark:hover:text-deep-sea-300 transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2" data-category="engineer">
+                <div class="relative">
+                    <div class="w-full h-64 bg-gradient-to-br from-green-400 to-emerald-400 flex items-center justify-center">
+                        <i class="fas fa-user text-6xl text-white"></i>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-deep-sea-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        {% trans "Engineer" %}
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">David Rodriguez</h4>
+                    <p class="text-deep-sea-600 dark:text-deep-sea-400 font-medium mb-3">{% trans "Structural Engineer" %}</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">{% trans "Licensed structural engineer with expertise in modern building design and safety." %}</p>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            <span>10 {% trans "years experience" %}</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:david@dorsamehr.com" class="hover:text-deep-sea-600 dark:hover:text-deep-sea-400 transition">david@dorsamehr.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-deep-sea-600 dark:text-deep-sea-400 hover:text-deep-sea-700 dark:hover:text-deep-sea-300 transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 dark:border-gray-700 transform hover:-translate-y-2" data-category="architect">
+                <div class="relative">
+                    <div class="w-full h-64 bg-gradient-to-br from-orange-400 to-red-400 flex items-center justify-center">
+                        <i class="fas fa-user text-6xl text-white"></i>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-deep-sea-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        {% trans "Architect" %}
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Emily Watson</h4>
+                    <p class="text-deep-sea-600 dark:text-deep-sea-400 font-medium mb-3">{% trans "Lead Architect" %}</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">{% trans "Award-winning architect with 15+ years creating innovative and sustainable designs." %}</p>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            <span>15 {% trans "years experience" %}</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:emily@dorsamehr.com" class="hover:text-deep-sea-600 dark:hover:text-deep-sea-400 transition">emily@dorsamehr.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-deep-sea-600 dark:text-deep-sea-400 hover:text-deep-sea-700 dark:hover:text-deep-sea-300 transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        {% empty %}
-        <div class="text-center py-12">
-            <i class="fas fa-users text-6xl text-gray-300 dark:text-gray-600 mb-4"></i>
-            <p class="text-gray-500 dark:text-gray-400 text-lg">Team information will be available soon.</p>
+        
+        <!-- No Results Message -->
+        <div id="no-results" class="hidden text-center py-12">
+            <i class="fas fa-search text-6xl text-gray-300 dark:text-gray-600 mb-4"></i>
+            <p class="text-gray-500 dark:text-gray-400 text-lg">{% trans "No team members found in this category." %}</p>
         </div>
-        {% endfor %}
     </div>
 </section>
 
@@ -101,11 +254,11 @@
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="text-center">
-                <div class="text-4xl md:text-5xl font-bold text-[#95a236] dark:text-[#feb906] mb-2">{{ team_members.count }}</div>
+                <div class="text-4xl md:text-5xl font-bold text-deep-sea-600 dark:text-deep-sea-400 mb-2">{{ team_members.count }}</div>
                 <div class="text-gray-600 dark:text-gray-300">Team Members</div>
             </div>
             <div class="text-center">
-                <div class="text-4xl md:text-5xl font-bold text-[#95a236] dark:text-[#feb906] mb-2">
+                <div class="text-4xl md:text-5xl font-bold text-deep-sea-600 dark:text-deep-sea-400 mb-2">
                     {% with total_exp=team_members|length %}
                         {% if total_exp > 0 %}
                             {{ total_exp|add:"10" }}
@@ -117,11 +270,11 @@
                 <div class="text-gray-600 dark:text-gray-300">Combined Years</div>
             </div>
             <div class="text-center">
-                <div class="text-4xl md:text-5xl font-bold text-[#95a236] dark:text-[#feb906] mb-2">6</div>
+                <div class="text-4xl md:text-5xl font-bold text-deep-sea-600 dark:text-deep-sea-400 mb-2">6</div>
                 <div class="text-gray-600 dark:text-gray-300">Specializations</div>
             </div>
             <div class="text-center">
-                <div class="text-4xl md:text-5xl font-bold text-[#95a236] dark:text-[#feb906] mb-2">100%</div>
+                <div class="text-4xl md:text-5xl font-bold text-deep-sea-600 dark:text-deep-sea-400 mb-2">100%</div>
                 <div class="text-gray-600 dark:text-gray-300">Certified</div>
             </div>
         </div>
@@ -140,7 +293,7 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="text-center">
-                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 bg-deep-sea-600 dark:bg-deep-sea-400 rounded-lg flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-graduation-cap text-2xl text-white dark:text-gray-900"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Expert Qualifications</h3>
@@ -150,7 +303,7 @@
             </div>
             
             <div class="text-center">
-                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 bg-deep-sea-600 dark:bg-deep-sea-400 rounded-lg flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-clock text-2xl text-white dark:text-gray-900"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Proven Experience</h3>
@@ -160,7 +313,7 @@
             </div>
             
             <div class="text-center">
-                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 bg-deep-sea-600 dark:bg-deep-sea-400 rounded-lg flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-users text-2xl text-white dark:text-gray-900"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Team Collaboration</h3>
@@ -170,7 +323,7 @@
             </div>
             
             <div class="text-center">
-                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 bg-deep-sea-600 dark:bg-deep-sea-400 rounded-lg flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-lightbulb text-2xl text-white dark:text-gray-900"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Innovation</h3>
@@ -180,7 +333,7 @@
             </div>
             
             <div class="text-center">
-                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 bg-deep-sea-600 dark:bg-deep-sea-400 rounded-lg flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-shield-alt text-2xl text-white dark:text-gray-900"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Safety Focus</h3>
@@ -190,7 +343,7 @@
             </div>
             
             <div class="text-center">
-                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 bg-deep-sea-600 dark:bg-deep-sea-400 rounded-lg flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-heart text-2xl text-white dark:text-gray-900"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Passion</h3>
@@ -212,27 +365,27 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 bg-deep-sea-600 dark:bg-deep-sea-400 rounded-lg flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-briefcase text-2xl text-white dark:text-gray-900"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Current Openings</h3>
                 <p class="text-gray-600 dark:text-gray-300 mb-6">
                     Check out our current job openings and see if there's a position that matches your skills and interests.
                 </p>
-                <a href="{% url 'construction:contact' %}" class="bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-[#7a8a2b] dark:hover:bg-[#e6a800] transition duration-300">
+                <a href="{% url 'construction:contact' %}" class="bg-deep-sea-600 dark:bg-deep-sea-400 text-white dark:text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-deep-sea-700 dark:hover:bg-deep-sea-300 transition duration-300">
                     View Openings
                 </a>
             </div>
             
             <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-                <div class="w-16 h-16 bg-[#95a236] dark:bg-[#feb906] rounded-lg flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 bg-deep-sea-600 dark:bg-deep-sea-400 rounded-lg flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-paper-plane text-2xl text-white dark:text-gray-900"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Send Resume</h3>
                 <p class="text-gray-600 dark:text-gray-300 mb-6">
                     Don't see a position that fits? Send us your resume and we'll keep it on file for future opportunities.
                 </p>
-                <a href="{% url 'construction:contact' %}" class="bg-[#95a236] dark:bg-[#feb906] text-white dark:text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-[#7a8a2b] dark:hover:bg-[#e6a800] transition duration-300">
+                <a href="{% url 'construction:contact' %}" class="bg-deep-sea-600 dark:bg-deep-sea-400 text-white dark:text-gray-900 px-6 py-2 rounded-lg font-semibold hover:bg-deep-sea-700 dark:hover:bg-deep-sea-300 transition duration-300">
                     Submit Resume
                 </a>
             </div>
@@ -241,17 +394,17 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-br from-[#95a236] to-[#7a8a2b] text-white">
+<section class="py-20 bg-gradient-to-br from-deep-sea-600 to-deep-sea-800 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Work With Our Team?</h2>
         <p class="text-xl mb-8 text-gray-100 max-w-3xl mx-auto">
             Let's discuss your project and see how our experienced team can help bring your vision to life.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{% url 'construction:contact' %}" class="bg-[#feb906] text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-[#e6a800] transition duration-300">
+            <a href="{% url 'construction:contact' %}" class="bg-deep-sea-400 text-white px-8 py-3 rounded-lg font-semibold hover:bg-deep-sea-500 transition duration-300">
                 Get Free Quote
             </a>
-            <a href="{% url 'construction:projects' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#95a236] transition duration-300">
+            <a href="{% url 'construction:projects' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-deep-sea-600 transition duration-300">
                 View Our Work
             </a>
         </div>
@@ -259,5 +412,72 @@
 </section>
 
 <!-- Theme Toggle JavaScript -->
+
+<!-- Team Filter JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.team-filter-btn');
+    const teamMembers = document.querySelectorAll('.team-member');
+    const noResults = document.getElementById('no-results');
+    const teamGrid = document.getElementById('team-grid');
+    
+    function filterTeam(category) {
+        let visibleCount = 0;
+        
+        teamMembers.forEach(member => {
+            const memberCategory = member.getAttribute('data-category');
+            
+            if (category === 'all' || memberCategory === category) {
+                member.style.display = 'block';
+                member.style.opacity = '0';
+                member.style.transform = 'translateY(20px)';
+                
+                // Animate in
+                setTimeout(() => {
+                    member.style.opacity = '1';
+                    member.style.transform = 'translateY(0)';
+                }, visibleCount * 100);
+                
+                visibleCount++;
+            } else {
+                member.style.display = 'none';
+            }
+        });
+        
+        // Show/hide no results message
+        if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+            teamGrid.classList.add('hidden');
+        } else {
+            noResults.classList.add('hidden');
+            teamGrid.classList.remove('hidden');
+        }
+    }
+    
+    function updateActiveButton(clickedButton) {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => {
+            btn.classList.remove('active', 'bg-deep-sea-600', 'text-white');
+            btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300', 'border', 'border-gray-200', 'dark:border-gray-700');
+        });
+        
+        // Add active class to clicked button
+        clickedButton.classList.add('active', 'bg-deep-sea-600', 'text-white');
+        clickedButton.classList.remove('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300', 'border', 'border-gray-200', 'dark:border-gray-700');
+    }
+    
+    // Add click event listeners to filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            updateActiveButton(this);
+            filterTeam(category);
+        });
+    });
+    
+    // Initialize with all team members visible
+    filterTeam('all');
+});
+</script>
 
 {% endblock %} 

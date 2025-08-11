@@ -9,17 +9,6 @@
   * the scope of this path.
   */
 @source "../../../**/*.{html,py,js}";
-@import "tailwindcss";
-@plugin "daisyui";
-
-/**
-  * A catch-all path to Django template files, JavaScript, and Python files
-  * that contain Tailwind CSS classes and will be scanned by Tailwind to generate the final CSS file.
-  *
-  * If your final CSS file is not being updated after code changes, you may want to broaden or narrow
-  * the scope of this path.
-  */
-@source "../../../**/*.{html,py,js}";
 
 /* RTL Support */
 .rtl {
@@ -71,179 +60,233 @@
 .rtl .right-4 { right: auto; left: 1rem; }
 .rtl .right-0 { right: auto; left: 0; }
 
-/* Custom Dark Mode Styles - Professional Color Scheme */
+/* Custom Deep Sea Color Palette Styles */
+.deep-sea-theme {
+    --color-primary: #415a77;
+    --color-secondary: #778da9;
+    --color-accent: #e0e1dd;
+    --color-neutral: #1b263b;
+    --color-base: #0d1b2a;
+}
+
+/* Deep Sea Color Utility Classes */
+.text-deep-sea-primary { color: #415a77; }
+.text-deep-sea-secondary { color: #778da9; }
+.text-deep-sea-accent { color: #e0e1dd; }
+.text-deep-sea-neutral { color: #1b263b; }
+.text-deep-sea-base { color: #0d1b2a; }
+
+.bg-deep-sea-primary { background-color: #415a77; }
+.bg-deep-sea-secondary { background-color: #778da9; }
+.bg-deep-sea-accent { background-color: #e0e1dd; }
+.bg-deep-sea-neutral { background-color: #1b263b; }
+.bg-deep-sea-base { background-color: #0d1b2a; }
+
+.border-deep-sea-primary { border-color: #415a77; }
+.border-deep-sea-secondary { border-color: #778da9; }
+.border-deep-sea-accent { border-color: #e0e1dd; }
+.border-deep-sea-neutral { border-color: #1b263b; }
+.border-deep-sea-base { border-color: #0d1b2a; }
+
+/* Hover States */
+.hover\:text-deep-sea-primary:hover { color: #415a77; }
+.hover\:text-deep-sea-secondary:hover { color: #778da9; }
+.hover\:text-deep-sea-accent:hover { color: #e0e1dd; }
+.hover\:text-deep-sea-neutral:hover { color: #1b263b; }
+.hover\:text-deep-sea-base:hover { color: #0d1b2a; }
+
+.hover\:bg-deep-sea-primary:hover { background-color: #415a77; }
+.hover\:bg-deep-sea-secondary:hover { background-color: #778da9; }
+.hover\:bg-deep-sea-accent:hover { background-color: #e0e1dd; }
+.hover\:bg-deep-sea-neutral:hover { background-color: #1b263b; }
+.hover\:bg-deep-sea-base:hover { background-color: #0d1b2a; }
+
+/* Focus States */
+.focus\:ring-deep-sea-primary:focus { --tw-ring-color: #415a77; }
+.focus\:ring-deep-sea-secondary:focus { --tw-ring-color: #778da9; }
+.focus\:ring-deep-sea-accent:focus { --tw-ring-color: #e0e1dd; }
+.focus\:ring-deep-sea-neutral:focus { --tw-ring-color: #1b263b; }
+.focus\:ring-deep-sea-base:focus { --tw-ring-color: #0d1b2a; }
+
+/* Custom Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        transform: translateY(20px); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+/* Deep Sea Theme Dark Mode Overrides */
+.dark .deep-sea-theme {
+    --color-primary: #778da9;
+    --color-secondary: #415a77;
+    --color-accent: #e0e1dd;
+    --color-neutral: #1b263b;
+    --color-base: #0d1b2a;
+}
+
+/* Professional Dark Mode Styles */
 .dark-mode-active .text-white {
-  color: #ffffff !important;
+    color: #e0e1dd !important;
 }
 
 .dark-mode-active .bg-white {
-  background-color: #121212 !important;
+    background-color: #0d1b2a !important;
 }
 
-.dark-mode-active .text-gray-300 {
-  color: #b0b0b0 !important;
+.dark-mode-active .text-deep-sea-300 {
+    color: #778da9 !important;
 }
 
-.dark-mode-active .text-gray-400 {
-  color: #b0b0b0 !important;
+.dark-mode-active .text-deep-sea-400 {
+    color: #778da9 !important;
 }
 
-.dark-mode-active .text-gray-500 {
-  color: #b0b0b0 !important;
+.dark-mode-active .text-deep-sea-500 {
+    color: #778da9 !important;
 }
 
-.dark-mode-active .text-gray-600 {
-  color: #ffffff !important;
+.dark-mode-active .text-deep-sea-600 {
+    color: #e0e1dd !important;
 }
 
-.dark-mode-active .text-gray-700 {
-  color: #ffffff !important;
+.dark-mode-active .text-deep-sea-700 {
+    color: #e0e1dd !important;
 }
 
-.dark-mode-active .text-gray-800 {
-  color: #ffffff !important;
+.dark-mode-active .text-deep-sea-800 {
+    color: #e0e1dd !important;
 }
 
-.dark-mode-active .text-gray-900 {
-  color: #ffffff !important;
+.dark-mode-active .text-deep-sea-900 {
+    color: #e0e1dd !important;
 }
 
-/* Additional styles for better dark mode visibility */
-.dark-mode-active .text-gray-100 {
-  color: #ffffff !important;
+.dark-mode-active .bg-deep-sea-50 {
+    background-color: #0d1b2a !important;
 }
 
-.dark-mode-active .text-gray-200 {
-  color: #ffffff !important;
+.dark-mode-active .bg-deep-sea-100 {
+    background-color: #1b263b !important;
 }
 
-/* Keep accent colors unchanged */
-.dark-mode-active .text-\[#feb906\],
-.dark-mode-active .text-\[#95a236\] {
-  color: inherit !important;
+.dark-mode-active .bg-deep-sea-200 {
+    background-color: #1b263b !important;
 }
 
-/* Professional Dark Mode Background Colors */
-.dark-mode-active .bg-gray-50 {
-  background-color: #181818 !important;
+.dark-mode-active .bg-deep-sea-800 {
+    background-color: #0d1b2a !important;
 }
 
-.dark-mode-active .bg-gray-100 {
-  background-color: #181818 !important;
-}
-
-.dark-mode-active .bg-gray-200 {
-  background-color: #181818 !important;
-}
-
-.dark-mode-active .bg-gray-800 {
-  background-color: #121212 !important;
-}
-
-.dark-mode-active .bg-gray-900 {
-  background-color: #121212 !important;
+.dark-mode-active .bg-deep-sea-900 {
+    background-color: #0d1b2a !important;
 }
 
 /* Dark mode borders and separators */
-.dark-mode-active .border-gray-200 {
-  border-color: #333333 !important;
+.dark-mode-active .border-deep-sea-200 {
+    border-color: #415a77 !important;
 }
 
-.dark-mode-active .border-gray-300 {
-  border-color: #333333 !important;
+.dark-mode-active .border-deep-sea-300 {
+    border-color: #415a77 !important;
 }
 
-.dark-mode-active .border-gray-400 {
-  border-color: #444444 !important;
+.dark-mode-active .border-deep-sea-400 {
+    border-color: #778da9 !important;
 }
 
-.dark-mode-active .border-gray-500 {
-  border-color: #444444 !important;
+.dark-mode-active .border-deep-sea-500 {
+    border-color: #778da9 !important;
 }
 
-.dark-mode-active .border-gray-600 {
-  border-color: #444444 !important;
+.dark-mode-active .border-deep-sea-600 {
+    border-color: #778da9 !important;
 }
 
-.dark-mode-active .border-gray-700 {
-  border-color: #444444 !important;
+.dark-mode-active .border-deep-sea-700 {
+    border-color: #778da9 !important;
 }
 
-/* Specific element background in dark mode */
-.dark-mode-active .bg-white\/95 {
-  background-color: #feb906 !important;
+/* Navigation specific dark mode styles */
+.dark-mode-active nav .text-deep-sea-700 {
+    color: #e0e1dd !important;
 }
 
-/* Navigation menu text in dark mode */
-.dark-mode-active nav .text-gray-700 {
-  color: #ffffff !important;
+.dark-mode-active nav .text-deep-sea-300 {
+    color: #e0e1dd !important;
 }
 
-.dark-mode-active nav .text-gray-300 {
-  color: #ffffff !important;
+.dark-mode-active nav .text-deep-sea-400 {
+    color: #e0e1dd !important;
 }
 
-.dark-mode-active nav .text-gray-400 {
-  color: #ffffff !important;
+.dark-mode-active nav .text-deep-sea-500 {
+    color: #e0e1dd !important;
 }
 
-.dark-mode-active nav .text-gray-500 {
-  color: #ffffff !important;
+.dark-mode-active nav .text-deep-sea-600 {
+    color: #e0e1dd !important;
 }
 
-.dark-mode-active nav .text-gray-600 {
-  color: #ffffff !important;
+.dark-mode-active nav .text-deep-sea-800 {
+    color: #e0e1dd !important;
 }
 
-.dark-mode-active nav .text-gray-800 {
-  color: #ffffff !important;
-}
-
-.dark-mode-active nav .text-gray-900 {
-  color: #ffffff !important;
+.dark-mode-active nav .text-deep-sea-900 {
+    color: #e0e1dd !important;
 }
 
 /* Navigation background in dark mode */
 .dark-mode-active nav {
-  background-color: #121212 !important;
+    background-color: #0d1b2a !important;
 }
 
-.dark-mode-active nav.bg-white {
-  background-color: #121212 !important;
+.dark-mode-active nav.bg-deep-sea-50 {
+    background-color: #0d1b2a !important;
 }
 
-.dark-mode-active nav.bg-gray-800 {
-  background-color: #121212 !important;
+.dark-mode-active nav.bg-deep-sea-800 {
+    background-color: #0d1b2a !important;
 }
 
 /* Navigation text item backgrounds in dark mode */
-.dark-mode-active nav .hover\:bg-gray-100:hover {
-  background-color: #95a236 !important;
+.dark-mode-active nav .hover\:bg-deep-sea-100:hover {
+    background-color: #415a77 !important;
 }
 
-.dark-mode-active nav .hover\:bg-gray-700\/50:hover {
-  background-color: #95a236 !important;
+.dark-mode-active nav .hover\:bg-deep-sea-700\/50:hover {
+    background-color: #415a77 !important;
 }
 
-.dark-mode-active nav .bg-gray-100 {
-  background-color: #95a236 !important;
+.dark-mode-active nav .bg-deep-sea-100 {
+    background-color: #415a77 !important;
 }
 
-.dark-mode-active nav .bg-gray-700 {
-  background-color: #95a236 !important;
+.dark-mode-active nav .bg-deep-sea-700 {
+    background-color: #415a77 !important;
 }
 
-.dark-mode-active nav .bg-gray-200 {
-  background-color: #95a236 !important;
+.dark-mode-active nav .bg-deep-sea-200 {
+    background-color: #415a77 !important;
 }
 
-.dark-mode-active nav .bg-gray-600 {
-  background-color: #95a236 !important;
-}
-
-.dark-mode-active .text-blue-600,
-.dark-mode-active .text-blue-400,
-.dark-mode-active .text-green-600,
-.dark-mode-active .text-green-400 {
-  color: inherit !important;
+.dark-mode-active nav .bg-deep-sea-600 {
+    background-color: #415a77 !important;
 }

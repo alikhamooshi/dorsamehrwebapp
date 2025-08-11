@@ -86,6 +86,42 @@ def team(request):
     }
     return render(request, 'construction/team.html', context)
 
+def team_employment(request):
+    """Employment opportunities page"""
+    try:
+        company_info = CompanyInfo.objects.first()
+    except:
+        company_info = None
+    
+    context = {
+        'company_info': company_info,
+    }
+    return render(request, 'construction/team_employment.html', context)
+
+def team_partnership(request):
+    """Partnership opportunities page"""
+    try:
+        company_info = CompanyInfo.objects.first()
+    except:
+        company_info = None
+    
+    context = {
+        'company_info': company_info,
+    }
+    return render(request, 'construction/team_partnership.html', context)
+
+def team_barter(request):
+    """Barter/Exchange opportunities page"""
+    try:
+        company_info = CompanyInfo.objects.first()
+    except:
+        company_info = None
+    
+    context = {
+        'company_info': company_info,
+    }
+    return render(request, 'construction/team_barter.html', context)
+
 def projects(request):
     """Projects portfolio page"""
     projects_list = Project.objects.all()
