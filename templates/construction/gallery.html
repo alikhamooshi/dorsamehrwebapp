@@ -6,152 +6,356 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="relative py-20" style="background-image: url('{% static 'images/Offy/logo/11111.png' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <div class="absolute inset-0 bg-gradient-to-r from-[#0d1b2a]/20 to-[#1b263b]/20 bg-black/40"></div>
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center max-w-3xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+<section class="relative py-32 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <img src="{% static 'images/Offy/emaratfarokh/ED32.jpg' %}" alt="Gallery Background" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 left-10 w-32 h-32 border border-white/10 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 w-24 h-24 border border-white/10 rounded-full animate-pulse delay-1000"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <div class="inline-block mb-6">
+                <span class="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full border border-white/30">
+                    {% trans "Our Work" %}
+                </span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                 {% trans "Project Gallery" %}
             </h1>
-            <p class="text-lg text-white/90 leading-relaxed">
+            <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
                 {% trans "Explore our portfolio of exceptional construction projects, showcasing innovation, quality, and craftsmanship." %}
             </p>
+            
+            <!-- Stats -->
+            <div class="flex justify-center items-center space-x-8 mt-12">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">11</div>
+                    <div class="text-white/70 text-sm uppercase tracking-wide">{% trans "Projects" %}</div>
+                </div>
+                <div class="w-px h-12 bg-white/30"></div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">200+</div>
+                    <div class="text-white/70 text-sm uppercase tracking-wide">{% trans "Images" %}</div>
+                </div>
+                <div class="w-px h-12 bg-white/30"></div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">25+</div>
+                    <div class="text-white/70 text-sm uppercase tracking-wide">{% trans "Years" %}</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Projects Section -->
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
+<section class="py-20 bg-gradient-to-br from-[#415a77] to-[#1b263b]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-[#0d1b2a] mb-4">
+        <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+                
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-[#e0e1dd] mb-6">
                 {% trans "Our Projects" %}
             </h2>
-            <p class="text-[#415a77] max-w-2xl mx-auto">
+            <p class="text-xl text-[#415a77] max-w-3xl mx-auto leading-relaxed">
                 {% trans "Select a project to explore our comprehensive gallery of construction achievements." %}
             </p>
         </div>
 
         <!-- Project Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             <!-- Abnoos -->
-            <button class="project-btn group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-[#778da9] overflow-hidden hover:bg-[#415a77] hover:border-[#415a77]"
+            <button class="project-btn group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
                     data-project="abnoos">
-                <div class="p-6 text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#415a77] to-[#1b263b] rounded-lg flex items-center justify-center group-hover:bg-white">
-                        <i class="fas fa-building text-2xl text-white group-hover:text-[#415a77]"></i>
+                <!-- Background Image Placeholder -->
+                <div class="absolute inset-0 bg-gradient-to-br from-[#415a77] via-[#778da9] to-[#1b263b]"></div>
+                
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                
+                <!-- Content -->
+                <div class="relative z-10 h-full flex flex-col justify-between p-6 text-white">
+                    <div class="flex justify-between items-start">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                            <i class="fas fa-building text-xl text-white"></i>
+                        </div>
+                        <span class="bg-white/20 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
+                            {% trans "Modern" %}
+                        </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-[#0d1b2a] mb-2 group-hover:text-white">Abnoos</h3>
-                    <p class="text-sm text-[#778da9] group-hover:text-white/80">{% trans "Modern Construction" %}</p>
+                    
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-2 group-hover:text-[#feb906] transition-colors duration-300">Abnoos</h3>
+                        <p class="text-white/80 text-sm mb-4">{% trans "Modern Construction Project" %}</p>
+                        
+                        <!-- View Button -->
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium border border-white/30">
+                                {% trans "View Gallery" %}
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </button>
 
             <!-- Dorsamehr Kish -->
-            <button class="project-btn group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-[#778da9] overflow-hidden hover:bg-[#415a77] hover:border-[#415a77]"
+            <button class="project-btn group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
                     data-project="dorsamehrkish">
-                <div class="p-6 text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#415a77] to-[#1b263b] rounded-lg flex items-center justify-center group-hover:bg-white">
-                        <i class="fas fa-building text-2xl text-white group-hover:text-[#415a77]"></i>
+                <!-- Background Image -->
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{% static 'images/Offy/dorsamehrkish/ChatGPT Image Aug 3, 2025, 04_36_27 PM.png' %}');"></div>
+                
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/30 group-hover:from-black/70 transition-all duration-300"></div>
+                
+                <!-- Content -->
+                <div class="relative z-10 h-full flex flex-col justify-between p-6 text-white">
+                    <div class="flex justify-between items-start">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                            <i class="fas fa-building text-xl text-white"></i>
+                        </div>
+                        <span class="bg-[#feb906]/90 backdrop-blur-sm text-black text-xs font-bold px-3 py-1 rounded-full">
+                            {% trans "Featured" %}
+                        </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-[#0d1b2a] mb-2 group-hover:text-white">Dorsamehr Kish</h3>
-                    <p class="text-sm text-[#778da9] group-hover:text-white/80">{% trans "Premium Development" %}</p>
+                    
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-2 group-hover:text-[#feb906] transition-colors duration-300">Dorsamehr Kish</h3>
+                        <p class="text-white/80 text-sm mb-4">{% trans "Premium Development Project" %}</p>
+                        
+                        <!-- View Button -->
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium border border-white/30">
+                                {% trans "View Gallery" %}
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </button>
 
             <!-- Emarat Farokh -->
-            <button class="project-btn group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-[#778da9] overflow-hidden hover:bg-[#415a77] hover:border-[#415a77]"
+            <button class="project-btn group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
                     data-project="emaratfarokh">
-                <div class="p-6 text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#415a77] to-[#1b263b] rounded-lg flex items-center justify-center group-hover:bg-white">
-                        <i class="fas fa-building text-2xl text-white group-hover:text-[#415a77]"></i>
+                <!-- Background Image -->
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{% static 'images/Offy/emaratfarokh/ED32.jpg' %}');"></div>
+                
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/30 group-hover:from-black/70 transition-all duration-300"></div>
+                
+                <!-- Content -->
+                <div class="relative z-10 h-full flex flex-col justify-between p-6 text-white">
+                    <div class="flex justify-between items-start">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                            <i class="fas fa-home text-xl text-white"></i>
+                        </div>
+                        <span class="bg-white/20 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
+                            {% trans "Luxury" %}
+                        </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-[#0d1b2a] mb-2 group-hover:text-white">Emarat Farokh</h3>
-                    <p class="text-sm text-[#778da9] group-hover:text-white/80">{% trans "Luxury Construction" %}</p>
+                    
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-2 group-hover:text-[#feb906] transition-colors duration-300">Emarat Farokh</h3>
+                        <p class="text-white/80 text-sm mb-4">{% trans "Luxury Construction Project" %}</p>
+                        
+                        <!-- View Button -->
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium border border-white/30">
+                                {% trans "View Gallery" %}
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </button>
 
             <!-- Esperlos -->
-            <button class="project-btn group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-[#778da9] overflow-hidden hover:bg-[#415a77] hover:border-[#415a77]"
+            <button class="project-btn group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
                     data-project="esperlos">
-                <div class="p-6 text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#415a77] to-[#1b263b] rounded-lg flex items-center justify-center group-hover:bg-white">
-                        <i class="fas fa-building text-2xl text-white group-hover:text-[#415a77]"></i>
+                <div class="absolute inset-0 bg-gradient-to-br from-[#778da9] via-[#415a77] to-[#1b263b]"></div>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                <div class="relative z-10 h-full flex flex-col justify-between p-6 text-white">
+                    <div class="flex justify-between items-start">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                            <i class="fas fa-lightbulb text-xl text-white"></i>
+                        </div>
+                        <span class="bg-white/20 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
+                            {% trans "Innovation" %}
+                        </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-[#0d1b2a] mb-2 group-hover:text-white">Esperlos</h3>
-                    <p class="text-sm text-[#778da9] group-hover:text-white/80">{% trans "Innovative Design" %}</p>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-2 group-hover:text-[#feb906] transition-colors duration-300">Esperlos</h3>
+                        <p class="text-white/80 text-sm mb-4">{% trans "Innovative Design Project" %}</p>
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium border border-white/30">
+                                {% trans "View Gallery" %} <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </button>
 
             <!-- Gheytariye -->
-            <button class="project-btn group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-[#778da9] overflow-hidden hover:bg-[#415a77] hover:border-[#415a77]"
+            <button class="project-btn group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
                     data-project="gheytariye">
-                <div class="p-6 text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#415a77] to-[#1b263b] rounded-lg flex items-center justify-center group-hover:bg-white">
-                        <i class="fas fa-building text-2xl text-white group-hover:text-[#415a77]"></i>
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{% static 'images/Offy/gheytariye/front 1.jpg' %}');"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/30 group-hover:from-black/70 transition-all duration-300"></div>
+                <div class="relative z-10 h-full flex flex-col justify-between p-6 text-white">
+                    <div class="flex justify-between items-start">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                            <i class="fas fa-city text-xl text-white"></i>
+                        </div>
+                        <span class="bg-white/20 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
+                            {% trans "Urban" %}
+                        </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-[#0d1b2a] mb-2 group-hover:text-white">Gheytariye</h3>
-                    <p class="text-sm text-[#778da9] group-hover:text-white/80">{% trans "Urban Development" %}</p>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-2 group-hover:text-[#feb906] transition-colors duration-300">Gheytariye</h3>
+                        <p class="text-white/80 text-sm mb-4">{% trans "Urban Development Project" %}</p>
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium border border-white/30">
+                                {% trans "View Gallery" %} <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </button>
 
             <!-- Narbon -->
-            <button class="project-btn group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-[#778da9] overflow-hidden hover:bg-[#415a77] hover:border-[#415a77]"
+            <button class="project-btn group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
                     data-project="narbon">
-                <div class="p-6 text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#415a77] to-[#1b263b] rounded-lg flex items-center justify-center group-hover:bg-white">
-                        <i class="fas fa-building text-2xl text-white group-hover:text-[#415a77]"></i>
+                <div class="absolute inset-0 bg-gradient-to-br from-[#1b263b] via-[#415a77] to-[#778da9]"></div>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                <div class="relative z-10 h-full flex flex-col justify-between p-6 text-white">
+                    <div class="flex justify-between items-start">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                            <i class="fas fa-store text-xl text-white"></i>
+                        </div>
+                        <span class="bg-white/20 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
+                            {% trans "Commercial" %}
+                        </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-[#0d1b2a] mb-2 group-hover:text-white">Narbon</h3>
-                    <p class="text-sm text-[#778da9] group-hover:text-white/80">{% trans "Commercial Complex" %}</p>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-2 group-hover:text-[#feb906] transition-colors duration-300">Narbon</h3>
+                        <p class="text-white/80 text-sm mb-4">{% trans "Commercial Complex Project" %}</p>
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium border border-white/30">
+                                {% trans "View Gallery" %} <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </button>
 
             <!-- Narenjestan -->
-            <button class="project-btn group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-[#778da9] overflow-hidden hover:bg-[#415a77] hover:border-[#415a77]"
+            <button class="project-btn group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
                     data-project="narenjestan">
-                <div class="p-6 text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#415a77] to-[#1b263b] rounded-lg flex items-center justify-center group-hover:bg-white">
-                        <i class="fas fa-building text-2xl text-white group-hover:text-[#415a77]"></i>
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{% static 'images/Offy/narenjestan/20250604_182910.jpg' %}');"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/30 group-hover:from-black/70 transition-all duration-300"></div>
+                <div class="relative z-10 h-full flex flex-col justify-between p-6 text-white">
+                    <div class="flex justify-between items-start">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                            <i class="fas fa-home text-xl text-white"></i>
+                        </div>
+                        <span class="bg-white/20 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
+                            {% trans "Residential" %}
+                        </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-[#0d1b2a] mb-2 group-hover:text-white">Narenjestan</h3>
-                    <p class="text-sm text-[#778da9] group-hover:text-white/80">{% trans "Residential Project" %}</p>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-2 group-hover:text-[#feb906] transition-colors duration-300">Narenjestan</h3>
+                        <p class="text-white/80 text-sm mb-4">{% trans "Residential Development Project" %}</p>
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium border border-white/30">
+                                {% trans "View Gallery" %} <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </button>
 
             <!-- Roshana -->
-            <button class="project-btn group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-[#778da9] overflow-hidden hover:bg-[#415a77] hover:border-[#415a77]"
+            <button class="project-btn group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
                     data-project="roshana">
-                <div class="p-6 text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#415a77] to-[#1b263b] rounded-lg flex items-center justify-center group-hover:bg-white">
-                        <i class="fas fa-building text-2xl text-white group-hover:text-[#415a77]"></i>
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{% static 'images/Offy/roshana/3.jpg' %}');"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/30 group-hover:from-black/70 transition-all duration-300"></div>
+                <div class="relative z-10 h-full flex flex-col justify-between p-6 text-white">
+                    <div class="flex justify-between items-start">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                            <i class="fas fa-building text-xl text-white"></i>
+                        </div>
+                        <span class="bg-white/20 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
+                            {% trans "Mixed" %}
+                        </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-[#0d1b2a] mb-2 group-hover:text-white">Roshana</h3>
-                    <p class="text-sm text-[#778da9] group-hover:text-white/80">{% trans "Mixed Development" %}</p>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-2 group-hover:text-[#feb906] transition-colors duration-300">Roshana</h3>
+                        <p class="text-white/80 text-sm mb-4">{% trans "Mixed Development Project" %}</p>
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium border border-white/30">
+                                {% trans "View Gallery" %} <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </button>
 
             <!-- Sadinva -->
-            <button class="project-btn group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-[#778da9] overflow-hidden hover:bg-[#415a77] hover:border-[#415a77]"
+            <button class="project-btn group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
                     data-project="sadinva">
-                <div class="p-6 text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#415a77] to-[#1b263b] rounded-lg flex items-center justify-center group-hover:bg-white">
-                        <i class="fas fa-building text-2xl text-white group-hover:text-[#415a77]"></i>
+                <div class="absolute inset-0 bg-gradient-to-br from-[#415a77] via-[#1b263b] to-[#778da9]"></div>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                <div class="relative z-10 h-full flex flex-col justify-between p-6 text-white">
+                    <div class="flex justify-between items-start">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                            <i class="fas fa-cogs text-xl text-white"></i>
+                        </div>
+                        <span class="bg-white/20 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
+                            {% trans "Specialized" %}
+                        </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-[#0d1b2a] mb-2 group-hover:text-white">Sadinva</h3>
-                    <p class="text-sm text-[#778da9] group-hover:text-white/80">{% trans "Specialized Project" %}</p>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-2 group-hover:text-[#feb906] transition-colors duration-300">Sadinva</h3>
+                        <p class="text-white/80 text-sm mb-4">{% trans "Specialized Construction Project" %}</p>
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium border border-white/30">
+                                {% trans "View Gallery" %} <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </button>
 
             <!-- Sakra -->
-            <button class="project-btn group bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-[#778da9] overflow-hidden hover:bg-[#415a77] hover:border-[#415a77]"
+            <button class="project-btn group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
                     data-project="sakra">
-                <div class="p-6 text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#415a77] to-[#1b263b] rounded-lg flex items-center justify-center group-hover:bg-white">
-                        <i class="fas fa-building text-2xl text-white group-hover:text-[#415a77]"></i>
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{% static 'images/Offy/sakra/DSC01657.JPG' %}');"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/30 group-hover:from-black/70 transition-all duration-300"></div>
+                <div class="relative z-10 h-full flex flex-col justify-between p-6 text-white">
+                    <div class="flex justify-between items-start">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                            <i class="fas fa-building text-xl text-white"></i>
+                        </div>
+                        <span class="bg-white/20 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
+                            {% trans "Modern" %}
+                        </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-[#0d1b2a] mb-2 group-hover:text-white">Sakra</h3>
-                    <p class="text-sm text-[#778da9] group-hover:text-white/80">{% trans "Modern Complex" %}</p>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-2 group-hover:text-[#feb906] transition-colors duration-300">Sakra</h3>
+                        <p class="text-white/80 text-sm mb-4">{% trans "Modern Complex Project" %}</p>
+                        <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg font-medium border border-white/30">
+                                {% trans "View Gallery" %} <i class="fas fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </button>
         </div>

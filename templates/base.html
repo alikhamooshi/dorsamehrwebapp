@@ -28,11 +28,8 @@
                 <div class="flex items-center">
                     <a href="{% url 'construction:home' %}" class="flex-shrink-0 group">
                         <div class="flex items-center space-x-3">
-                            <img src="{% static 'images/logo/logo1.png' %}" alt="Dorsamehr Construction" class="h-16 w-auto group-hover:scale-105 transition-transform duration-300">
-                            <div class="hidden sm:block">
-                                <h1 class="text-2xl font-bold bg-gradient-to-r from-[#415a77] to-[#1b263b] bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">Dorsamehr</h1>
-                                <p class="text-xs text-[#415a77] -mt-1">{% trans "Kish" %}</p>
-                            </div>
+                            <img src="{% static 'images/Offy/logo/11111.png' %}" alt="Dorsamehr Construction" class="h-20 w-auto group-hover:scale-105 transition-transform duration-300">
+
                         </div>
                     </a>
                 </div>
@@ -270,6 +267,10 @@
                         <a href="#" class="text-[#778da9] hover:text-[#e0e1dd] transition"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" class="text-[#778da9] hover:text-[#e0e1dd] transition"><i class="fab fa-instagram"></i></a>
                     </div>
+                                         <div class="flex items-center space-x-3 mb-4">
+                         <img src="{% static 'images/Offy/logo/11111.png' %}" alt="Dorsamehr Construction" class="h-64 w-auto">
+                        
+                     </div>
                 </div>
                 
                 <!-- Quick Links -->
@@ -287,10 +288,51 @@
                 <!-- Contact Info -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">{% trans "Contact Info" %}</h4>
-                    <div class="space-y-2 text-[#e0e1dd]">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i> Tehran, Iran</p>
-                        <p><i class="fas fa-phone mr-2"></i> +98 21 1234 5678</p>
-                        <p><i class="fas fa-envelope mr-2"></i> info@dorsamehr.com</p>
+                    
+                    <!-- Main Office -->
+                    <div class="mb-6">
+                        <h5 class="text-md font-medium text-[#778da9] mb-2">
+                            {% if LANGUAGE_CODE == 'fa' %}
+                                دفتر مرکزی
+                            {% else %}
+                                Main Office
+                            {% endif %}
+                        </h5>
+                        <div class="space-y-1 text-[#e0e1dd] text-sm">
+                            <p><i class="fas fa-map-marker-alt mr-2 text-[#778da9]"></i>
+                                {% if LANGUAGE_CODE == 'fa' %}
+                                    خیابان شریعتی، خیابان توپچی، عمارت فرخ، واحد ۸
+                                {% else %}
+                                    Shariati St., Topchi St., Emarat Farokh, Unit 8
+                                {% endif %}
+                            </p>
+                            <div class="space-y-1">
+                                <p><i class="fas fa-phone mr-2 text-[#778da9]"></i> 021-88549121</p>
+                                <p class="{% if LANGUAGE_CODE == 'fa' %}mr-6{% else %}ml-6{% endif %}"> 021-88549120</p>
+                                <p class="{% if LANGUAGE_CODE == 'fa' %}mr-6{% else %}ml-6{% endif %}"> 021-88549123</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Kish Office -->
+                    <div>
+                        <h5 class="text-md font-medium text-[#778da9] mb-2">
+                            {% if LANGUAGE_CODE == 'fa' %}
+                                دفتر کیش
+                            {% else %}
+                                Kish Office
+                            {% endif %}
+                        </h5>
+                        <div class="space-y-1 text-[#e0e1dd] text-sm">
+                            <p><i class="fas fa-map-marker-alt mr-2 text-[#778da9]"></i>
+                                {% if LANGUAGE_CODE == 'fa' %}
+                                    کیش، میدان الغدیر، مجتمع پزشکان درسا مهر
+                                {% else %}
+                                    Kish, Alghadir Square, Dorsa Mehr Doctors Complex
+                                {% endif %}
+                            </p>
+                            <p><i class="fas fa-phone mr-2 text-[#778da9]"></i> 076-44487012</p>
+                        </div>
                     </div>
                 </div>
             </div>

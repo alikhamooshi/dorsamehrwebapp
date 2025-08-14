@@ -1,99 +1,226 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
 
-{% block title %}Blog - Dorsamehr Kish{% endblock %}
+{% block title %}{% trans "Blog" %} - Dorsamehr Kish{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">Our Blog</h1>
-        <p class="text-xl text-[#e0e1dd] max-w-3xl mx-auto">
-            Stay updated with the latest trends, tips, and insights from the construction industry.
-        </p>
+<section class="relative py-32 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <img src="{% static 'images/Offy/EDIT PHOTO/ED25.jpg' %}" alt="Blog Background" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80"></div>
+    </div>
+    
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 left-10 w-32 h-32 border border-white/10 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 w-24 h-24 border border-white/10 rounded-full animate-pulse delay-1000"></div>
+        <div class="absolute top-1/2 left-1/4 w-16 h-16 border border-white/10 rounded-full animate-pulse delay-500"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <!-- Badge -->
+            <div class="inline-block mb-6">
+                <span class="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full border border-white/30">
+                    {% trans "Knowledge Hub" %}
+                </span>
+            </div>
+            
+            <!-- Main Title -->
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                {% trans "Our Blog" %}
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
+                {% trans "Stay updated with the latest trends, tips, and insights from the construction industry." %}
+            </p>
+            
+            <!-- Stats -->
+            <div class="flex justify-center items-center space-x-8 mt-12">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">50+</div>
+                    <div class="text-white/70 text-sm uppercase tracking-wide">{% trans "Articles" %}</div>
+                </div>
+                <div class="w-px h-12 bg-white/30"></div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">10K+</div>
+                    <div class="text-white/70 text-sm uppercase tracking-wide">{% trans "Readers" %}</div>
+                </div>
+                <div class="w-px h-12 bg-white/30"></div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">5</div>
+                    <div class="text-white/70 text-sm uppercase tracking-wide">{% trans "Categories" %}</div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Search Section -->
-<section class="py-12 bg-white border-b border-[#778da9]">
+<section class="py-16 bg-gradient-to-br from-[#e0e1dd] to-white relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mx-auto">
-            <form method="get" class="relative">
-                <input type="text" name="search" value="{{ search_query|default:'' }}" 
-                       placeholder="Search blog posts..." 
-                       class="w-full pl-12 pr-4 py-4 border border-[#778da9] rounded-lg focus:ring-2 focus:ring-[#415a77] focus:border-transparent text-lg bg-white text-[#0d1b2a]">
-                <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-[#778da9] text-xl"></i>
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Search Title -->
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-[#0d1b2a] mb-4">{% trans "Find What You're Looking For" %}</h2>
+                <p class="text-[#415a77] text-lg">{% trans "Search through our extensive library of construction insights and expertise" %}</p>
+            </div>
+            
+            <!-- Enhanced Search Form -->
+            <form method="get" class="relative group">
+                <div class="relative bg-white rounded-2xl shadow-lg border border-white/50 overflow-hidden backdrop-blur-sm">
+                    <input type="text" name="search" value="{{ search_query|default:'' }}" 
+                           placeholder="{% trans 'Search articles, tips, insights...' %}" 
+                           class="w-full pl-16 pr-32 py-6 text-lg bg-transparent text-[#0d1b2a] placeholder-[#778da9] focus:outline-none">
+                    <i class="fas fa-search absolute left-6 top-1/2 transform -translate-y-1/2 text-[#778da9] text-xl group-focus-within:text-[#415a77] transition-colors"></i>
+                    <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#415a77] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#1b263b] transition-all duration-300 shadow-lg hover:shadow-xl">
+                        {% trans "Search" %}
+                    </button>
+                </div>
+                
+                <!-- Search Suggestions -->
+                <div class="flex flex-wrap justify-center gap-3 mt-6">
+                    <span class="text-sm text-[#778da9] font-medium">{% trans "Popular:" %}</span>
+                    <button type="button" class="text-sm bg-white/70 backdrop-blur-sm text-[#415a77] px-4 py-2 rounded-full border border-[#415a77]/20 hover:bg-[#415a77] hover:text-white transition-all duration-300">
+                        {% trans "Construction Tips" %}
+                    </button>
+                    <button type="button" class="text-sm bg-white/70 backdrop-blur-sm text-[#415a77] px-4 py-2 rounded-full border border-[#415a77]/20 hover:bg-[#415a77] hover:text-white transition-all duration-300">
+                        {% trans "Sustainability" %}
+                    </button>
+                    <button type="button" class="text-sm bg-white/70 backdrop-blur-sm text-[#415a77] px-4 py-2 rounded-full border border-[#415a77]/20 hover:bg-[#415a77] hover:text-white transition-all duration-300">
+                        {% trans "Safety" %}
+                    </button>
+                </div>
             </form>
         </div>
     </div>
 </section>
 
 <!-- Blog Posts Section -->
-<section class="py-20 bg-[#e0e1dd]">
+<section class="py-20 bg-gradient-to-br from-white to-[#e0e1dd]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {% if page_obj %}
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+                <span class="bg-[#415a77]/10 text-[#415a77] text-sm font-semibold px-4 py-2 rounded-full">
+                    {% trans "Latest Articles" %}
+                </span>
+            </div>
+            <h2 class="text-4xl font-bold text-[#0d1b2a] mb-4">
+                {% trans "Construction Insights & Tips" %}
+            </h2>
+        </div>
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {% for blog in page_obj %}
-            <article class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-[#778da9]">
-                {% if blog.image %}
-                <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="w-full h-48 object-cover">
-                {% else %}
-                <div class="w-full h-48 bg-[#778da9] flex items-center justify-center">
-                    <i class="fas fa-newspaper text-4xl text-[#e0e1dd]"></i>
+            <article class="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50">
+                <!-- Image Section -->
+                <div class="relative overflow-hidden">
+                    {% if blog.image %}
+                    <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110">
+                    {% else %}
+                    <div class="w-full h-56 bg-gradient-to-br from-[#415a77] to-[#778da9] flex items-center justify-center">
+                        <i class="fas fa-newspaper text-5xl text-white/70"></i>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    <!-- Reading Time Badge -->
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-white/90 backdrop-blur-sm text-[#415a77] text-xs font-semibold px-3 py-1 rounded-full">
+                            {% trans "5 min read" %}
+                        </span>
+                    </div>
                 </div>
-                {% endif %}
+                
+                <!-- Content Section -->
                 <div class="p-6">
-                    <div class="flex items-center text-sm text-[#778da9] mb-3">
-                        <span><i class="fas fa-user mr-1"></i>{{ blog.author }}</span>
-                        <span class="mx-2">•</span>
+                    <!-- Meta Information -->
+                    <div class="flex items-center text-sm text-[#778da9] mb-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-[#415a77] rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-user text-white text-xs"></i>
+                            </div>
+                            <span class="font-medium">{{ blog.author }}</span>
+                        </div>
+                        <span class="mx-3">•</span>
                         <span><i class="fas fa-calendar mr-1"></i>{{ blog.published_date|date:"M d, Y" }}</span>
                     </div>
-                    <h2 class="text-xl font-semibold text-[#0d1b2a] mb-3">{{ blog.title }}</h2>
-                    <p class="text-[#415a77] mb-4">{{ blog.excerpt|default:blog.content|truncatewords:20 }}</p>
                     
+                    <!-- Title -->
+                    <h2 class="text-xl font-bold text-[#0d1b2a] mb-3 line-clamp-2 group-hover:text-[#415a77] transition-colors duration-300">
+                        {{ blog.title }}
+                    </h2>
+                    
+                    <!-- Excerpt -->
+                    <p class="text-[#415a77] mb-4 line-clamp-3 leading-relaxed">
+                        {{ blog.excerpt|default:blog.content|truncatewords:20 }}
+                    </p>
+                    
+                    <!-- Tags -->
                     {% if blog.tags %}
                     <div class="mb-4">
                         <div class="flex flex-wrap gap-2">
                             {% for tag in blog.tags.split|slice:":3" %}
-                            <span class="bg-[#415a77]/10 text-[#415a77] text-xs px-2 py-1 rounded">{{ tag }}</span>
+                            <span class="bg-[#415a77]/10 text-[#415a77] text-xs px-3 py-1 rounded-full font-medium border border-[#415a77]/20">
+                                {{ tag }}
+                            </span>
                             {% endfor %}
                         </div>
                     </div>
                     {% endif %}
                     
-                    <a href="{% url 'construction:blog_detail' blog.slug %}" class="text-[#415a77] font-semibold hover:text-[#1b263b] transition">
-                        Read More <i class="fas fa-arrow-right ml-1"></i>
+                    <!-- Read More Button -->
+                    <a href="{% url 'construction:blog_detail' blog.slug %}" 
+                       class="inline-flex items-center text-[#415a77] font-semibold hover:text-white bg-transparent hover:bg-[#415a77] px-4 py-2 rounded-lg transition-all duration-300 border border-[#415a77]/20 hover:border-[#415a77] group/btn">
+                        {% trans "Read More" %}
+                        <i class="fas fa-arrow-right ml-2 transform group-hover/btn:translate-x-1 transition-transform duration-300"></i>
                     </a>
                 </div>
+                
+                <!-- Hover Border Effect -->
+                <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#415a77]/20 rounded-2xl transition-all duration-300 pointer-events-none"></div>
             </article>
             {% endfor %}
         </div>
         
-        <!-- Pagination -->
+        <!-- Enhanced Pagination -->
         {% if page_obj.has_other_pages %}
-        <div class="mt-12 flex justify-center">
-            <nav class="flex items-center space-x-2">
+        <div class="mt-16 flex justify-center">
+            <nav class="flex items-center space-x-3">
                 {% if page_obj.has_previous %}
                 <a href="?page={{ page_obj.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" 
-                   class="px-3 py-2 border border-[#778da9] rounded-lg text-[#415a77] hover:bg-[#e0e1dd]">
-                    <i class="fas fa-chevron-left"></i>
+                   class="flex items-center px-4 py-3 bg-white/80 backdrop-blur-sm border border-[#415a77]/20 rounded-xl text-[#415a77] hover:bg-[#415a77] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <i class="fas fa-chevron-left mr-2"></i>
+                    {% trans "Previous" %}
                 </a>
                 {% endif %}
                 
-                {% for num in page_obj.paginator.page_range %}
-                    {% if page_obj.number == num %}
-                    <span class="px-3 py-2 bg-[#415a77] text-white rounded-lg">{{ num }}</span>
-                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                    <a href="?page={{ num }}{% if search_query %}&search={{ search_query }}{% endif %}" 
-                       class="px-3 py-2 border border-[#778da9] rounded-lg text-[#415a77] hover:bg-[#e0e1dd]">
-                        {{ num }}
-                    </a>
-                    {% endif %}
-                {% endfor %}
+                <div class="flex items-center space-x-2">
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                        <span class="px-4 py-3 bg-[#415a77] text-white rounded-xl font-semibold shadow-lg">{{ num }}</span>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a href="?page={{ num }}{% if search_query %}&search={{ search_query }}{% endif %}" 
+                           class="px-4 py-3 bg-white/80 backdrop-blur-sm border border-[#415a77]/20 rounded-xl text-[#415a77] hover:bg-[#415a77] hover:text-white transition-all duration-300 font-semibold">
+                            {{ num }}
+                        </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
                 
                 {% if page_obj.has_next %}
                 <a href="?page={{ page_obj.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" 
-                   class="px-3 py-2 border border-[#778da9] rounded-lg text-[#415a77] hover:bg-[#e0e1dd]">
-                    <i class="fas fa-chevron-right"></i>
+                   class="flex items-center px-4 py-3 bg-white/80 backdrop-blur-sm border border-[#415a77]/20 rounded-xl text-[#415a77] hover:bg-[#415a77] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl">
+                    {% trans "Next" %}
+                    <i class="fas fa-chevron-right ml-2"></i>
                 </a>
                 {% endif %}
             </nav>
@@ -121,91 +248,245 @@
 </section>
 
 <!-- Blog Categories Section -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-20 bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-0 left-0 w-full h-full" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-4">Blog Categories</h2>
-            <p class="text-xl text-[#415a77] max-w-3xl mx-auto">
-                Explore our blog posts by category to find the information you need.
+            <div class="inline-block mb-6">
+                <span class="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full border border-white/30">
+                    {% trans "Explore Topics" %}
+                </span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">{% trans "Blog Categories" %}</h2>
+            <p class="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                {% trans "Explore our blog posts by category to find the information you need." %}
             </p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="text-center">
-                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-tools text-3xl text-white"></i>
+            <!-- Construction Tips -->
+            <div class="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="relative mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#feb906] to-[#ff9500] rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-tools text-3xl text-white"></i>
+                    </div>
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#feb906]/20 to-[#ff9500]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">Construction Tips</h3>
-                <p class="text-[#415a77]">
-                    Practical tips and advice for construction projects and best practices.
+                <h3 class="text-xl font-bold text-white mb-4 group-hover:text-[#feb906] transition-colors duration-300">
+                    {% trans "Construction Tips" %}
+                </h3>
+                <p class="text-white/70 leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+                    {% trans "Practical tips and advice for construction projects and best practices." %}
                 </p>
+                
+                <!-- Hover Border Effect -->
+                <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#feb906]/30 rounded-2xl transition-all duration-300"></div>
             </div>
             
-            <div class="text-center">
-                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-lightbulb text-3xl text-white"></i>
+            <!-- Industry Insights -->
+            <div class="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="relative mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#415a77] to-[#778da9] rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-lightbulb text-3xl text-white"></i>
+                    </div>
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#415a77]/20 to-[#778da9]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">Industry Insights</h3>
-                <p class="text-[#415a77]">
-                    Latest trends and insights from the construction industry.
+                <h3 class="text-xl font-bold text-white mb-4 group-hover:text-[#778da9] transition-colors duration-300">
+                    {% trans "Industry Insights" %}
+                </h3>
+                <p class="text-white/70 leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+                    {% trans "Latest trends and insights from the construction industry." %}
                 </p>
+                
+                <!-- Hover Border Effect -->
+                <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#778da9]/30 rounded-2xl transition-all duration-300"></div>
             </div>
             
-            <div class="text-center">
-                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-leaf text-3xl text-white"></i>
+            <!-- Sustainability -->
+            <div class="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="relative mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#22c55e] to-[#16a34a] rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-leaf text-3xl text-white"></i>
+                    </div>
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#22c55e]/20 to-[#16a34a]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">Sustainability</h3>
-                <p class="text-[#415a77]">
-                    Green building practices and sustainable construction methods.
+                <h3 class="text-xl font-bold text-white mb-4 group-hover:text-[#22c55e] transition-colors duration-300">
+                    {% trans "Sustainability" %}
+                </h3>
+                <p class="text-white/70 leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+                    {% trans "Green building practices and sustainable construction methods." %}
                 </p>
+                
+                <!-- Hover Border Effect -->
+                <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#22c55e]/30 rounded-2xl transition-all duration-300"></div>
             </div>
             
-            <div class="text-center">
-                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-shield-alt text-3xl text-white"></i>
+            <!-- Safety & Compliance -->
+            <div class="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="relative mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#ef4444] to-[#dc2626] rounded-2xl flex items-center justify-center mx-auto transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-shield-alt text-3xl text-white"></i>
+                    </div>
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#ef4444]/20 to-[#dc2626]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">Safety & Compliance</h3>
-                <p class="text-[#415a77]">
-                    Safety guidelines and compliance requirements for construction projects.
+                <h3 class="text-xl font-bold text-white mb-4 group-hover:text-[#ef4444] transition-colors duration-300">
+                    {% trans "Safety & Compliance" %}
+                </h3>
+                <p class="text-white/70 leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+                    {% trans "Safety guidelines and compliance requirements for construction projects." %}
                 </p>
+                
+                <!-- Hover Border Effect -->
+                <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#ef4444]/30 rounded-2xl transition-all duration-300"></div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Newsletter Section -->
-<section class="py-20 bg-[#e0e1dd]">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-4">Stay Updated</h2>
-        <p class="text-xl text-[#415a77] mb-8">
-            Subscribe to our newsletter to receive the latest construction insights and tips directly in your inbox.
-        </p>
-        
-        <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input type="email" placeholder="Enter your email" 
-                   class="flex-1 px-4 py-3 border border-[#778da9] rounded-lg focus:ring-2 focus:ring-[#415a77] focus:border-transparent bg-white text-[#0d1b2a]">
-            <button type="submit" class="bg-[#415a77] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1b263b] transition duration-300">
-                Subscribe
-            </button>
-        </form>
+<section class="py-24 bg-gradient-to-br from-[#e0e1dd] to-white relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0">
+        <div class="absolute top-10 right-10 w-40 h-40 bg-[#415a77]/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 left-10 w-32 h-32 bg-[#feb906]/5 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/50">
+            <div class="text-center mb-8">
+                <div class="inline-block mb-4">
+                    <span class="bg-[#415a77]/10 text-[#415a77] text-sm font-semibold px-4 py-2 rounded-full">
+                        {% trans "Newsletter" %}
+                    </span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-[#0d1b2a] mb-6">{% trans "Stay Updated" %}</h2>
+                <p class="text-xl text-[#415a77] max-w-3xl mx-auto leading-relaxed">
+                    {% trans "Subscribe to our newsletter to receive the latest construction insights and tips directly in your inbox." %}
+                </p>
+            </div>
+            
+            <form class="max-w-2xl mx-auto">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex-1 relative">
+                        <input type="email" placeholder="{% trans 'Enter your email address' %}" 
+                               class="w-full px-6 py-4 bg-white border border-[#415a77]/20 rounded-2xl focus:ring-2 focus:ring-[#415a77] focus:border-transparent text-lg text-[#0d1b2a] placeholder-[#778da9] shadow-lg">
+                        <i class="fas fa-envelope absolute right-6 top-1/2 transform -translate-y-1/2 text-[#778da9]"></i>
+                    </div>
+                    <button type="submit" class="bg-gradient-to-r from-[#415a77] to-[#1b263b] text-white px-8 py-4 rounded-2xl font-bold hover:from-[#1b263b] hover:to-[#415a77] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        {% trans "Subscribe Now" %}
+                        <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Newsletter Benefits -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 pt-8 border-t border-[#415a77]/10">
+                    <div class="flex items-center justify-center text-center">
+                        <i class="fas fa-newspaper text-[#415a77] text-xl mr-3"></i>
+                        <span class="text-[#415a77] font-medium">{% trans "Weekly Insights" %}</span>
+                    </div>
+                    <div class="flex items-center justify-center text-center">
+                        <i class="fas fa-lightbulb text-[#415a77] text-xl mr-3"></i>
+                        <span class="text-[#415a77] font-medium">{% trans "Expert Tips" %}</span>
+                    </div>
+                    <div class="flex items-center justify-center text-center">
+                        <i class="fas fa-chart-line text-[#415a77] text-xl mr-3"></i>
+                        <span class="text-[#415a77] font-medium">{% trans "Industry Trends" %}</span>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-br from-[#415a77] to-[#1b263b] text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
-        <p class="text-xl mb-8 text-[#e0e1dd] max-w-3xl mx-auto">
-            Get inspired by our blog and ready to build something amazing? Contact us today.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{% url 'construction:contact' %}" class="bg-[#415a77] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1b263b] transition duration-300">
-                Get Free Quote
-            </a>
-            <a href="{% url 'construction:projects' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#0d1b2a] transition duration-300">
-                View Our Work
-            </a>
+<section class="py-24 bg-gradient-to-br from-[#415a77] via-[#1b263b] to-[#0d1b2a] text-white relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <img src="{% static 'images/Offy/EDIT PHOTO/ED40.jpg' %}" alt="CTA Background" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-[#415a77]/90 to-[#0d1b2a]/90"></div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 right-20 w-32 h-32 border border-white/10 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-20 left-20 w-24 h-24 border border-white/10 rounded-full animate-pulse delay-1000"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <!-- Badge -->
+            <div class="inline-block mb-6">
+                <span class="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full border border-white/30">
+                    {% trans "Let's Build Together" %}
+                </span>
+            </div>
+            
+            <!-- Main Title -->
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                {% trans "Ready to Start Your Project?" %}
+            </h2>
+            
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto leading-relaxed">
+                {% trans "Get inspired by our blog and ready to build something amazing? Contact us today." %}
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                <a href="{% url 'construction:contact' %}" 
+                   class="group bg-white text-[#415a77] px-10 py-4 rounded-2xl font-bold hover:bg-[#feb906] hover:text-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+                    <span class="flex items-center justify-center">
+                        {% trans "Get Free Quote" %}
+                        <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </span>
+                </a>
+                <a href="{% url 'construction:projects' %}" 
+                   class="group border-2 border-white text-white px-10 py-4 rounded-2xl font-bold hover:bg-white hover:text-[#415a77] transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+                    <span class="flex items-center justify-center">
+                        {% trans "View Our Work" %}
+                        <i class="fas fa-external-link-alt ml-3 transform group-hover:scale-110 transition-transform duration-300"></i>
+                    </span>
+                </a>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-white/20">
+                <div class="flex items-center justify-center">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-phone text-white text-xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-white/70 text-sm">{% trans "Call Us" %}</div>
+                        <div class="text-white font-semibold">+98 21 8854 9121</div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center justify-center">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-envelope text-white text-xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-white/70 text-sm">{% trans "Email Us" %}</div>
+                        <div class="text-white font-semibold">info@dorsamehr.com</div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center justify-center">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-white/70 text-sm">{% trans "Visit Us" %}</div>
+                        <div class="text-white font-semibold">{% trans "Tehran & Kish" %}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

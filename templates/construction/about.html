@@ -1,163 +1,422 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load i18n %}
 
 {% block title %}{% trans "About Us - Dorsamehr Kish" %}{% endblock %}
 
 {% block content %}
-<!-- Theme Toggle -->
-
-
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">{% trans "About Dorsamehr Construction" %}</h1>
-        <p class="text-xl text-[#e0e1dd] max-w-3xl mx-auto">
-            {% trans "Building excellence and creating value through innovative construction solutions for over 15 years." %}
-        </p>
+<section class="relative py-32 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <img src="{% static 'images/Offy/emaratfarokh/ED30.jpg' %}" alt="About Background" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80"></div>
+    </div>
+    
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 left-10 w-32 h-32 border border-white/10 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 w-24 h-24 border border-white/10 rounded-full animate-pulse delay-1000"></div>
+        <div class="absolute top-1/2 right-1/4 w-16 h-16 border border-white/10 rounded-full animate-pulse delay-500"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <!-- Badge -->
+            <div class="inline-block mb-6">
+                <span class="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full border border-white/30">
+                    {% trans "Our Story" %}
+                </span>
+            </div>
+            
+            <!-- Main Title -->
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                {% trans "About Dorsamehr" %}
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
+                {% trans "Building excellence and creating value through innovative construction solutions for over 15 years." %}
+            </p>
+            
+            <!-- Company Stats -->
+            <div class="flex justify-center items-center space-x-8 mt-12">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">15+</div>
+                    <div class="text-white/70 text-sm uppercase tracking-wide">{% trans "Years" %}</div>
+                </div>
+                <div class="w-px h-12 bg-white/30"></div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">200+</div>
+                    <div class="text-white/70 text-sm uppercase tracking-wide">{% trans "Projects" %}</div>
+                </div>
+                <div class="w-px h-12 bg-white/30"></div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white">50+</div>
+                    <div class="text-white/70 text-sm uppercase tracking-wide">{% trans "Team Members" %}</div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Company Story Section -->
-<section class="py-20 bg-white">
+<section class="py-20 bg-gradient-to-br from-[#415a77] to-[#0d1b2a]/30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-6">{% trans "Our Story" %}</h2>
-                <p class="text-lg text-[#415a77] mb-6">
-                    {% trans "Founded in 2009, Dorsamehr Construction has grown from a small local contractor to one of the most trusted names in the construction industry. Our journey began with a simple mission: to deliver exceptional quality and value to our clients." %}
-                </p>
-                <p class="text-lg text-[#415a77] mb-6">
-                    {% trans "Over the years, we have successfully completed hundreds of projects across residential, commercial, and industrial sectors. Our commitment to quality, safety, and customer satisfaction has remained unwavering throughout our growth." %}
-                </p>
-                <p class="text-lg text-[#415a77]">
-                    {% trans "Today, we continue to push the boundaries of construction excellence, embracing new technologies and sustainable practices while maintaining the personal touch that our clients have come to expect." %}
-                </p>
-            </div>
-            <div class="relative">
-                <div class="bg-[#778da9] h-96 rounded-2xl flex items-center justify-center">
-                    <i class="fas fa-building text-8xl text-[#e0e1dd]"></i>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="lg:order-1">
+                <!-- Section Badge -->
+                <div class="inline-block mb-6">
+                    <span class="bg-[#415a77]/10 text-[#415a77] text-sm font-semibold px-4 py-2 rounded-full">
+                        {% trans "Our Journey" %}
+                    </span>
                 </div>
+                
+                <h2 class="text-4xl md:text-5xl font-bold text-[#0d1b2a] mb-8">{% trans "Our Story" %}</h2>
+                
+                <!-- Story Timeline -->
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#415a77] rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-rocket text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0d1b2a] mb-2">{% trans "Founded in 2009" %}</h3>
+                            <p class="text-[#415a77] leading-relaxed">
+                                {% trans "Dorsamehr Construction has grown from a small local contractor to one of the most trusted names in the construction industry. Our journey began with a simple mission: to deliver exceptional quality and value to our clients." %}
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#778da9] rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-line text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0d1b2a] mb-2">{% trans "Continuous Growth" %}</h3>
+                            <p class="text-[#415a77] leading-relaxed">
+                                {% trans "Over the years, we have successfully completed hundreds of projects across residential, commercial, and industrial sectors. Our commitment to quality, safety, and customer satisfaction has remained unwavering throughout our growth." %}
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-[#feb906] rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-star text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0d1b2a] mb-2">{% trans "Innovation & Excellence" %}</h3>
+                            <p class="text-[#415a77] leading-relaxed">
+                                {% trans "Today, we continue to push the boundaries of construction excellence, embracing new technologies and sustainable practices while maintaining the personal touch that our clients have come to expect." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:order-2 relative">
+                <!-- Main Image -->
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-700">
+                    <img src="{% static 'images/Offy/emaratfarokh/ED57.jpg' %}" alt="Company Story" class="w-full h-96 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                
+                <!-- Floating Stats Card -->
+                <div class="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/50">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-[#415a77] rounded-xl flex items-center justify-center">
+                            <i class="fas fa-trophy text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-[#0d1b2a]">100%</div>
+                            <div class="text-[#415a77] text-sm">{% trans "Client Satisfaction" %}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Background Elements -->
+                <div class="absolute -top-4 -right-4 w-24 h-24 bg-[#feb906]/10 rounded-full blur-xl"></div>
+                <div class="absolute -bottom-4 right-8 w-32 h-32 bg-[#415a77]/5 rounded-full blur-2xl"></div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Company Stats Section -->
-<section class="py-20 bg-[#e0e1dd]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-24 bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-0 left-0 w-full h-full" style="background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Cpath d="M20 20l-8-8v16l8-8zm8-8v16l-8-8 8-8z"/%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 left-20 w-40 h-40 bg-[#feb906]/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-20 w-32 h-32 bg-[#415a77]/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-4">{% trans "Our Achievements" %}</h2>
-            <p class="text-xl text-[#415a77]">
-                {% trans "Numbers that speak for our commitment to excellence" %}
+            <!-- Badge -->
+            <div class="inline-block mb-6">
+                <span class="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full border border-white/30">
+                    {% trans "Our Impact" %}
+                </span>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">{% trans "Our Achievements" %}</h2>
+            <p class="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                {% trans "Numbers that speak for our commitment to excellence and the trust our clients place in us" %}
             </p>
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="text-center">
-                <div class="text-4xl md:text-5xl font-bold text-[#415a77] mb-2">15+</div>
-                <div class="text-[#415a77]">{% trans "Years of Experience" %}</div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Years of Experience -->
+            <div class="group text-center">
+                <div class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2">
+                    <!-- Icon -->
+                    <div class="w-16 h-16 bg-gradient-to-br from-[#feb906] to-[#ff9500] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-calendar-alt text-2xl text-white"></i>
+                    </div>
+                    
+                    <!-- Number -->
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-3 group-hover:text-[#feb906] transition-colors duration-300">15+</div>
+                    
+                    <!-- Label -->
+                    <div class="text-white/80 font-medium group-hover:text-white transition-colors duration-300">
+                        {% trans "Years of Experience" %}
+                    </div>
+                    
+                    <!-- Hover Glow -->
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#feb906]/20 to-[#ff9500]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
             </div>
-            <div class="text-center">
-                <div class="text-4xl md:text-5xl font-bold text-[#415a77] mb-2">200+</div>
-                <div class="text-[#415a77]">{% trans "Projects Completed" %}</div>
+            
+            <!-- Projects Completed -->
+            <div class="group text-center">
+                <div class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2">
+                    <!-- Icon -->
+                    <div class="w-16 h-16 bg-gradient-to-br from-[#415a77] to-[#778da9] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-building text-2xl text-white"></i>
+                    </div>
+                    
+                    <!-- Number -->
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-3 group-hover:text-[#778da9] transition-colors duration-300">200+</div>
+                    
+                    <!-- Label -->
+                    <div class="text-white/80 font-medium group-hover:text-white transition-colors duration-300">
+                        {% trans "Projects Completed" %}
+                    </div>
+                    
+                    <!-- Hover Glow -->
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#415a77]/20 to-[#778da9]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
             </div>
-            <div class="text-center">
-                <div class="text-4xl md:text-5xl font-bold text-[#415a77] mb-2">50+</div>
-                <div class="text-[#415a77]">{% trans "Team Members" %}</div>
+            
+            <!-- Team Members -->
+            <div class="group text-center">
+                <div class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2">
+                    <!-- Icon -->
+                    <div class="w-16 h-16 bg-gradient-to-br from-[#22c55e] to-[#16a34a] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-users text-2xl text-white"></i>
+                    </div>
+                    
+                    <!-- Number -->
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-3 group-hover:text-[#22c55e] transition-colors duration-300">50+</div>
+                    
+                    <!-- Label -->
+                    <div class="text-white/80 font-medium group-hover:text-white transition-colors duration-300">
+                        {% trans "Team Members" %}
+                    </div>
+                    
+                    <!-- Hover Glow -->
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#22c55e]/20 to-[#16a34a]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
             </div>
-            <div class="text-center">
-                <div class="text-4xl md:text-5xl font-bold text-[#415a77] mb-2">100%</div>
-                <div class="text-[#415a77]">{% trans "Client Satisfaction" %}</div>
+            
+            <!-- Client Satisfaction -->
+            <div class="group text-center">
+                <div class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2">
+                    <!-- Icon -->
+                    <div class="w-16 h-16 bg-gradient-to-br from-[#ef4444] to-[#dc2626] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-heart text-2xl text-white"></i>
+                    </div>
+                    
+                    <!-- Number -->
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-3 group-hover:text-[#ef4444] transition-colors duration-300">100%</div>
+                    
+                    <!-- Label -->
+                    <div class="text-white/80 font-medium group-hover:text-white transition-colors duration-300">
+                        {% trans "Client Satisfaction" %}
+                    </div>
+                    
+                    <!-- Hover Glow -->
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#ef4444]/20 to-[#dc2626]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Our Values Section -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-24 bg-gradient-to-br from-white to-[#e0e1dd] relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#415a77] to-[#0d1b2a]/30">
+        <div class="absolute top-20 right-20 w-40 h-40 bg-[#415a77]/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-20 w-32 h-32 bg-[#feb906]/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[#778da9]/3 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-4">{% trans "Our Core Values" %}</h2>
-            <p class="text-xl text-[#415a77] max-w-3xl mx-auto">
-                {% trans "The principles that guide everything we do" %}
+            <!-- Badge -->
+            <div class="inline-block mb-6">
+                <span class="bg-[#e0e1dd]/10 text-[#e0e1dd] text-sm font-semibold px-4 py-2 rounded-full">
+                    {% trans "Our Foundation" %}
+                </span>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-bold text-[#0d1b2a] mb-6">{% trans "Our Core Values" %}</h2>
+            <p class="text-xl text-[#e0e1dd] max-w-3xl mx-auto leading-relaxed">
+                {% trans "The principles that guide everything we do and define who we are as a company" %}
             </p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Quality -->
-            <div class="text-center">
-                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-medal text-3xl text-white"></i>
+            <!-- Quality Excellence -->
+            <div class="group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/50 hover:bg-white/90 transition-all duration-500 transform hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+                <!-- Icon -->
+                <div class="relative mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#feb906] to-[#ff9500] rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-medal text-3xl text-white"></i>
+                    </div>
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#feb906]/20 to-[#ff9500]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">{% trans "Quality Excellence" %}</h3>
-                <p class="text-[#415a77]">
+                
+                <h3 class="text-xl font-bold text-[#0d1b2a] mb-4 group-hover:text-[#feb906] transition-colors duration-300">
+                    {% trans "Quality Excellence" %}
+                </h3>
+                <p class="text-[#415a77] leading-relaxed group-hover:text-[#0d1b2a] transition-colors duration-300">
                     {% trans "We never compromise on quality. Every project is built to the highest standards using premium materials and expert craftsmanship." %}
                 </p>
+                
+                <!-- Hover Border -->
+                <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#feb906]/30 rounded-2xl transition-all duration-300"></div>
             </div>
             
-            <!-- Safety -->
-            <div class="text-center">
-                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-shield-alt text-3xl text-white"></i>
+            <!-- Safety First -->
+            <div class="group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/50 hover:bg-white/90 transition-all duration-500 transform hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+                <!-- Icon -->
+                <div class="relative mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#ef4444] to-[#dc2626] rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-shield-alt text-3xl text-white"></i>
+                    </div>
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#ef4444]/20 to-[#dc2626]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">{% trans "Safety First" %}</h3>
-                <p class="text-[#415a77]">
+                
+                <h3 class="text-xl font-bold text-[#0d1b2a] mb-4 group-hover:text-[#ef4444] transition-colors duration-300">
+                    {% trans "Safety First" %}
+                </h3>
+                <p class="text-[#415a77] leading-relaxed group-hover:text-[#0d1b2a] transition-colors duration-300">
                     {% trans "Safety is our top priority. We maintain strict safety protocols and ensure all team members are properly trained and equipped." %}
                 </p>
+                
+                <!-- Hover Border -->
+                <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#ef4444]/30 rounded-2xl transition-all duration-300"></div>
             </div>
             
-            <!-- Integrity -->
-            <div class="text-center">
-                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-handshake text-3xl text-white"></i>
+            <!-- Integrity & Trust -->
+            <div class="group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/50 hover:bg-white/90 transition-all duration-500 transform hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+                <!-- Icon -->
+                <div class="relative mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#415a77] to-[#778da9] rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-handshake text-3xl text-white"></i>
+                    </div>
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#415a77]/20 to-[#778da9]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">{% trans "Integrity & Trust" %}</h3>
-                <p class="text-[#415a77]">
+                
+                <h3 class="text-xl font-bold text-[#0d1b2a] mb-4 group-hover:text-[#415a77] transition-colors duration-300">
+                    {% trans "Integrity & Trust" %}
+                </h3>
+                <p class="text-[#415a77] leading-relaxed group-hover:text-[#0d1b2a] transition-colors duration-300">
                     {% trans "We build lasting relationships based on honesty, transparency, and mutual trust with our clients and partners." %}
                 </p>
+                
+                <!-- Hover Border -->
+                <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#415a77]/30 rounded-2xl transition-all duration-300"></div>
             </div>
             
             <!-- Innovation -->
-            <div class="text-center">
-                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-lightbulb text-3xl text-white"></i>
+            <div class="group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/50 hover:bg-white/90 transition-all duration-500 transform hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+                <!-- Icon -->
+                <div class="relative mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#8b5cf6] to-[#7c3aed] rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-lightbulb text-3xl text-white"></i>
+                    </div>
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#8b5cf6]/20 to-[#7c3aed]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">{% trans "Innovation" %}</h3>
-                <p class="text-[#415a77]">
+                
+                <h3 class="text-xl font-bold text-[#0d1b2a] mb-4 group-hover:text-[#8b5cf6] transition-colors duration-300">
+                    {% trans "Innovation" %}
+                </h3>
+                <p class="text-[#415a77] leading-relaxed group-hover:text-[#0d1b2a] transition-colors duration-300">
                     {% trans "We embrace new technologies and innovative solutions to deliver better, more efficient construction projects." %}
                 </p>
+                
+                <!-- Hover Border -->
+                <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#8b5cf6]/30 rounded-2xl transition-all duration-300"></div>
             </div>
             
             <!-- Sustainability -->
-            <div class="text-center">
-                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-leaf text-3xl text-white"></i>
+            <div class="group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/50 hover:bg-white/90 transition-all duration-500 transform hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+                <!-- Icon -->
+                <div class="relative mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#22c55e] to-[#16a34a] rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-leaf text-3xl text-white"></i>
+                    </div>
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#22c55e]/20 to-[#16a34a]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">{% trans "Sustainability" %}</h3>
-                <p class="text-[#415a77]">
+                
+                <h3 class="text-xl font-bold text-[#0d1b2a] mb-4 group-hover:text-[#22c55e] transition-colors duration-300">
+                    {% trans "Sustainability" %}
+                </h3>
+                <p class="text-[#415a77] leading-relaxed group-hover:text-[#0d1b2a] transition-colors duration-300">
                     {% trans "We are committed to environmentally responsible construction practices and sustainable building solutions." %}
                 </p>
+                
+                <!-- Hover Border -->
+                <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#22c55e]/30 rounded-2xl transition-all duration-300"></div>
             </div>
             
             <!-- Customer Focus -->
-            <div class="text-center">
-                <div class="w-20 h-20 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-users text-3xl text-white"></i>
+            <div class="group relative bg-white/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/50 hover:bg-white/90 transition-all duration-500 transform hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+                <!-- Icon -->
+                <div class="relative mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-[#f59e0b] to-[#d97706] rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                        <i class="fas fa-users text-3xl text-white"></i>
+                    </div>
+                    <div class="absolute -inset-2 bg-gradient-to-br from-[#f59e0b]/20 to-[#d97706]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 class="text-xl font-semibold text-[#0d1b2a] mb-4">{% trans "Customer Focus" %}</h3>
-                <p class="text-[#415a77]">
+                
+                <h3 class="text-xl font-bold text-[#0d1b2a] mb-4 group-hover:text-[#f59e0b] transition-colors duration-300">
+                    {% trans "Customer Focus" %}
+                </h3>
+                <p class="text-[#415a77] leading-relaxed group-hover:text-[#0d1b2a] transition-colors duration-300">
                     {% trans "Our clients are at the heart of everything we do. We listen, understand, and exceed their expectations." %}
                 </p>
+                
+                <!-- Hover Border -->
+                <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#f59e0b]/30 rounded-2xl transition-all duration-300"></div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Team Section -->
-<section class="py-20 bg-[#e0e1dd]">
+<section class="py-20 bg-[#0d1b2a]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-4">{% trans "Meet Our Leadership Team" %}</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-[#e0e1dd] mb-4">{% trans "Meet Our Leadership Team" %}</h2>
             <p class="text-xl text-[#415a77] max-w-3xl mx-auto">
                 {% trans "Experienced professionals dedicated to delivering exceptional results" %}
             </p>
@@ -204,48 +463,142 @@
 </section>
 
 <!-- Mission & Vision Section -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-24 bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-0 left-0 w-full h-full" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <div class="inline-block mb-6">
+                <span class="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full border border-white/30">
+                    {% trans "Our Purpose" %}
+                </span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">{% trans "Mission & Vision" %}</h2>
+        </div>
+        
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <!-- Mission -->
-            <div class="bg-[#e0e1dd] rounded-2xl p-8 border border-[#778da9]">
-                <div class="w-16 h-16 bg-[#415a77] rounded-lg flex items-center justify-center mb-6">
-                    <i class="fas fa-bullseye text-2xl text-white"></i>
+            <div class="group relative bg-white/10 backdrop-blur-sm rounded-3xl p-10 border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2">
+                <!-- Icon -->
+                <div class="w-20 h-20 bg-gradient-to-br from-[#feb906] to-[#ff9500] rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                    <i class="fas fa-bullseye text-3xl text-white"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-[#0d1b2a] mb-4">{% trans "Our Mission" %}</h3>
-                <p class="text-[#415a77] text-lg">
+                
+                <h3 class="text-3xl font-bold text-white mb-6 group-hover:text-[#feb906] transition-colors duration-300">
+                    {% trans "Our Mission" %}
+                </h3>
+                <p class="text-white/80 text-lg leading-relaxed group-hover:text-white/95 transition-colors duration-300">
                     {% trans "To deliver exceptional construction services that exceed client expectations while maintaining the highest standards of quality, safety, and sustainability. We strive to build lasting relationships and create value for our clients, employees, and communities." %}
                 </p>
+                
+                <!-- Hover Glow -->
+                <div class="absolute -inset-2 bg-gradient-to-br from-[#feb906]/20 to-[#ff9500]/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
             
             <!-- Vision -->
-            <div class="bg-[#e0e1dd] rounded-2xl p-8 border border-[#778da9]">
-                <div class="w-16 h-16 bg-[#415a77] rounded-lg flex items-center justify-center mb-6">
-                    <i class="fas fa-eye text-2xl text-white"></i>
+            <div class="group relative bg-white/10 backdrop-blur-sm rounded-3xl p-10 border border-white/20 hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2">
+                <!-- Icon -->
+                <div class="w-20 h-20 bg-gradient-to-br from-[#415a77] to-[#778da9] rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                    <i class="fas fa-eye text-3xl text-white"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-[#0d1b2a] mb-4">{% trans "Our Vision" %}</h3>
-                <p class="text-[#415a77] text-lg">
+                
+                <h3 class="text-3xl font-bold text-white mb-6 group-hover:text-[#778da9] transition-colors duration-300">
+                    {% trans "Our Vision" %}
+                </h3>
+                <p class="text-white/80 text-lg leading-relaxed group-hover:text-white/95 transition-colors duration-300">
                     {% trans "To be the leading construction company known for innovation, quality, and customer satisfaction. We envision a future where our projects not only meet today's needs but also contribute to a sustainable and prosperous tomorrow." %}
                 </p>
+                
+                <!-- Hover Glow -->
+                <div class="absolute -inset-2 bg-gradient-to-br from-[#415a77]/20 to-[#778da9]/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-br from-[#415a77] to-[#1b263b] text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">{% trans "Ready to Work With Us?" %}</h2>
-        <p class="text-xl mb-8 text-[#e0e1dd] max-w-3xl mx-auto">
-            {% trans "Let's discuss your project and see how we can help bring your vision to life. Contact us today for a free consultation." %}
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{% url 'construction:contact' %}" class="bg-[#778da9] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#415a77] transition duration-300">
-                {% trans "Get In Touch" %}
-            </a>
-            <a href="{% url 'construction:projects' %}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#0d1b2a] transition duration-300">
-                {% trans "View Our Work" %}
-            </a>
+<section class="py-24 bg-gradient-to-br from-white to-[#e0e1dd] relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0">
+        <div class="absolute top-10 right-10 w-40 h-40 bg-[#415a77]/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 left-10 w-32 h-32 bg-[#feb906]/5 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <!-- Badge -->
+            <div class="inline-block mb-6">
+                <span class="bg-[#415a77]/10 text-[#415a77] text-sm font-semibold px-4 py-2 rounded-full">
+                    {% trans "Let's Build Together" %}
+                </span>
+            </div>
+            
+            <!-- Main Title -->
+            <h2 class="text-4xl md:text-6xl font-bold text-[#0d1b2a] mb-6 leading-tight">
+                {% trans "Ready to Work With Us?" %}
+            </h2>
+            
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-[#415a77] mb-12 max-w-3xl mx-auto leading-relaxed">
+                {% trans "Let's discuss your project and see how we can help bring your vision to life. Contact us today for a free consultation." %}
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                <a href="{% url 'construction:contact' %}" 
+                   class="group bg-[#415a77] text-white px-10 py-4 rounded-2xl font-bold hover:bg-[#1b263b] transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+                    <span class="flex items-center justify-center">
+                        {% trans "Get In Touch" %}
+                        <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </span>
+                </a>
+                <a href="{% url 'construction:projects' %}" 
+                   class="group border-2 border-[#415a77] text-[#415a77] px-10 py-4 rounded-2xl font-bold hover:bg-[#415a77] hover:text-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+                    <span class="flex items-center justify-center">
+                        {% trans "View Our Work" %}
+                        <i class="fas fa-external-link-alt ml-3 transform group-hover:scale-110 transition-transform duration-300"></i>
+                    </span>
+                </a>
+            </div>
+            
+            <!-- Contact Quick Info -->
+            <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/50">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex items-center justify-center">
+                        <div class="w-12 h-12 bg-[#415a77] rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-phone text-white text-lg"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-[#415a77] text-sm font-medium">{% trans "Call Us" %}</div>
+                            <div class="text-[#0d1b2a] font-bold">+98 21 8854 9121</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center">
+                        <div class="w-12 h-12 bg-[#415a77] rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-envelope text-white text-lg"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-[#415a77] text-sm font-medium">{% trans "Email Us" %}</div>
+                            <div class="text-[#0d1b2a] font-bold">info@dorsamehr.com</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center">
+                        <div class="w-12 h-12 bg-[#415a77] rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-white text-lg"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-[#415a77] text-sm font-medium">{% trans "Visit Us" %}</div>
+                            <div class="text-[#0d1b2a] font-bold">{% trans "Tehran & Kish" %}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

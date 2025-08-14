@@ -109,42 +109,39 @@
 
 {% block content %}
 <!-- Hero Section -->
-                    <section class="relative bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] text-white h-[calc(100vh-5rem)] overflow-hidden">
+                    <section class="relative bg-gradient-to-br from-[#0d1b2a] to-[#1b263b] text-white overflow-hidden" style="width: 1521px; height: 650px; max-width: 100%; margin: 0 auto;">
             <!-- Background Photo Carousel -->
             <div id="gallery-carousel" class="absolute inset-0 w-full h-full">
                 <div class="relative w-full h-full overflow-hidden">
                     <!-- Photo 1 -->
-                    <img src="{% static 'images/Offy/dorsamehrkish/0O7A1259.jpg' %}" alt="Dorsamehr Construction Project 1" class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-100" data-index="0" data-title="{% trans 'Every detail tells a story' %}" data-description="{% trans 'Beacuse you deserve nothing but the best' %}">
+                    <img src="{% static 'images/Offy/dorsamehrkish/ChatGPT Image Aug 3, 2025, 04_36_27 PM.png' %}" alt="Dorsamehr Construction Project 1" class="absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 opacity-100" data-index="0" data-title="{% trans 'Dorsa Mehr Kish Doctors Complex' %}" data-description="{% trans 'For those who choose to stand out' %}">
                     <!-- Photo 2 -->
-                    <img src="{% static 'images/Offy/dorsamehrkish/49ce9796-cc0b-45d2-8efe-74e2ab688b48.jpg' %}" alt="Dorsamehr Construction Project 2" class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0" data-index="1" data-title="{% trans 'Every detail tells a story' %}" data-description="{% trans 'Beacuse you deserve nothing but the best' %}">
+                    <img src="{% static 'images/Offy/emaratfarokh/DSC_0022 (1).jpg' %}" alt="Dorsamehr Construction Project 2" class="absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 opacity-0" data-index="1" data-title="{% trans 'Emarat Farokh' %}" data-description="{% trans 'Designed for those who think differently' %}">
                     <!-- Photo 3 -->
-                    <img src="{% static 'images/Offy/dorsamehrkish/IMG_20250506_133558_810.jpg' %}" alt="Dorsamehr Construction Project 3" class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0" data-index="2" data-title="{% trans 'Every detail tells a story' %}" data-description="{% trans 'Beacuse you deserve nothing but the best' %}">
+                    <img src="{% static 'images/Offy/emaratfarokh/download.png' %}" alt="Dorsamehr Construction Project 3" class="absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 opacity-0" data-index="2" data-title="{% trans 'Emarat Farokh' %}" data-description="{% trans 'For The Finest' %}">
 
                 </div>
                 
-                <!-- Static Text Overlay - Top Left -->
+                <!-- Dynamic Text Overlay - Top Left -->
                 <div class="absolute top-8 left-8 z-10 max-w-2xl">
                     <div class="bg-black/60 backdrop-blur-sm rounded-xl px-8 py-4 border border-white/20">
                         <!-- Decorative accent -->
                         <div class="w-16 h-1 bg-gradient-to-r from-[#415a77] to-[#778da9] mb-3 rounded-full"></div>
                         
-                        <!-- Main Title -->
-                        <h3 class="text-2xl md:text-3xl font-light mb-2 text-white leading-tight">
-                            <span class="font-thin">Every</span> 
-                            <span class="font-bold text-[#e0e1dd]">detail</span>
-                            <span class="font-thin">tells a</span>
-                            <span class="font-bold text-[#e0e1dd]">story</span>
+                        <!-- Dynamic Title with Typewriter Effect -->
+                        <h3 id="dynamic-title" class="text-2xl md:text-3xl font-bold mb-2 text-white leading-tight min-h-[3rem]">
+                            {% trans 'Dorsa Mehr Kish Doctors Complex' %}
                         </h3>
                         
-                        <!-- Subtitle -->
-                        <p class="text-sm md:text-base font-light text-white/90 leading-relaxed tracking-wide mb-2">
-                            Because you deserve nothing but the best
+                        <!-- Dynamic Subtitle with Typewriter Effect -->
+                        <p id="dynamic-description" class="text-sm md:text-base font-light text-white/90 leading-relaxed tracking-wide mb-2 min-h-[1.5rem]">
+                            {% trans 'For those who choose to stand out' %}
                         </p>
                         
                         <!-- Bottom accent line -->
                         <div class="w-12 h-px bg-white/40"></div>
-            </div>
-                            </div>
+                    </div>
+                </div>
                             
                             <!-- Navigation Dots -->
                 <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
@@ -269,69 +266,69 @@
         <!-- Project 1 - Summary Left, Image Right -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 project-row" data-aos="fade-up" data-aos-duration="1000">
             <!-- Project 1 Summary -->
-            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-[#778da9] flex flex-col justify-center transform hover:scale-105 project-summary" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
+            <div class="bg-white rounded-xl p-8 shadow-lg border border-[#778da9] flex flex-col justify-center project-summary {% if LANGUAGE_CODE == 'fa' %}text-right{% endif %}" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
                 <div class="mb-4">
                     <span class="bg-[#415a77]/10 text-[#415a77] text-sm font-semibold px-4 py-2 rounded-full project-badge">
                         {% trans "Commercial Development" %}
                     </span>
                 </div>
-                <h3 class="text-2xl md:text-3xl font-bold text-[#0d1b2a] mb-4 project-title">{% trans "Dorsamehr Kish Complex" %}</h3>
-                <p class="text-[#415a77] mb-6 leading-relaxed project-description">
+                <h3 class="text-2xl md:text-3xl font-bold text-[#0d1b2a] mb-4 project-title {% if LANGUAGE_CODE == 'fa' %}font-medium leading-relaxed{% endif %}">{% trans "Dorsamehr Kish Complex" %}</h3>
+                <p class="text-[#415a77] mb-6 leading-relaxed project-description {% if LANGUAGE_CODE == 'fa' %}leading-loose text-justify{% endif %}">
                     {% trans "A premium commercial development featuring modern architecture, sustainable design principles, and state-of-the-art facilities. This project showcases our commitment to excellence and innovation in construction." %}
                 </p>
                 
                 <!-- Project Details Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div class="space-y-3">
-                        <div class="flex items-center text-[#0d1b2a] project-detail-item">
-                            <i class="fas fa-building w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] project-detail-item {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-building w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Project Type" %}</span>
-                                <p class="font-semibold">{% trans "Commercial Complex" %}</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">{% trans "Commercial Complex" %}</p>
                             </div>
                         </div>
-                        <div class="flex items-center text-[#0d1b2a] project-detail-item">
-                            <i class="fas fa-map-marker-alt w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] project-detail-item {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-map-marker-alt w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Location" %}</span>
-                                <p class="font-semibold">{% trans "Kish Island" %}</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">{% trans "Kish Island" %}</p>
                             </div>
                         </div>
-                        <div class="flex items-center text-[#0d1b2a]">
-                            <i class="fas fa-expand-arrows-alt w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-expand-arrows-alt w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Area" %}</span>
-                                <p class="font-semibold">15,000 m²</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">15,000 m²</p>
                             </div>
                         </div>
-                        <div class="flex items-center text-[#0d1b2a]">
-                            <i class="fas fa-calendar w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-calendar w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Completion Date" %}</span>
-                                <p class="font-semibold">{% trans "December 2024" %}</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">{% trans "December 2024" %}</p>
                             </div>
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <div class="flex items-center text-[#0d1b2a]">
-                            <i class="fas fa-layer-group w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-layer-group w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Number of Floors" %}</span>
-                                <p class="font-semibold">12 {% trans "Floors" %}</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">12 {% trans "Floors" %}</p>
                             </div>
                         </div>
-                        <div class="flex items-center text-[#0d1b2a]">
-                            <i class="fas fa-drafting-compass w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-drafting-compass w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Architectural Design" %}</span>
-                                <p class="font-semibold">{% trans "Modern Minimalist" %}</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">{% trans "Modern Minimalist" %}</p>
                             </div>
                         </div>
-                        <div class="flex items-center text-[#0d1b2a]">
-                            <i class="fas fa-store w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-store w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Venue" %}</span>
-                                <p class="font-semibold">{% trans "Mixed-Use Complex" %}</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">{% trans "Mixed-Use Complex" %}</p>
                             </div>
                         </div>
                     </div>
@@ -346,68 +343,68 @@
             </div>
             
             <!-- Project 1 Image -->
-            <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 project-image h-full min-h-[500px]" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
-                <img src="{% static 'images/Offy/dorsamehrkish/0O7A1259.jpg' %}" alt="Dorsamehr Kish Project" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-110">
+            <div class="rounded-xl overflow-hidden shadow-lg project-image h-full min-h-[500px]" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
+                <img src="{% static 'images/Offy/dorsamehrkish/ChatGPT Image Aug 3, 2025, 04_36_27 PM.png' %}" alt="Dorsamehr Kish Project" class="w-full h-full object-cover object-center">
             </div>
         </div>
         
         <!-- Project 2 - Image Left, Summary Right -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 project-row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
             <!-- Project 2 Image -->
-            <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 project-image h-full min-h-[500px]" data-aos="fade-right" data-aos-delay="800" data-aos-duration="800">
-                <img src="{% static 'images/Offy/emaratfarokh/ED12.jpg' %}" alt="Emarat Farokh Project" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-110">
+            <div class="rounded-xl overflow-hidden shadow-lg project-image h-full min-h-[500px]" data-aos="fade-right" data-aos-delay="800" data-aos-duration="800">
+                <img src="{% static 'images/Offy/emaratfarokh/ED5.jpg' %}" alt="Emarat Farokh Project" class="w-full h-full object-cover object-center">
             </div>
             
             <!-- Project 2 Summary -->
-            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-[#778da9] flex flex-col justify-center transform hover:scale-105 project-summary" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="800">
+            <div class="bg-white rounded-xl p-8 shadow-lg border border-[#778da9] flex flex-col justify-center project-summary {% if LANGUAGE_CODE == 'fa' %}text-right{% endif %}" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="800">
                 <div class="mb-4">
                     <span class="bg-[#415a77]/10 text-[#415a77] text-sm font-semibold px-4 py-2 rounded-full">
                         {% trans "Luxury Construction" %}
                     </span>
                 </div>
-                <h3 class="text-2xl md:text-3xl font-bold text-[#0d1b2a] mb-4">{% trans "Emarat Farokh" %}</h3>
-                <p class="text-[#415a77] mb-6 leading-relaxed">
+                <h3 class="text-2xl md:text-3xl font-bold text-[#0d1b2a] mb-4 {% if LANGUAGE_CODE == 'fa' %}font-medium leading-relaxed{% endif %}">{% trans "Emarat Farokh" %}</h3>
+                <p class="text-[#415a77] mb-6 leading-relaxed {% if LANGUAGE_CODE == 'fa' %}leading-loose text-justify{% endif %}">
                     {% trans "An exceptional luxury construction project that combines premium materials with innovative design. This development represents the pinnacle of modern construction excellence and attention to detail." %}
                 </p>
                 
                 <!-- Project Details Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div class="space-y-3">
-                        <div class="flex items-center text-[#0d1b2a]">
-                            <i class="fas fa-expand-arrows-alt w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-expand-arrows-alt w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Area" %}</span>
-                                <p class="font-semibold">8,500 m²</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">8,500 m²</p>
                             </div>
                         </div>
-                        <div class="flex items-center text-[#0d1b2a]">
-                            <i class="fas fa-building w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-building w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Venue" %}</span>
-                                <p class="font-semibold">{% trans "Residential Complex" %}</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">{% trans "Residential Complex" %}</p>
                             </div>
                         </div>
-                        <div class="flex items-center text-[#0d1b2a]">
-                            <i class="fas fa-home w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-home w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Number of Units" %}</span>
-                                <p class="font-semibold">36 {% trans "Units" %}</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">36 {% trans "Units" %}</p>
                             </div>
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <div class="flex items-center text-[#0d1b2a]">
-                            <i class="fas fa-user-tie w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-user-tie w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Employer" %}</span>
-                                <p class="font-semibold">{% trans "Farokh Development" %}</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">{% trans "Farokh Development" %}</p>
                             </div>
                         </div>
-                        <div class="flex items-center text-[#0d1b2a]">
-                            <i class="fas fa-layer-group w-5 text-[#415a77] mr-3"></i>
+                        <div class="flex items-center text-[#0d1b2a] {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
+                            <i class="fas fa-layer-group w-5 text-[#415a77] {% if LANGUAGE_CODE == 'fa' %}ml-3{% else %}mr-3{% endif %}"></i>
                             <div>
                                 <span class="text-xs text-[#778da9] uppercase tracking-wide">{% trans "Number of Floors" %}</span>
-                                <p class="font-semibold">8 {% trans "Floors" %}</p>
+                                <p class="font-semibold {% if LANGUAGE_CODE == 'fa' %}font-medium{% endif %}">8 {% trans "Floors" %}</p>
                             </div>
                         </div>
                     </div>
@@ -431,58 +428,61 @@
 </section>
 
 <!-- Why Choose Us Section -->
-<section class="py-20 bg-[#415a77]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="{% if LANGUAGE_CODE == 'fa' %}order-2{% endif %}">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#e0e1dd] mb-6">{% trans "Why Choose Dorsamehr Construction?" %}</h2>
-                <div class="space-y-6">
-                    <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#415a77] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
-                            <i class="fas fa-medal text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-[#e0e1dd] mb-2">{% trans "Quality Assurance" %}</h3>
-                            <p class="text-[#e0e1dd]">{% trans "We maintain the highest standards of quality throughout every project phase." %}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#415a77] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
-                            <i class="fas fa-clock text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-[#e0e1dd] mb-2">{% trans "Timely Delivery" %}</h3>
-                            <p class="text-[#e0e1dd]">{% trans "We complete projects on schedule while maintaining quality and safety standards." %}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#415a77] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
-                            <i class="fas fa-users text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-[#e0e1dd] mb-2">{% trans "Expert Team" %}</h3>
-                            <p class="text-[#e0e1dd]">{% trans "Our experienced professionals bring expertise and innovation to every project." %}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start {% if LANGUAGE_CODE == 'fa' %}flex-row-reverse{% endif %}">
-                        <div class="w-12 h-12 bg-[#415a77] rounded-lg flex items-center justify-center {% if LANGUAGE_CODE == 'fa' %}ml-4{% else %}mr-4{% endif %} flex-shrink-0">
-                            <i class="fas fa-shield-alt text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-[#e0e1dd] mb-2">{% trans "Safety First" %}</h3>
-                            <p class="text-[#e0e1dd]">{% trans "We prioritize safety in all our operations and maintain strict safety protocols." %}</p>
-                        </div>
-                    </div>
+<section class="py-32 relative overflow-hidden min-h-screen">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <img src="{% static 'images/Offy/emaratfarokh/ChatGPT Image Aug 11, 2025, 05_02_25 PM.png' %}" alt="Why Choose Us Background" class="w-full h-full object-cover">
+        <!-- Light Overlay -->
+        <div class="absolute inset-0 bg-black/30"></div>
+    </div>
+    
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-h-screen flex flex-col">
+        <div class="text-center pt-16 mb-auto" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 {% if LANGUAGE_CODE == 'fa' %}font-medium leading-loose tracking-wide{% endif %}">
+                <span class="bg-[#415a77]/90 backdrop-blur-sm px-8 py-4 rounded-xl inline-block shadow-lg border border-white/20">
+                    {% trans "Why Choose Dorsamehr Construction?" %}
+                </span>
+            </h2>
+        </div>
+        
+        <div class="pb-20 mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 {% if LANGUAGE_CODE == 'fa' %}rtl{% endif %}">
+            <!-- Quality Assurance -->
+            <div class="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-6 text-center hover:bg-white/30 transition-all duration-500 {% if LANGUAGE_CODE == 'fa' %}text-right{% endif %}" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                <div class="w-16 h-16 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <i class="fas fa-medal text-white text-2xl"></i>
                 </div>
+                <h3 class="text-xl font-semibold text-white mb-3 {% if LANGUAGE_CODE == 'fa' %}font-medium leading-relaxed{% endif %}">{% trans "Quality Assurance" %}</h3>
+                <p class="text-white/90 {% if LANGUAGE_CODE == 'fa' %}leading-loose text-sm{% endif %}">{% trans "We maintain the highest standards of quality throughout every project phase." %}</p>
             </div>
             
-            <div class="relative {% if LANGUAGE_CODE == 'fa' %}order-1{% endif %}">
-                <div class="bg-[#778da9] h-96 rounded-2xl flex items-center justify-center">
-                    <img src="{% static 'images/Offy/emaratfarokh/ED63.jpg' %}" alt="Why Choose Us">
+            <!-- Timely Delivery -->
+            <div class="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-6 text-center hover:bg-white/30 transition-all duration-500 {% if LANGUAGE_CODE == 'fa' %}text-right{% endif %}" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+                <div class="w-16 h-16 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <i class="fas fa-clock text-white text-2xl"></i>
                 </div>
+                <h3 class="text-xl font-semibold text-white mb-3 {% if LANGUAGE_CODE == 'fa' %}font-medium leading-relaxed{% endif %}">{% trans "Timely Delivery" %}</h3>
+                <p class="text-white/90 {% if LANGUAGE_CODE == 'fa' %}leading-loose text-sm{% endif %}">{% trans "We complete projects on schedule while maintaining quality and safety standards." %}</p>
+            </div>
+            
+            <!-- Expert Team -->
+            <div class="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-6 text-center hover:bg-white/30 transition-all duration-500 {% if LANGUAGE_CODE == 'fa' %}text-right{% endif %}" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+                <div class="w-16 h-16 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <i class="fas fa-users text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-3 {% if LANGUAGE_CODE == 'fa' %}font-medium leading-relaxed{% endif %}">{% trans "Expert Team" %}</h3>
+                <p class="text-white/90 {% if LANGUAGE_CODE == 'fa' %}leading-loose text-sm{% endif %}">{% trans "Our experienced professionals bring expertise and innovation to every project." %}</p>
+            </div>
+            
+            <!-- Safety First -->
+            <div class="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-6 text-center hover:bg-white/30 transition-all duration-500 {% if LANGUAGE_CODE == 'fa' %}text-right{% endif %}" data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
+                <div class="w-16 h-16 bg-[#415a77] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <i class="fas fa-shield-alt text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-3 {% if LANGUAGE_CODE == 'fa' %}font-medium leading-relaxed{% endif %}">{% trans "Safety First" %}</h3>
+                <p class="text-white/90 {% if LANGUAGE_CODE == 'fa' %}leading-loose text-sm{% endif %}">{% trans "We prioritize safety in all our operations and maintain strict safety protocols." %}</p>
+            </div>
             </div>
         </div>
     </div>
@@ -590,13 +590,29 @@
 
 <!-- Gallery Carousel JavaScript -->
 <script>
+    // Typewriter Animation Function
+    function typeWriter(element, text, speed = 50) {
+        element.innerHTML = '';
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, speed);
+            }
+        }
+        typing();
+    }
+
     // Gallery Carousel Functionality
     document.addEventListener('DOMContentLoaded', function() {
-                 const carousel = document.getElementById('gallery-carousel');
-         const images = carousel.querySelectorAll('img');
-         const dots = carousel.querySelectorAll('[data-index]');
-         const prevBtn = document.getElementById('prev-btn');
-         const nextBtn = document.getElementById('next-btn');
+        const carousel = document.getElementById('gallery-carousel');
+        const images = carousel.querySelectorAll('img');
+        const dots = carousel.querySelectorAll('[data-index]');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const titleElement = document.getElementById('dynamic-title');
+        const descriptionElement = document.getElementById('dynamic-description');
         
         console.log('DOM elements found:', {
             carousel: carousel,
@@ -653,6 +669,19 @@
              // Update current index
              currentIndex = index;
              
+             // Update dynamic text with typewriter effect
+             const currentImage = images[index];
+             const title = currentImage.getAttribute('data-title') || '';
+             const description = currentImage.getAttribute('data-description') || '';
+             
+             // Clear existing text and start typewriter animation
+             setTimeout(() => {
+                 typeWriter(titleElement, title, 50);
+             }, 300);
+             setTimeout(() => {
+                 typeWriter(descriptionElement, description, 30);
+             }, 800);
+             
              // Update active dot
              dots.forEach((dot, i) => {
                  if (i === index) {
@@ -698,6 +727,18 @@
         // Start auto-play
         console.log('Starting auto-play');
                 startAutoPlay();
+        
+        // Initial typewriter animation for first image
+        setTimeout(() => {
+            const firstImage = images[0];
+            const title = firstImage.getAttribute('data-title') || '';
+            const description = firstImage.getAttribute('data-description') || '';
+            
+            typeWriter(titleElement, title, 50);
+            setTimeout(() => {
+                typeWriter(descriptionElement, description, 30);
+            }, 500);
+        }, 500);
         
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {

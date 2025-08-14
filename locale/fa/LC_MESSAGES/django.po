@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-04 03:15+0330\n"
+"POT-Creation-Date: 2025-08-11 20:21+0330\n"
 "PO-Revision-Date: 2024-01-01 12:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
@@ -17,7 +17,6 @@ msgstr ""
 
 #: .\construction\management\commands\test_translations.py:18
 #: .\construction\management\commands\test_translations.py:26
-#: .\templates\construction\about.html:4
 msgid "About Us - Dorsamehr Construction"
 msgstr "درباره ما - ساختمان سازی درسمهر"
 
@@ -39,64 +38,75 @@ msgstr "برتری کیفیت"
 msgid "Get In Touch"
 msgstr "تماس با ما"
 
-#: .\templates\base.html:8
+#: .\templates\base.html:8 .\templates\construction\team_barter.html:5
+#: .\templates\construction\team_employment.html:5
+#: .\templates\construction\team_partnership.html:5
 #, fuzzy
 #| msgid "About Dorsamehr Construction"
-msgid "Dorsamehr Construction"
+msgid "Dorsamehr Kish"
 msgstr "درباره ساختمان سازی درسمهر"
 
 #: .\templates\base.html:34
-#, fuzzy
-#| msgid "About Dorsamehr Construction"
-msgid "Construction"
-msgstr "درباره ساختمان سازی درسمهر"
+msgid "Kish"
+msgstr ""
 
-#: .\templates\base.html:43 .\templates\base.html:151 .\templates\base.html:246
+#: .\templates\base.html:43 .\templates\base.html:167 .\templates\base.html:279
 #: .\test_language_switching.py:69 .\test_language_switching.py:75
 msgid "Home"
 msgstr "خانه"
 
-#: .\templates\base.html:47 .\templates\base.html:154
+#: .\templates\base.html:47 .\templates\base.html:170
 #: .\test_language_switching.py:70 .\test_language_switching.py:76
 msgid "About"
 msgstr " درباره ما"
 
-#: .\templates\base.html:51 .\templates\base.html:157 .\templates\base.html:248
+#: .\templates\base.html:51 .\templates\base.html:173 .\templates\base.html:281
+#: .\templates\construction\home.html:532
 msgid "Projects"
 msgstr "پروژه‌ها"
 
-#: .\templates\base.html:55 .\templates\base.html:160
+#: .\templates\base.html:55 .\templates\base.html:176
 msgid "Gallery"
 msgstr "گالری"
 
-#: .\templates\base.html:59 .\templates\base.html:163 .\templates\base.html:249
+#: .\templates\base.html:63 .\templates\base.html:183 .\templates\base.html:282
 msgid "Team"
 msgstr "همکاری با ما"
 
-#: .\templates\base.html:63 .\templates\base.html:166 .\templates\base.html:250
+#: .\templates\base.html:71 .\templates\base.html:191
+msgid "Team Options"
+msgstr ""
+
+#: .\templates\base.html:90 .\templates\base.html:210 .\templates\base.html:283
 msgid "Blog"
 msgstr "وبلاگ"
 
-#: .\templates\base.html:69 .\templates\base.html:169
-#: .\test_language_switching.py:71 .\test_language_switching.py:77
+#: .\templates\base.html:96 .\test_language_switching.py:71
+#: .\test_language_switching.py:77
 msgid "Contact"
 msgstr "ارتباط با ما"
 
-#: .\templates\base.html:97
+#: .\templates\base.html:113
 #, fuzzy
 #| msgid "Switch Language"
 msgid "Select Language"
 msgstr "تغییر زبان"
 
-#: .\templates\base.html:110 .\templates\base.html:200
+#: .\templates\base.html:126 .\templates\base.html:233
 msgid "English"
 msgstr "انگلیسی"
 
-#: .\templates\base.html:130 .\templates\base.html:207
+#: .\templates\base.html:146 .\templates\base.html:240
 msgid "Persian"
 msgstr "فارسی"
 
-#: .\templates\base.html:233
+#: .\templates\base.html:213
+#, fuzzy
+#| msgid "Contact"
+msgid "Contact us"
+msgstr "ارتباط با ما"
+
+#: .\templates\base.html:266
 #, fuzzy
 #| msgid ""
 #| "Building excellence and creating value through innovative construction "
@@ -108,25 +118,31 @@ msgstr ""
 "ساخت برتری و ایجاد ارزش از طریق راه‌حل‌های نوآورانه ساختمانی برای بیش از ۱۵ "
 "سال."
 
-#: .\templates\base.html:244
+#: .\templates\base.html:277
 msgid "Quick Links"
 msgstr "لینک‌های سریع"
 
-#: .\templates\base.html:247
+#: .\templates\base.html:280
 #, fuzzy
 #| msgid "About"
 msgid "About Us"
 msgstr "درباره"
 
-#: .\templates\base.html:256
+#: .\templates\base.html:289
 #, fuzzy
 #| msgid "Contact Information"
 msgid "Contact Info"
 msgstr "اطلاعات تماس"
 
-#: .\templates\base.html:266
+#: .\templates\base.html:299
 msgid "All rights reserved."
 msgstr "تمام حقوق محفوظ است."
+
+#: .\templates\construction\about.html:4
+#, fuzzy
+#| msgid "About Us - Dorsamehr Construction"
+msgid "About Us - Dorsamehr Kish"
+msgstr "درباره ما - ساختمان سازی درسمهر"
 
 #: .\templates\construction\about.html:13
 msgid "About Dorsamehr Construction"
@@ -173,6 +189,7 @@ msgstr ""
 "دارند را حفظ می‌کنیم."
 
 #: .\templates\construction\about.html:49
+#: .\templates\construction\home.html:503
 msgid "Our Achievements"
 msgstr "دستاوردهای ما"
 
@@ -184,15 +201,15 @@ msgstr "اعدادی که از تعهد ما به برتری سخن می‌گو�
 msgid "Years of Experience"
 msgstr "سال تجربه"
 
-#: .\templates\construction\about.html:62 .\templates\construction\home.html:45
+#: .\templates\construction\about.html:62
 msgid "Projects Completed"
 msgstr "پروژه تکمیل شده"
 
-#: .\templates\construction\about.html:66 .\templates\construction\home.html:49
+#: .\templates\construction\about.html:66
 msgid "Team Members"
 msgstr "اعضای تیم"
 
-#: .\templates\construction\about.html:70 .\templates\construction\home.html:53
+#: .\templates\construction\about.html:70
 msgid "Client Satisfaction"
 msgstr "رضایت مشتری"
 
@@ -213,7 +230,7 @@ msgstr ""
 "از مواد اولیه برتر و مهارت متخصص ساخته می‌شود."
 
 #: .\templates\construction\about.html:103
-#: .\templates\construction\home.html:214
+#: .\templates\construction\home.html:483
 msgid "Safety First"
 msgstr "ایمنی اول"
 
@@ -282,6 +299,10 @@ msgid "Experienced professionals dedicated to delivering exceptional results"
 msgstr "متخصصان با تجربه‌ای که متعهد به ارائه نتایج استثنایی هستند"
 
 #: .\templates\construction\about.html:181
+#: .\templates\construction\team.html:72 .\templates\construction\team.html:120
+#: .\templates\construction\team.html:153
+#: .\templates\construction\team.html:186
+#: .\templates\construction\team.html:219
 msgid "years experience"
 msgstr "سال تجربه"
 
@@ -339,57 +360,132 @@ msgid "View Our Work"
 msgstr "مشاهده کارهای ما"
 
 #: .\templates\construction\gallery.html:5
-#: .\templates\construction\gallery.html:12
+#: .\templates\construction\gallery.html:14
 msgid "Project Gallery"
 msgstr "گالری پروژه‌ها"
 
-#: .\templates\construction\gallery.html:14
+#: .\templates\construction\gallery.html:17
+#, fuzzy
+#| msgid ""
+#| "Explore our diverse portfolio of construction projects through our "
+#| "comprehensive gallery."
 msgid ""
-"Explore our diverse portfolio of construction projects through our "
-"comprehensive gallery."
+"Explore our portfolio of exceptional construction projects, showcasing "
+"innovation, quality, and craftsmanship."
 msgstr "مجموعه متنوع پروژه‌های ساختمانی ما را از طریق گالری جامع ما کاوش کنید."
 
+#: .\templates\construction\gallery.html:29
+msgid "Our Projects"
+msgstr "پروژه‌های ما"
+
+#: .\templates\construction\gallery.html:32
+msgid ""
+"Select a project to explore our comprehensive gallery of construction "
+"achievements."
+msgstr ""
+
+#: .\templates\construction\gallery.html:46
+#, fuzzy
+#| msgid "About Dorsamehr Construction"
+msgid "Modern Construction"
+msgstr "درباره ساختمان سازی درسمهر"
+
+#: .\templates\construction\gallery.html:58
+msgid "Premium Development"
+msgstr ""
+
+#: .\templates\construction\gallery.html:70
+#: .\templates\construction\home.html:362
+#, fuzzy
+#| msgid "About Dorsamehr Construction"
+msgid "Luxury Construction"
+msgstr "درباره ساختمان سازی درسمهر"
+
+#: .\templates\construction\gallery.html:82
+#, fuzzy
+#| msgid "Innovation"
+msgid "Innovative Design"
+msgstr "نوآوری"
+
+#: .\templates\construction\gallery.html:94
+msgid "Urban Development"
+msgstr ""
+
+#: .\templates\construction\gallery.html:106
+#: .\templates\construction\home.html:287
+#, fuzzy
+#| msgid "Commercial Construction"
+msgid "Commercial Complex"
+msgstr "ساخت تجاری"
+
+#: .\templates\construction\gallery.html:118
+#, fuzzy
+#| msgid "Residential Construction"
+msgid "Residential Project"
+msgstr "ساخت مسکونی"
+
+#: .\templates\construction\gallery.html:130
+msgid "Mixed Development"
+msgstr ""
+
+#: .\templates\construction\gallery.html:142
+#, fuzzy
+#| msgid "Featured Projects"
+msgid "Specialized Project"
+msgstr "پروژه‌های ویژه"
+
+#: .\templates\construction\gallery.html:154
+msgid "Modern Complex"
+msgstr ""
+
+#: .\templates\construction\gallery.html:171
+msgid "Back"
+msgstr ""
+
+#: .\templates\construction\gallery.html:194
+msgid "Previous"
+msgstr ""
+
+#: .\templates\construction\gallery.html:197
+msgid "Next"
+msgstr ""
+
 #: .\templates\construction\home.html:4
-msgid "Dorsamehr Construction - Building Excellence"
+#, fuzzy
+#| msgid "Dorsamehr Construction - Building Excellence"
+msgid "Dorsamehr Kish - Building Excellence"
 msgstr "ساختمان سازی درسمهر - ساخت برتری"
 
-#: .\templates\construction\home.html:16
-msgid "Building Your"
-msgstr "ساخت"
+# New translations for carousel titles
+#: .\templates\construction\home.html:117
+#: .\templates\construction\home.html:133
+msgid "Dorsa Mehr Kish Doctors Complex"
+msgstr "مجتمع پزشکان درسا مهر کیش"
 
-#: .\templates\construction\home.html:16
-msgid "Dreams"
-msgstr "رویاهای"
+#: .\templates\construction\home.html:117
+#: .\templates\construction\home.html:138
+msgid "For those who choose to stand out"
+msgstr "برای کسانی که انتخاب می‌کنند متمایز باشند"
 
-#: .\templates\construction\home.html:16
-msgid "Into Reality"
-msgstr "به واقعیت"
+#: .\templates\construction\home.html:119
+#: .\templates\construction\home.html:121
+#: .\templates\construction\home.html:365
+msgid "Emarat Farokh"
+msgstr "عمارت فرخ"
 
-#: .\templates\construction\home.html:19
-msgid ""
-"Dorsamehr Construction delivers exceptional quality and innovative solutions "
-"for residential, commercial, and industrial projects."
-msgstr ""
-"ساختمان سازی درسمهر کیفیت استثنایی و راه‌حل‌های نوآورانه برای پروژه‌های مسکونی، "
-"تجاری و صنعتی ارائه می‌دهد."
+#: .\templates\construction\home.html:119
+msgid "Designed for those who think differently"
+msgstr "طراحی شده برای کسانی که متفاوت فکر می‌کنند"
 
-#: .\templates\construction\home.html:23
-msgid "View Our Projects"
-msgstr "مشاهده پروژه‌های ما"
+#: .\templates\construction\home.html:121
+msgid "For The Finest"
+msgstr "برای بهترین‌ها"
 
-#: .\templates\construction\home.html:26
-msgid "Get Quote"
-msgstr "دریافت قیمت"
-
-#: .\templates\construction\home.html:41
-msgid "Years Experience"
-msgstr "سال تجربه"
-
-#: .\templates\construction\home.html:67
+#: .\templates\construction\home.html:176
 msgid "Our Services"
 msgstr "خدمات ما"
 
-#: .\templates\construction\home.html:69
+#: .\templates\construction\home.html:178
 msgid ""
 "We offer comprehensive construction services tailored to meet your specific "
 "needs and exceed your expectations."
@@ -397,56 +493,74 @@ msgstr ""
 "ما خدمات ساختمانی جامعی ارائه می‌دهیم که متناسب با نیازهای خاص شما طراحی شده "
 "و فراتر از انتظاراتتان عمل می‌کند."
 
-#: .\templates\construction\home.html:79
-msgid "Residential Construction"
-msgstr "ساخت مسکونی"
-
-#: .\templates\construction\home.html:81
-msgid ""
-"Custom homes, renovations, and residential developments built with quality "
-"materials and expert craftsmanship."
+#: .\templates\construction\home.html:188
+msgid "Project Definition"
 msgstr ""
-"خانه‌های سفارشی، بازسازی و توسعه‌های مسکونی ساخته شده با مواد اولیه با کیفیت و "
-"مهارت متخصص."
 
-#: .\templates\construction\home.html:84 .\templates\construction\home.html:98
-#: .\templates\construction\home.html:112
+#: .\templates\construction\home.html:190
+msgid ""
+"Comprehensive project planning, analysis, and strategic definition to ensure "
+"successful execution from concept to completion."
+msgstr ""
+
+#: .\templates\construction\home.html:193
+#: .\templates\construction\home.html:207
+#: .\templates\construction\home.html:221
+#: .\templates\construction\home.html:235
+#: .\templates\construction\home.html:249
+#: .\templates\construction\team_partnership.html:65
+#: .\templates\construction\team_partnership.html:74
+#: .\templates\construction\team_partnership.html:83
 msgid "Learn More"
 msgstr "بیشتر بدانید"
 
-#: .\templates\construction\home.html:93
-msgid "Commercial Construction"
-msgstr "ساخت تجاری"
-
-#: .\templates\construction\home.html:95
-msgid ""
-"Office buildings, retail spaces, and commercial facilities designed for "
-"functionality and aesthetic appeal."
-msgstr ""
-"ساختمان‌های اداری، فضاهای خرده‌فروشی و تأسیسات تجاری طراحی شده برای کارایی و "
-"جذابیت زیبایی‌شناختی."
-
-#: .\templates\construction\home.html:107
-msgid "Industrial Construction"
-msgstr "ساخت صنعتی"
-
-#: .\templates\construction\home.html:109
+#: .\templates\construction\home.html:202
 #, fuzzy
-#| msgid ""
-#| "Factories, warehouses, and industrial facilities built to meet the "
-#| "highest standards of efficiency and safety."
-msgid ""
-"Manufacturing facilities, warehouses, and industrial complexes built for "
-"efficiency and durability."
-msgstr ""
-"کارخانه‌ها، انبارها و تأسیسات صنعتی ساخته شده برای برآورده کردن بالاترین "
-"استانداردهای کارایی و ایمنی."
+#| msgid "Projects Completed"
+msgid "Project Implementation"
+msgstr "پروژه تکمیل شده"
 
-#: .\templates\construction\home.html:123
+#: .\templates\construction\home.html:204
+msgid ""
+"Expert execution of construction projects with skilled teams, quality "
+"materials, and advanced methodologies."
+msgstr ""
+
+#: .\templates\construction\home.html:216
+msgid "Operation"
+msgstr ""
+
+#: .\templates\construction\home.html:218
+msgid ""
+"Ongoing operational management, maintenance services, and facility "
+"optimization for long-term performance."
+msgstr ""
+
+#: .\templates\construction\home.html:230
+msgid "Barter"
+msgstr ""
+
+#: .\templates\construction\home.html:232
+msgid ""
+"Flexible exchange services and trade agreements that create mutual value for "
+"construction and development projects."
+msgstr ""
+
+#: .\templates\construction\home.html:244
+msgid "Co-ownership"
+msgstr ""
+
+#: .\templates\construction\home.html:246
+msgid ""
+"Strategic partnership opportunities in real estate development with shared "
+"ownership and collaborative investment models."
+msgstr ""
+
+#: .\templates\construction\home.html:260
 msgid "Featured Projects"
 msgstr "پروژه‌های ویژه"
 
-#: .\templates\construction\home.html:125
+#: .\templates\construction\home.html:262
 #, fuzzy
 #| msgid ""
 #| "Explore our portfolio of successful construction projects that showcase "
@@ -458,40 +572,145 @@ msgstr ""
 "نمونه کار موفقیت‌آمیز پروژه‌های ساختمانی ما را که تخصص و تعهد ما به کیفیت را "
 "نشان می‌دهد کاوش کنید."
 
-#: .\templates\construction\home.html:151
-msgid "View Details"
-msgstr "مشاهده جزئیات"
+#: .\templates\construction\home.html:272
+#, fuzzy
+#| msgid "Commercial Construction"
+msgid "Commercial Development"
+msgstr "ساخت تجاری"
 
-#: .\templates\construction\home.html:159
-msgid "No featured projects available yet."
-msgstr "هنوز هیچ پروژه ویژه‌ای در دسترس نیست."
+# New translations for carousel titles
+#: .\templates\construction\home.html:275
+#, fuzzy
+#| msgid "Dorsa Mehr Kish Doctors Complex"
+msgid "Dorsamehr Kish Complex"
+msgstr "مجتمع پزشکان درسا مهر کیش"
 
-#: .\templates\construction\home.html:166
+#: .\templates\construction\home.html:277
+msgid ""
+"A premium commercial development featuring modern architecture, sustainable "
+"design principles, and state-of-the-art facilities. This project showcases "
+"our commitment to excellence and innovation in construction."
+msgstr ""
+
+#: .\templates\construction\home.html:286
+#, fuzzy
+#| msgid "Projects"
+msgid "Project Type"
+msgstr "پروژه‌ها"
+
+#: .\templates\construction\home.html:293
+#, fuzzy
+#| msgid "Innovation"
+msgid "Location"
+msgstr "نوآوری"
+
+#: .\templates\construction\home.html:294
+msgid "Kish Island"
+msgstr ""
+
+#: .\templates\construction\home.html:300
+#: .\templates\construction\home.html:376
+msgid "Area"
+msgstr ""
+
+#: .\templates\construction\home.html:307
+msgid "Completion Date"
+msgstr ""
+
+#: .\templates\construction\home.html:308
+msgid "December 2024"
+msgstr ""
+
+#: .\templates\construction\home.html:316
+#: .\templates\construction\home.html:406
+msgid "Number of Floors"
+msgstr ""
+
+#: .\templates\construction\home.html:317
+#: .\templates\construction\home.html:407
+msgid "Floors"
+msgstr ""
+
+#: .\templates\construction\home.html:323
+msgid "Architectural Design"
+msgstr ""
+
+#: .\templates\construction\home.html:324
+msgid "Modern Minimalist"
+msgstr ""
+
+#: .\templates\construction\home.html:330
+#: .\templates\construction\home.html:383
+msgid "Venue"
+msgstr ""
+
+#: .\templates\construction\home.html:331
+msgid "Mixed-Use Complex"
+msgstr ""
+
+#: .\templates\construction\home.html:339
+#: .\templates\construction\home.html:415
+#, fuzzy
+#| msgid "Gallery"
+msgid "View Gallery"
+msgstr "گالری"
+
+#: .\templates\construction\home.html:367
+msgid ""
+"An exceptional luxury construction project that combines premium materials "
+"with innovative design. This development represents the pinnacle of modern "
+"construction excellence and attention to detail."
+msgstr ""
+
+#: .\templates\construction\home.html:384
+#, fuzzy
+#| msgid "Residential Construction"
+msgid "Residential Complex"
+msgstr "ساخت مسکونی"
+
+#: .\templates\construction\home.html:390
+msgid "Number of Units"
+msgstr ""
+
+#: .\templates\construction\home.html:391
+#: .\templates\construction\home.html:517
+msgid "Units"
+msgstr ""
+
+#: .\templates\construction\home.html:399
+msgid "Employer"
+msgstr ""
+
+#: .\templates\construction\home.html:400
+msgid "Farokh Development"
+msgstr ""
+
+#: .\templates\construction\home.html:424
 msgid "View All Projects"
 msgstr "مشاهده تمام پروژه‌ها"
 
-#: .\templates\construction\home.html:177
+#: .\templates\construction\home.html:444
 #, fuzzy
 #| msgid "About Dorsamehr Construction"
 msgid "Why Choose Dorsamehr Construction?"
 msgstr "چرا ساختمان سازی درسمهر را انتخاب کنید؟"
 
-#: .\templates\construction\home.html:184
+#: .\templates\construction\home.html:456
 #, fuzzy
 #| msgid "Quality Excellence"
 msgid "Quality Assurance"
 msgstr "تضمین کیفیت"
 
-#: .\templates\construction\home.html:185
+#: .\templates\construction\home.html:457
 msgid ""
 "We maintain the highest standards of quality throughout every project phase."
 msgstr "ما بالاترین استانداردهای کیفیت را در تمام مراحل پروژه حفظ می‌کنیم."
 
-#: .\templates\construction\home.html:194
+#: .\templates\construction\home.html:465
 msgid "Timely Delivery"
 msgstr "تحویل به موقع"
 
-#: .\templates\construction\home.html:195
+#: .\templates\construction\home.html:466
 msgid ""
 "We complete projects on schedule while maintaining quality and safety "
 "standards."
@@ -499,11 +718,11 @@ msgstr ""
 "ما پروژه‌ها را طبق برنامه تکمیل می‌کنیم در حالی که استانداردهای کیفیت و ایمنی "
 "را حفظ می‌کنیم."
 
-#: .\templates\construction\home.html:204
+#: .\templates\construction\home.html:474
 msgid "Expert Team"
 msgstr "تیم متخصص"
 
-#: .\templates\construction\home.html:205
+#: .\templates\construction\home.html:475
 #, fuzzy
 #| msgid ""
 #| "Our team of experienced professionals brings years of expertise to every "
@@ -513,7 +732,7 @@ msgid ""
 "project."
 msgstr "تیم ما از متخصصان با تجربه سال‌ها تخصص را به هر پروژه می‌آورد."
 
-#: .\templates\construction\home.html:215
+#: .\templates\construction\home.html:484
 msgid ""
 "We prioritize safety in all our operations and maintain strict safety "
 "protocols."
@@ -521,38 +740,59 @@ msgstr ""
 "ما ایمنی را در تمام عملیات‌مان اولویت قرار داده و پروتکل‌های ایمنی سختگیرانه‌ای "
 "را حفظ می‌کنیم."
 
-#: .\templates\construction\home.html:235
-#, fuzzy
-#| msgid "Latest News"
-msgid "Latest News & Insights"
-msgstr "آخرین اخبار"
-
-#: .\templates\construction\home.html:237
-#, fuzzy
-#| msgid ""
-#| "Stay updated with the latest construction trends, tips, and insights from "
-#| "our industry experts."
+#: .\templates\construction\home.html:505
 msgid ""
-"Stay updated with the latest trends, tips, and insights from the "
-"construction industry."
+"Discover the numbers that showcase our dedication to excellence and years of "
+"expertise in construction."
 msgstr ""
-"با آخرین روندها، نکات و بینش‌های ساختمانی از متخصصان صنعتی ما به‌روز بمانید."
 
-#: .\templates\construction\home.html:260
-msgid "Read More"
-msgstr "بیشتر بخوانید"
+#: .\templates\construction\home.html:521
+msgid "Total Units Built"
+msgstr ""
 
-#: .\templates\construction\home.html:269
+#: .\templates\construction\home.html:522
+msgid "Residential and commercial units completed successfully"
+msgstr ""
+
+#: .\templates\construction\home.html:536
+msgid "Infrastructure Built"
+msgstr ""
+
+#: .\templates\construction\home.html:537
+msgid "Roads, utilities, and essential infrastructure projects"
+msgstr ""
+
+#: .\templates\construction\home.html:547
+msgid "Active"
+msgstr ""
+
+#: .\templates\construction\home.html:551
 #, fuzzy
-#| msgid "View All Projects"
-msgid "View All Posts"
-msgstr "مشاهده تمام پروژه‌ها"
+#| msgid "About Dorsamehr Construction"
+msgid "Under Construction"
+msgstr "درباره ساختمان سازی درسمهر"
 
-#: .\templates\construction\home.html:279
+#: .\templates\construction\home.html:552
+msgid "Currently active infrastructure development projects"
+msgstr ""
+
+#: .\templates\construction\home.html:562
+msgid "Years"
+msgstr ""
+
+#: .\templates\construction\home.html:566
+msgid "History of Activity"
+msgstr ""
+
+#: .\templates\construction\home.html:567
+msgid "Years of dedicated service and construction excellence"
+msgstr ""
+
+#: .\templates\construction\home.html:576
 msgid "Ready to Start Your Project?"
 msgstr "آماده شروع پروژه خود هستید؟"
 
-#: .\templates\construction\home.html:281
+#: .\templates\construction\home.html:578
 #, fuzzy
 #| msgid ""
 #| "Let's discuss your project and see how we can help bring your vision to "
@@ -564,20 +804,632 @@ msgstr ""
 "بیایید پروژه شما را بررسی کنیم و ببینیم چگونه می‌توانیم به تحقق چشم‌اندازتان "
 "کمک کنیم. امروز برای مشاوره رایگان با ما تماس بگیرید."
 
-#: .\templates\construction\home.html:285
+#: .\templates\construction\home.html:582
 #, fuzzy
 #| msgid "Get Quote"
 msgid "Get Free Quote"
 msgstr "دریافت قیمت"
 
-#: .\templates\construction\home.html:288
+#: .\templates\construction\home.html:585
 msgid "Call Now"
 msgstr "همین حالا تماس بگیرید"
 
+#: .\templates\construction\team.html:4
+msgid "Our Team"
+msgstr "تیم ما"
+
+#: .\templates\construction\team.html:10
 #, fuzzy
-#~| msgid "Language"
-#~ msgid "Current Language"
-#~ msgstr "زبان"
+#| msgid "Our Team"
+msgid "Meet Our Team"
+msgstr "تیم ما"
+
+#: .\templates\construction\team.html:12
+#, fuzzy
+#| msgid ""
+#| "Experienced professionals dedicated to delivering exceptional results"
+msgid ""
+"Experienced professionals dedicated to delivering exceptional construction "
+"projects with quality and precision."
+msgstr "متخصصان با تجربه‌ای که متعهد به ارائه نتایج استثنایی هستند"
+
+#: .\templates\construction\team.html:21
+#, fuzzy
+#| msgid "Expert Team"
+msgid "Our Expert Team"
+msgstr "تیم متخصص"
+
+#: .\templates\construction\team.html:23
+msgid ""
+"Our diverse team of professionals brings together decades of experience in "
+"construction, engineering, and project management."
+msgstr ""
+
+#: .\templates\construction\team.html:30
+#, fuzzy
+#| msgid "Team"
+msgid "All Team"
+msgstr "همکاری با ما"
+
+#: .\templates\construction\team.html:33
+msgid "Designers"
+msgstr ""
+
+#: .\templates\construction\team.html:36
+#, fuzzy
+#| msgid "Project Gallery"
+msgid "Project Managers"
+msgstr "گالری پروژه‌ها"
+
+#: .\templates\construction\team.html:39
+msgid "Engineers"
+msgstr ""
+
+#: .\templates\construction\team.html:42
+msgid "Architects"
+msgstr ""
+
+#: .\templates\construction\team.html:109
+msgid "Designer"
+msgstr ""
+
+#: .\templates\construction\team.html:114
+msgid "Senior Interior Designer"
+msgstr ""
+
+#: .\templates\construction\team.html:115
+msgid ""
+"Creative designer with 8+ years of experience in modern interior design and "
+"space planning."
+msgstr ""
+
+#: .\templates\construction\team.html:142
+#, fuzzy
+#| msgid "Project Gallery"
+msgid "Project Manager"
+msgstr "گالری پروژه‌ها"
+
+#: .\templates\construction\team.html:147
+#: .\templates\construction\team_employment.html:61
+msgid "Senior Project Manager"
+msgstr ""
+
+#: .\templates\construction\team.html:148
+msgid ""
+"Experienced project manager with 12+ years leading complex construction "
+"projects."
+msgstr ""
+
+#: .\templates\construction\team.html:175
+msgid "Engineer"
+msgstr ""
+
+#: .\templates\construction\team.html:180
+msgid "Structural Engineer"
+msgstr ""
+
+#: .\templates\construction\team.html:181
+msgid ""
+"Licensed structural engineer with expertise in modern building design and "
+"safety."
+msgstr ""
+
+#: .\templates\construction\team.html:208
+msgid "Architect"
+msgstr ""
+
+#: .\templates\construction\team.html:213
+msgid "Lead Architect"
+msgstr ""
+
+#: .\templates\construction\team.html:214
+msgid ""
+"Award-winning architect with 15+ years creating innovative and sustainable "
+"designs."
+msgstr ""
+
+#: .\templates\construction\team.html:240
+#, fuzzy
+#| msgid "No team members found."
+msgid "No team members found in this category."
+msgstr "هیچ عضوی از تیم یافت نشد."
+
+#: .\templates\construction\team_barter.html:5
+#: .\templates\construction\team_barter.html:11
+msgid "Barter & Exchange Opportunities"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:12
+msgid ""
+"Exchange services, materials, and expertise for mutual benefit in "
+"construction projects"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:22
+msgid "How Barter Works"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:29
+msgid "Service Exchange"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:30
+msgid "Trade construction services for other valuable services you need"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:39
+msgid "Material Trading"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:40
+msgid "Exchange construction materials for other resources or services"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:49
+msgid "Mutual Benefit"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:50
+msgid "Both parties gain value without traditional monetary exchange"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:58
+msgid "Available for Exchange"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:61
+#, fuzzy
+#| msgid "About Dorsamehr Construction"
+msgid "Construction Services"
+msgstr "درباره ساختمان سازی درسمهر"
+
+#: .\templates\construction\team_barter.html:62
+msgid "Project management, supervision, consulting"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:63
+msgid "Trade our expertise for your specialized services"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:65
+#: .\templates\construction\team_barter.html:74
+#: .\templates\construction\team_barter.html:83
+msgid "Offer Exchange"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:70
+msgid "Equipment & Machinery"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:71
+msgid "Heavy equipment, tools, vehicles"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:72
+msgid "Exchange for materials, services, or other equipment"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:79
+msgid "Materials & Supplies"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:80
+msgid "Construction materials, supplies, inventory"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:81
+msgid "Trade excess materials for other valuable resources"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:95
+msgid "Exchange Process"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:101
+msgid "Submit Offer"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:102
+msgid "Describe what you have and what you need"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:109
+msgid "Review & Match"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:110
+msgid "We review and find matching opportunities"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:117
+msgid "Negotiate Terms"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:118
+msgid "Agree on exchange terms and conditions"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:125
+msgid "Execute Exchange"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:126
+msgid "Complete the exchange and benefit both parties"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:135
+msgid "Successful Exchanges"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:143
+msgid "Office Space Exchange"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:144
+msgid "Tehran, 2023"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:147
+msgid ""
+"Exchanged office renovation services for 6 months of office space rental, "
+"saving both parties significant costs."
+msgstr ""
+
+#: .\templates\construction\team_barter.html:156
+msgid "Equipment Trade"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:157
+msgid "Kish Island, 2023"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:160
+#, fuzzy
+#| msgid "We pride ourselves on completing projects on time and within budget."
+msgid ""
+"Traded excess construction materials for heavy equipment rental, completing "
+"projects on time and budget."
+msgstr ""
+"ما به خود می‌بالیم که پروژه‌ها را به موقع و در چارچوب بودجه تکمیل می‌کنیم."
+
+#: .\templates\construction\team_barter.html:169
+msgid "Ready to Exchange?"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:170
+msgid ""
+"Submit your exchange offer and let's create value together through barter "
+"and exchange!"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:173
+msgid "Contact Exchange Team"
+msgstr ""
+
+#: .\templates\construction\team_barter.html:176
+msgid "Submit Exchange Offer"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:5
+#: .\templates\construction\team_employment.html:11
+msgid "Employment Opportunities"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:12
+msgid ""
+"Join our dynamic team and be part of building excellence in construction"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:22
+#, fuzzy
+#| msgid "Ready to Work With Us?"
+msgid "Why Work With Us?"
+msgstr "آماده کار با ما هستید؟"
+
+#: .\templates\construction\team_employment.html:29
+msgid "Professional Growth"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:30
+msgid "Continuous learning opportunities and career advancement paths"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:39
+msgid "Team Environment"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:40
+msgid "Collaborative work culture with experienced professionals"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:49
+msgid "Competitive Benefits"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:50
+msgid "Attractive salary packages and comprehensive benefits"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:58
+#, fuzzy
+#| msgid "Language"
+msgid "Current Openings"
+msgstr "زبان"
+
+#: .\templates\construction\team_employment.html:62
+msgid "Full-time • Tehran"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:63
+msgid "Lead complex construction projects with a team of professionals"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:65
+#: .\templates\construction\team_employment.html:74
+#: .\templates\construction\team_employment.html:83
+msgid "Apply Now"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:70
+msgid "Civil Engineer"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:71
+msgid "Full-time • Kish Island"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:72
+msgid "Design and oversee construction projects from concept to completion"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:79
+msgid "Site Supervisor"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:80
+msgid "Full-time • Multiple Locations"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:81
+msgid "Ensure quality and safety standards on construction sites"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:95
+msgid "Interested in Joining Our Team?"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:96
+msgid ""
+"Send us your resume and cover letter. We're always looking for talented "
+"individuals!"
+msgstr ""
+
+#: .\templates\construction\team_employment.html:99
+#, fuzzy
+#| msgid "Contact"
+msgid "Contact HR"
+msgstr "ارتباط با ما"
+
+#: .\templates\construction\team_employment.html:102
+#, fuzzy
+#| msgid "Send Message"
+msgid "Send Resume"
+msgstr "ارسال پیام"
+
+#: .\templates\construction\team_partnership.html:5
+#: .\templates\construction\team_partnership.html:11
+msgid "Partnership Opportunities"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:12
+msgid ""
+"Collaborate with us to create innovative construction solutions and expand "
+"your business"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:22
+#, fuzzy
+#| msgid "Ready to Work With Us?"
+msgid "Why Partner With Us?"
+msgstr "آماده کار با ما هستید؟"
+
+#: .\templates\construction\team_partnership.html:29
+msgid "Proven Track Record"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:30
+msgid "15+ years of successful project delivery and client satisfaction"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:39
+msgid "Market Access"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:40
+msgid "Access to diverse markets and high-profile projects across Iran"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:49
+#, fuzzy
+#| msgid "Innovation"
+msgid "Innovation Focus"
+msgstr "نوآوری"
+
+#: .\templates\construction\team_partnership.html:50
+msgid "Cutting-edge technology and sustainable construction practices"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:58
+msgid "Partnership Types"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:61
+msgid "Joint Ventures"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:62
+msgid "Large-scale infrastructure projects"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:63
+msgid "Combine resources and expertise for major developments"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:70
+msgid "Supplier Partnerships"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:71
+msgid "Materials and equipment supply"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:72
+msgid "Long-term supply agreements with quality guarantees"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:79
+msgid "Technology Partnerships"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:80
+msgid "Innovation and R&D collaboration"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:81
+msgid "Develop next-generation construction solutions together"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:95
+msgid "Partnership Benefits"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:101
+msgid "Revenue Growth"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:102
+msgid "Expand your business reach and increase project opportunities"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:109
+msgid "Network Expansion"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:110
+msgid "Connect with industry leaders and potential clients"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:117
+#, fuzzy
+#| msgid "Innovation"
+msgid "Innovation Access"
+msgstr "نوآوری"
+
+#: .\templates\construction\team_partnership.html:118
+msgid "Access to cutting-edge technologies and methodologies"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:127
+#, fuzzy
+#| msgid "Ready to Work With Us?"
+msgid "Ready to Partner With Us?"
+msgstr "آماده کار با ما هستید؟"
+
+#: .\templates\construction\team_partnership.html:128
+msgid ""
+"Let's discuss how we can create value together. Contact our partnership team "
+"today!"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:131
+msgid "Contact Partnership Team"
+msgstr ""
+
+#: .\templates\construction\team_partnership.html:134
+msgid "Partnership Proposal"
+msgstr ""
+
+#~ msgid "Building Your"
+#~ msgstr "ساخت"
+
+#~ msgid "Dreams"
+#~ msgstr "رویاهای"
+
+#~ msgid "Into Reality"
+#~ msgstr "به واقعیت"
+
+#~ msgid ""
+#~ "Dorsamehr Construction delivers exceptional quality and innovative "
+#~ "solutions for residential, commercial, and industrial projects."
+#~ msgstr ""
+#~ "ساختمان سازی درسمهر کیفیت استثنایی و راه‌حل‌های نوآورانه برای پروژه‌های "
+#~ "مسکونی، تجاری و صنعتی ارائه می‌دهد."
+
+#~ msgid "View Our Projects"
+#~ msgstr "مشاهده پروژه‌های ما"
+
+#~ msgid "Get Quote"
+#~ msgstr "دریافت قیمت"
+
+#~ msgid "Years Experience"
+#~ msgstr "سال تجربه"
+
+#~ msgid ""
+#~ "Custom homes, renovations, and residential developments built with "
+#~ "quality materials and expert craftsmanship."
+#~ msgstr ""
+#~ "خانه‌های سفارشی، بازسازی و توسعه‌های مسکونی ساخته شده با مواد اولیه با "
+#~ "کیفیت و مهارت متخصص."
+
+#~ msgid ""
+#~ "Office buildings, retail spaces, and commercial facilities designed for "
+#~ "functionality and aesthetic appeal."
+#~ msgstr ""
+#~ "ساختمان‌های اداری، فضاهای خرده‌فروشی و تأسیسات تجاری طراحی شده برای کارایی "
+#~ "و جذابیت زیبایی‌شناختی."
+
+#~ msgid "Industrial Construction"
+#~ msgstr "ساخت صنعتی"
+
+#, fuzzy
+#~| msgid ""
+#~| "Factories, warehouses, and industrial facilities built to meet the "
+#~| "highest standards of efficiency and safety."
+#~ msgid ""
+#~ "Manufacturing facilities, warehouses, and industrial complexes built for "
+#~ "efficiency and durability."
+#~ msgstr ""
+#~ "کارخانه‌ها، انبارها و تأسیسات صنعتی ساخته شده برای برآورده کردن بالاترین "
+#~ "استانداردهای کارایی و ایمنی."
+
+#~ msgid "View Details"
+#~ msgstr "مشاهده جزئیات"
+
+#~ msgid "No featured projects available yet."
+#~ msgstr "هنوز هیچ پروژه ویژه‌ای در دسترس نیست."
+
+#, fuzzy
+#~| msgid "Latest News"
+#~ msgid "Latest News & Insights"
+#~ msgstr "آخرین اخبار"
+
+#, fuzzy
+#~| msgid ""
+#~| "Stay updated with the latest construction trends, tips, and insights "
+#~| "from our industry experts."
+#~ msgid ""
+#~ "Stay updated with the latest trends, tips, and insights from the "
+#~ "construction industry."
+#~ msgstr ""
+#~ "با آخرین روندها، نکات و بینش‌های ساختمانی از متخصصان صنعتی ما به‌روز بمانید."
+
+#~ msgid "Read More"
+#~ msgstr "بیشتر بخوانید"
+
+#, fuzzy
+#~| msgid "View All Projects"
+#~ msgid "View All Posts"
+#~ msgstr "مشاهده تمام پروژه‌ها"
 
 #~ msgid "Language"
 #~ msgstr "زبان"
@@ -613,10 +1465,6 @@ msgstr "همین حالا تماس بگیرید"
 #~ msgstr ""
 #~ "ما فقط از بهترین مواد اولیه استفاده می‌کنیم تا دوام و طول عمر را تضمین "
 #~ "کنیم."
-
-#~ msgid "We pride ourselves on completing projects on time and within budget."
-#~ msgstr ""
-#~ "ما به خود می‌بالیم که پروژه‌ها را به موقع و در چارچوب بودجه تکمیل می‌کنیم."
 
 #~ msgid "Customer Support"
 #~ msgstr "پشتیبانی مشتری"
@@ -670,9 +1518,6 @@ msgstr "همین حالا تماس بگیرید"
 #~ msgid "Message *"
 #~ msgstr "پیام *"
 
-#~ msgid "Send Message"
-#~ msgstr "ارسال پیام"
-
 #~ msgid "Address"
 #~ msgstr "آدرس"
 
@@ -713,9 +1558,6 @@ msgstr "همین حالا تماس بگیرید"
 #~ msgid "Our Projects - Dorsamehr Construction"
 #~ msgstr "پروژه‌های ما - ساختمان سازی درسمهر"
 
-#~ msgid "Our Projects"
-#~ msgstr "پروژه‌های ما"
-
 #~ msgid "Search projects..."
 #~ msgstr "جستجوی پروژه‌ها..."
 
@@ -732,18 +1574,12 @@ msgstr "همین حالا تماس بگیرید"
 #~ msgid "Our Team - Dorsamehr Construction"
 #~ msgstr "تیم ما - ساختمان سازی درسمهر"
 
-#~ msgid "Our Team"
-#~ msgstr "تیم ما"
-
 #~ msgid ""
 #~ "Meet the talented professionals who make Dorsamehr Construction a leader "
 #~ "in the industry."
 #~ msgstr ""
 #~ "با متخصصان با استعدادی آشنا شوید که ساختمان سازی درسمهر را به رهبری در "
 #~ "صنعت تبدیل کرده‌اند."
-
-#~ msgid "No team members found."
-#~ msgstr "هیچ عضوی از تیم یافت نشد."
 
 #~ msgid "Blog - Dorsamehr Construction"
 #~ msgstr "وبلاگ - ساختمان سازی درسمهر"
